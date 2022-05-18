@@ -44,7 +44,7 @@ if ($.isNode()) {
     $.msg($.name, "【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取", "https://bean.m.jd.com/bean/signIndex.action", { "open-url": "https://bean.m.jd.com/bean/signIndex.action" });
     return;
   }
-
+  console.log(`入口:\nhttps://lzdz1-isv.isvjcloud.com/dingzhi/baby/pairys/activity/8362322?activityId=dzf14101834564a0b1358291336646`)
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
       cookie = cookiesArr[i];
@@ -67,7 +67,9 @@ if ($.isNode()) {
       $.ADID = getUUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", 1);
       $.UUID = getUUID("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
       authorCodeList = [  
-                'ef89762db91641299482cd8f744f7b17',
+                '1e1f4c6ed1d048c9a3cfae6e7628443d',
+				'aa7aa582b95b4c3f8cfb5cacc62139a0',
+				'2915d7ecbb14466f8d102c01839b4461',
       ];
       // $.authorCode = authorCodeList[random(0, authorCodeList.length)];
       $.authorCode = ownCode ? ownCode : authorCodeList[random(0, authorCodeList.length)]
@@ -106,17 +108,21 @@ async function member() {
   await getFirstLZCK();
   await getToken();
   await task("dz/common/getSimpleActInfoVo", `activityId=${$.activityId}`, 1);
+  await $.wait(1000);
   if ($.token) {
     await getMyPing();
     if ($.secretPin) {
       console.log("去助力 -> " + $.authorCode);
       await taskaccessLog("common/accessLogWithAD", `venderId=${$.activityShopId}&code=99&pin=${encodeURIComponent($.secretPin)}&activityId=${$.activityId}&pageUrl=${$.activityUrl}&subType=app&adSource=undefined/activity/8258555?activityId=dzf14101834564a0b1336646135829`, 1);
-      await task("wxActionCommon/getUserInfo", `pin=${encodeURIComponent($.secretPin)}`, 1);
+      await $.wait(1000);
+	  await task("wxActionCommon/getUserInfo", `pin=${encodeURIComponent($.secretPin)}`, 1);
       await task("baby/pairys/activityContent", `activityId=${$.activityId}&pin=${encodeURIComponent($.secretPin)}&pinImg=&nick=${encodeURIComponent($.pin)}&cjyxPin=&cjhyPin=&shareUuid=${encodeURIComponent($.authorCode)}`, 0, 1);
       $.log("关注店铺");
       await task("baby/pairys/followShop", `activityId=${$.activityId}&actorUuid=${encodeURIComponent($.actorUuid)}&pin=${encodeURIComponent($.secretPin)}&shareUuid=${encodeURIComponent($.authorCode)}`);
-      await task("taskact/common/drawContent", `activityId=${$.activityId}&pin=${encodeURIComponent($.secretPin)}`);
-      await task("baby/pairys/initOpenCard", `pin=${encodeURIComponent($.secretPin)}&activityId=${$.activityId}&shareUuid=${encodeURIComponent($.authorCode)}`);
+      await $.wait(1000);
+	  await task("taskact/common/drawContent", `activityId=${$.activityId}&pin=${encodeURIComponent($.secretPin)}`);
+      await $.wait(1000);
+	  await task("baby/pairys/initOpenCard", `pin=${encodeURIComponent($.secretPin)}&activityId=${$.activityId}&shareUuid=${encodeURIComponent($.authorCode)}`);
       $.log("加入店铺会员");
       if ($.openCardList) {
         for (const vo of $.openCardList) {
@@ -126,7 +132,7 @@ async function member() {
             $.log(`>>> 准备加入会员`);
             await getShopOpenCardInfo({ venderId: `${vo.venderId}`, channel: "401" }, vo.venderId);
             await bindWithVender({ venderId: `${vo.venderId}`, bindByVerifyCodeFlag: 1, registerExtend: {}, writeChildFlag: 0, activityId: $.openCardActivityId, channel: 401 }, vo.venderId);
-            await $.wait(500);
+            await $.wait(1000);
           } else {
             $.log(`>>> 已经是会员`);
           }
@@ -192,10 +198,10 @@ function task(function_id, body, isCommon = 0, own = 0) {
                     $.log(`开启【${data.data.shareTitle}】活动`);
                     $.log("-------------------");
                     if ($.index === 1) {
-                      ownCode = 'ef89762db91641299482cd8f744f7b17';
+                      ownCode = data.data.actorUuid;
                       console.log(ownCode);
                     }
-                    $.actorUuid = 'ef89762db91641299482cd8f744f7b17';
+                    $.actorUuid = data.data.actorUuid;
                   } else {
                     $.log("活动已经结束");
                   }
