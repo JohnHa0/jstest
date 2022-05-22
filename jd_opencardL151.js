@@ -15,7 +15,7 @@ cron:32 1 21-28 5 *
 ============Quantumultx===============
 [task_local]
 #5.20~5.28 甜蜜派对 五月宠爱季
-32 12,16,20 21-28 5 * jd_opencardL151.js, tag=5.20~5.28 甜蜜派对 五月宠爱季, enabled=true
+32 12 21-28 5 * jd_opencardL151.js, tag=5.20~5.28 甜蜜派对 五月宠爱季, enabled=true
 
 */
 
@@ -610,8 +610,10 @@ async function dealReturn(type, data) {
             console.log('已经助力过')
           }else if(res.data.status == 104){
             console.log('已经助力其他人')
+          }else if(res.data.status == 103){
+            console.log('不是所有店铺会员，无法助力')
           }else if(res.data.status == 101){
-            // console.log('已经助力过')
+            console.log('不能助力自己')
           }else{
             console.log(data)
           }
