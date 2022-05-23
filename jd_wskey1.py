@@ -66,7 +66,7 @@ def get_qltoken(username, password):
 
 # 返回值 Token
 def ql_login():
-    path = '/ql/config/auth.json'
+    path = '/ql/data/config/auth.json'
     if os.path.isfile(path):
         with open(path, "r") as file:
             auth = file.read()
