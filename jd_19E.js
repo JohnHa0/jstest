@@ -174,7 +174,8 @@ $.shareCodesArr = [];
                     var ret = await promote_raise()
                 } while (ret)
                 console.log(`\n\n助力码：${res.inviteId}\n`)
-                $.newShareCodes.push(res.inviteId)
+                $.newShareCodes.push(res.inviteId);
+					console.log($.newShareCodes)
                 inviteId.push(res.inviteId)
             } catch (e) {
                 $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
