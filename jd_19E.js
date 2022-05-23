@@ -18,7 +18,15 @@ let cookiesArr = [],
     cookie = '',
     message;
 let secretp = '',
-    inviteId = []
+    inviteId = [
+	
+  'ZXASTT018v_VzQRob8VLRJxKb1AFjRWn6S7zB55awQ',
+  'ZXASTT0205KkcH2Vkpja9fl-G_KF3FjRWn6S7zB55awQ',
+  'ZXASTT0205KkcNkptry6lVWSt7r17FjRWn6S7zB55awQ',
+  'ZXASTT012vPt6RRgQ91TSFjRWn6S7zB55awQ',
+  'ZXASTT018v_V6QRsb_F3XIR-b1AFjRWn6S7zB55awQ',
+  'ZXASTT0225KkcRB9K8lHVdhL0lP4JdAFjRWn6S7zB55awQ'
+	]
 
 if ($.isNode()) {
     Object.keys(jdCookieNode).forEach((item) => {
