@@ -55,6 +55,13 @@ $.appId = 10032;
 			$.log('', "'"+$.cookie+"',", '')
     }
   }
+  for (let i = 0; i < cookiesArr.length; i++) {
+    if (cookiesArr[i]) {
+      $.cookie = cookiesArr[i] + '';
+
+			console.log($.cookie)
+    }
+  }
 })()
   .catch((e) => {
     $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
