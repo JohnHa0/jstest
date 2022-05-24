@@ -13,7 +13,64 @@ const CryptoJS = require("crypto-js");
 const $ = new Env('热爱奇旅互助版');
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
-let cookiesArr = [], cookie = '', message, helpCodeArr = [], helpPinArr = [], wxCookie = "";
+let cookiesArr = [], cookie = '', message, helpCodeArr = [
+  {
+    pin: '18014246678_p',
+    code: 'ZXASTT018v_VzQRob8VLRJxKb1AFjRWn6S7zB55awQ'
+  },
+  {
+    pin: 'jd_oKMcRZnuBXfM',
+    code: 'ZXASTT0205KkcH2Vkpja9fl-G_KF3FjRWn6S7zB55awQ'
+  },
+  {
+    pin: 'jd_FdDjJBENiJzA',
+    code: 'ZXASTT0205KkcNkptry6lVWSt7r17FjRWn6S7zB55awQ'
+  },
+  { pin: '269569205', code: 'ZXASTT012vPt6RRgQ91TSFjRWn6S7zB55awQ' },
+  {
+    pin: '18915299015_p',
+    code: 'ZXASTT018v_V6QRsb_F3XIR-b1AFjRWn6S7zB55awQ'
+  },
+  {
+    pin: 'jd_41c752f800930',
+    code: 'ZXASTT0225KkcRB9K8lHVdhL0lP4JdAFjRWn6S7zB55awQ'
+  },
+  {
+    pin: '乐事无极限',
+    code: 'ZXASTT020anTTlJSiI_NH9rRFTV6qFjRWn6S7zB55awQ'
+  },
+  {
+    pin: 'jd_6474d22a51041',
+    code: 'ZXASTT0225KkcRhoe8QDVIkvxlfcOdQFjRWn6S7zB55awQ'
+  },
+  {
+    pin: 'jd_7657cfade9bce',
+    code: 'ZXASTT0225KkcRxgc8geBcU6hnaVZIQFjRWn6S7zB55awQ'
+  },
+  {
+    pin: 'jd_407d12bebff84',
+    code: 'ZXASTT0225KkcRB4eoVXVck-mwqECcAFjRWn6S7zB55awQ'
+  },
+  { pin: '暴徒一条', code: 'ZXASTT016aFf3lZC7Idxn9rdlFjRWn6S7zB55awQ' },
+  {
+    pin: 'jd_6a5ad4aa036da',
+    code: 'ZXASTT0225KkcRk8cpADTcUv0l_FeJQFjRWn6S7zB55awQ'
+  },
+  { pin: 'olovemax', code: 'ZXASTT0114aEsBktEpBwFjRWn6S7zB55awQ' },
+  {
+    pin: 'jd_718b10084be4f',
+    code: 'ZXASTT0225KkcRx8Rp1XXIBLwxqIOIgFjRWn6S7zB55awQ'
+  },
+  {
+    pin: 'jd_6f4e83ff6ee5a',
+    code: 'ZXASTT0225KkcRkgdoFzUdkzywaIPJQFjRWn6S7zB55awQ'
+  },
+  { pin: 'Anco-tan', code: 'ZXASTT011z6MgHwNdpAoFjRWn6S7zB55awQ' },
+  {
+    pin: 'jd_7176151e0c73c',
+    code: 'ZXASTT0225KkcRx8e81XSIU_0x_AJJwFjRWn6S7zB55awQ'
+  }
+], helpPinArr = [], wxCookie = "";
 let wxCookieArr = process.env.WXCookie?.split("@") || []
 const teamLeaderArr = [], teamPlayerAutoTeam = {}
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
