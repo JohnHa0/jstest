@@ -18,15 +18,7 @@ let cookiesArr = [],
     cookie = '',
     message;
 let secretp = '',
-    inviteId = [
-	
-  'ZXASTT018v_VzQRob8VLRJxKb1AFjRWn6S7zB55awQ',
-  'ZXASTT0205KkcH2Vkpja9fl-G_KF3FjRWn6S7zB55awQ',
-  'ZXASTT0205KkcNkptry6lVWSt7r17FjRWn6S7zB55awQ',
-  'ZXASTT012vPt6RRgQ91TSFjRWn6S7zB55awQ',
-  'ZXASTT018v_V6QRsb_F3XIR-b1AFjRWn6S7zB55awQ',
-  'ZXASTT0225KkcRB9K8lHVdhL0lP4JdAFjRWn6S7zB55awQ'
-	]
+    inviteId = []
 
 if ($.isNode()) {
     Object.keys(jdCookieNode).forEach((item) => {
@@ -182,10 +174,8 @@ $.shareCodesArr = [];
                     var ret = await promote_raise()
                 } while (ret)
                 console.log(`\n\n助力码：${res.inviteId}\n`)
-                $.newShareCodes.push(res.inviteId);
-					
+                $.newShareCodes.push(res.inviteId)
                 inviteId.push(res.inviteId)
-					console.log(inviteId)
             } catch (e) {
                 $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
             }
@@ -277,7 +267,7 @@ function promote_sign() {
 }
 
 function promote_raise() {
-    let body = { "ss": { "extraData": { "log": "", "sceneid": "RAhomePageh5" }, "secretp": secretp, "random": randomString(6) } };
+    let body = {"scenceId":4, "ss": { "extraData": { "log": "", "sceneid": "RAhomePageh5" }, "secretp": secretp, "random": randomString(6) } };
     return new Promise((resolve) => {
         $.post(taskPostUrl("promote_raise", body), async(err, resp, data) => {
             try {
