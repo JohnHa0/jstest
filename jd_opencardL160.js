@@ -10,11 +10,11 @@
 请求太频繁会被黑ip
 过10分钟再执行
 
-cron:41 10 27-31 5 *
+cron:41 10,16,20 27-31 5 *
 ============Quantumultx===============
 [task_local]
 #5.27-6.1 我的新家 超级配
-41 10 27-31 5 * jd_opencardL160.js, tag=5.27-6.1 我的新家 超级配, enabled=true
+41 10,16,20 27-31 5 * jd_opencardL160.js, tag=5.27-6.1 我的新家 超级配, enabled=true
 
 
 */
