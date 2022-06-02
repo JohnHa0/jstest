@@ -195,7 +195,7 @@ def ql_login():  # 方法 青龙登录(获取Token 功能同上)
         auth = json.loads(auth)  # 使用 json模块读取
         username = auth["username"]  # 提取 username
         password = auth["password"]  # 提取 password
-        token = auth["token"]  # 提取 authkey
+        token = ''  # 提取 authkey
         try:
             twoFactorSecret = auth["twoFactorSecret"]
         except Exception as err:
