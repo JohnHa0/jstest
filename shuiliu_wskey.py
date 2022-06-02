@@ -439,7 +439,7 @@ def check_id():  # 方法 兼容青龙老版本与新版本 id & _id的问题
     url = ql_url + 'api/envs'
     try:  # 异常捕捉
         res = s.get(url).json()  # HTTP[GET] 请求 使用 session
-		print(json.dumps(res))
+        print(json.dumps(res))
     except Exception as err:  # 异常捕捉
         logger.debug(str(err))  # 调试日志输出
         logger.info("\n青龙环境接口错误")  # 标准日志输出
