@@ -567,7 +567,7 @@ def check_port():  # 方法 检查变量传递端口
 
 if __name__ == '__main__':  # Python主函数执行入口
     port = check_port()  # 调用方法 [check_port]  并赋值 [port]
-    ql_url = 'http://127.0.0.1:{0}/'.format(port)
+    ql_url = 'http://shuiliux.linkpc.net:{0}/'.format(port)
     token = ql_login()  # 调用方法 [ql_login]  并赋值 [token]
     s = requests.session()  # 设置 request session方法
     s.headers.update({"authorization": "Bearer " + str(token)})  # 增加 HTTP头认证
