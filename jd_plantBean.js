@@ -599,7 +599,7 @@ function requireConfig() {
 }
 function requestGet(function_id, body = {}) {
   if (!body.version) {
-    body["version"] = "9.0.0.1";
+    body["version"] = "9.2.4.1";
   }
   body["monitor_source"] = "plant_app_plant_index";
   body["monitor_refer"] = "";
