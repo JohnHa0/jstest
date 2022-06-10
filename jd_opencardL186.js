@@ -11,11 +11,11 @@
 请求太频繁会被黑ip
 请更换IP后再执行脚本
 
-cron:40 15 10-20 6 *
+cron:40 15,16,20 10-20 6 *
 ============Quantumultx===============
 [task_local]
 #6.10~6.20 为热爱选择 一起618
-40 15 10-20 6 * jd_opencardL186.js, tag=6.10~6.20 为热爱选择 一起618, enabled=true
+40 15,16,20 10-20 6 * jd_opencardL186.js, tag=6.10~6.20 为热爱选择 一起618, enabled=true
 
 */
 
@@ -52,9 +52,9 @@ let activityCookie =''
     return;
   }
   $.activityId = "dzlhkkd1304d0fa8d97c17d8423853"
-  $.shareUuid = "a256b5fbb7584397ab9523118a66c2eb"
+  $.shareUuid = "723200fa832040a1895900bf7c1114d8"
   console.log(`入口:\nhttps://lzdz1-isv.isvjcloud.com/dingzhi/customized/common/activity?activityId=${$.activityId}&shareUuid=${$.shareUuid}`)
-  let shareUuidArr = ["a256b5fbb7584397ab9523118a66c2eb","b96701bdfe234fdc9cc74a1d4218ae93","f22ca181d8344840a77c988c1335b3bd"]
+  let shareUuidArr = ["723200fa832040a1895900bf7c1114d8","69312fc06f3d4f599d833d7bf52aefad"]
   let s = Math.floor((Math.random()*3))
   let n = 0
   n = Math.floor((Math.random()*shareUuidArr.length))
@@ -228,7 +228,7 @@ async function run() {
     console.log($.actorUuid)
     console.log(`当前助力:${$.shareUuid}`)
     if($.index == 1){
-      $.shareUuid = $.actorUuid
+  //    $.shareUuid = $.actorUuid
       console.log(`后面的号都会助力:${$.shareUuid}`)
     }
       if($.index % 3 == 0) console.log('休息一下，别被黑ip了\n可持续发展')
