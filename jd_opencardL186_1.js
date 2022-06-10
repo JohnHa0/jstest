@@ -11,11 +11,11 @@
 请求太频繁会被黑ip
 请更换IP后再执行脚本
 
-cron:40 15,16,20 10-20 6 *
+cron:40 10 11-20 6 *
 ============Quantumultx===============
 [task_local]
 #6.10~6.20 为热爱选择 一起618
-40 15,16,20 10-20 6 * jd_opencardL186.js, tag=6.10~6.20 为热爱选择 一起618, enabled=true
+40 10 11-20 6 * jd_opencardL186.js, tag=6.10~6.20 为热爱选择 一起618, enabled=true
 
 */
 
@@ -228,7 +228,7 @@ async function run() {
     console.log($.actorUuid)
     console.log(`当前助力:${$.shareUuid}`)
     if($.index == 1){
-  //    $.shareUuid = $.actorUuid
+    //  $.shareUuid = $.actorUuid
       console.log(`后面的号都会助力:${$.shareUuid}`)
     }
       if($.index % 3 == 0) console.log('休息一下，别被黑ip了\n可持续发展')
