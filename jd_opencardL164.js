@@ -11,11 +11,11 @@
 请求太频繁会被黑ip
 过10分钟再执行
 
-cron:59 17 31,1-20 5,6 *
+cron:10 10 31,1-20 5,6 *
 ============Quantumultx===============
 [task_local]
 #5.31~6.20 时尚狂欢盛典
-59 17 31,1-20 5,6 * jd_opencardL164.js, tag=5.31~6.20 时尚狂欢盛典, enabled=true
+10 10 31,1-20 5,6 * jd_opencardL164.js, tag=5.31~6.20 时尚狂欢盛典, enabled=true
 
 */
 
@@ -51,7 +51,7 @@ let cookies = []
   }
 
   $.activityId = "dz61218d9945da9fd2f4164d2aad92"
-  $.shareUuid = "6aef03ed4c89439e85dd0d9116833029"
+  $.shareUuid = "22a4fe0faac24d769a3eee5b5e05f00b"
   console.log(`入口:\nhttps://lzdz1-isv.isvjcloud.com/dingzhi/may/fashionUnion/activity?activityId=${$.activityId}&shareUuid=${$.shareUuid}`)
   let shareUuidArr = ["6aef03ed4c89439e85dd0d9116833029","22a4fe0faac24d769a3eee5b5e05f00b"]
   let s = Math.floor((Math.random()*3))
@@ -218,7 +218,7 @@ async function run() {
     console.log($.actorUuid)
     console.log(`当前助力:${$.shareUuid}`)
     if($.index == 1){
-     // $.shareUuid = $.actorUuid
+    //  $.shareUuid = $.actorUuid
       console.log(`后面的号都会助力:${$.shareUuid}`)
     }
       if($.index % 3 == 0) console.log('休息一下，别被黑ip了\n可持续发展')
