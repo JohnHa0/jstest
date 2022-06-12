@@ -277,10 +277,11 @@ class UserInfo {
             let ranIdx = Math.floor(Math.random()*userCount)
             let searcher = userList[ranIdx]
             await searcher.promotionCreate()
+				 console.log('searchChannel')
             await searcher.searchChannel()
         }
         await $.wait(SLEEP_TIME)
-        
+         console.log('unlinkSync')
         for(let files of fs.readdirSync(`/ql/data/log/${scriptName}`)) {
             let fileName = `/ql/data/log/${scriptName}/${files}`
             let logFile = fs.statSync(fileName)
@@ -290,7 +291,7 @@ class UserInfo {
               //  fs.unlinkSync(fileName);
             }
         }
-        
+        console.log('qlApiCrons')
         await qlApiCrons()
     }
 })()
