@@ -108,92 +108,6 @@ def get_token():
     print("获取青龙面板的token:",response)
     return response["data"]["token"]
 
-# 登录青龙 返回值 token
-def get_qltoken(username, password, twoFactorSecret):  # 方法 用于获取青龙 Token
-    logger.info("Token失效, 新登陆\n")  # 日志输出
-    if twoFactorSecret:
-        try:
-            twoCode = ttotp(twoFactorSecret)
-        except Exception as err:
-            logger.debug(str(err))  # Debug日志输出
-            logger.info("TOTP异常")
-            sys.exit(1)
-        url = ql_url + "api/user/login"  # 设置青龙地址 使用 format格式化自定义端口
-        payload = json.dumps({
-            'username': username,
-            'password': password
-        })  # HTTP请求载荷
-        headers = {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        }  # HTTP请求头 设置为 Json格式
-        try:  # 异常捕捉
-            res = requests.post(url=url, headers=headers, data=payload)  # 使用 requests模块进行 HTTP POST请求
-            if res.status_code == 200 and res.json()["code"] == 420:
-                url = ql_url + 'api/user/two-factor/login'
-                data = json.dumps({
-                    "username": username,
-                    "password": password,
-                    "code": twoCode
-                })
-                res = requests.put(url=url, headers=headers, data=data)
-                if res.status_code == 200 and res.json()["code"] == 200:
-                    token = res.json()["data"]['token']  # 从 res.text 返回值中 取出 Token值
-                    return token
-                else:
-                    logger.info("两步校验失败\n")  # 日志输出
-                    sys.exit(1)
-            elif res.status_code == 200 and res.json()["code"] == 200:
-                token = res.json()["data"]['token']  # 从 res.text 返回值中 取出 Token值
-                return token
-        except Exception as err:
-            logger.debug(str(err))  # Debug日志输出
-            sys.exit(1)
-    else:
-        url = ql_url + 'api/user/login'
-        payload = {
-            'username': username,
-            'password': password
-        }  # HTTP请求载荷
-        payload = json.dumps(payload)  # json格式化载荷
-        headers = {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        }  # HTTP请求头 设置为 Json格式
-        try:  # 异常捕捉
-            res = requests.post(url=url, headers=headers, data=payload)  # 使用 requests模块进行 HTTP POST请求
-            if res.status_code == 200 and res.json()["code"] == 200:
-                token = res.json()["data"]['token']  # 从 res.text 返回值中 取出 Token值
-                return token
-            else:
-                ql_send("青龙登录失败!")
-                sys.exit(1)  # 脚本退出
-        except Exception as err:
-            logger.debug(str(err))  # Debug日志输出
-            logger.info("使用旧版青龙登录接口")
-            url = ql_url + 'api/login'  # 设置青龙地址 使用 format格式化自定义端口
-            payload = {
-                'username': username,
-                'password': password
-            }  # HTTP请求载荷
-            payload = json.dumps(payload)  # json格式化载荷
-            headers = {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            }  # HTTP请求头 设置为 Json格式
-            try:  # 异常捕捉
-                res = requests.post(url=url, headers=headers, data=payload)  # 使用 requests模块进行 HTTP POST请求
-                token = json.loads(res.text)["data"]['token']  # 从 res.text 返回值中 取出 Token值
-            except Exception as err:  # 异常捕捉
-                logger.debug(str(err))  # Debug日志输出
-                logger.info("青龙登录失败, 请检查面板状态!")  # 标准日志输出
-                ql_send('青龙登陆失败, 请检查面板状态.')
-                sys.exit(1)  # 脚本退出
-            else:  # 无异常执行分支
-                return token  # 返回 token值
-        # else:  # 无异常执行分支
-        #     return token  # 返回 token值
-
 def ql_login_by_client_id():#通过client_id方式登录
     return get_token()
 
@@ -437,7 +351,7 @@ def serch_ck(pin):  # 方法 搜索 Pin
 
 
 def get_env():  # 方法 读取变量
-    url = ql_url + 'api/envs'
+    url = ql_url + 'open/envs'
     try:  # 异常捕捉
         res = s.get(url)  # HTTP请求 [GET] 使用 session
     except Exception as err:  # 异常捕捉
@@ -450,7 +364,7 @@ def get_env():  # 方法 读取变量
 
 
 def check_id():  # 方法 兼容青龙老版本与新版本 id & _id的问题
-    url = ql_url + 'api/envs'
+    url = ql_url + 'open/envs'
     try:  # 异常捕捉
         res = s.get(url).json()  # HTTP[GET] 请求 使用 session
         print(json.dumps(res))
@@ -468,7 +382,7 @@ def check_id():  # 方法 兼容青龙老版本与新版本 id & _id的问题
 
 
 def ql_update(e_id, n_ck):  # 方法 青龙更新变量 传递 id cookie
-    url = ql_url + 'api/envs'
+    url = ql_url + 'open/envs'
     data = {
         "name": "JD_COOKIE",
         "value": n_ck,
@@ -480,7 +394,7 @@ def ql_update(e_id, n_ck):  # 方法 青龙更新变量 传递 id cookie
 
 
 def ql_enable(e_id):  # 方法 青龙变量启用 传递值 eid
-    url = ql_url + 'api/envs/enable'
+    url = ql_url + 'open/envs/enable'
     data = '["{0}"]'.format(e_id)  # 格式化 POST 载荷
     res = json.loads(s.put(url=url, data=data).text)  # json模块读取 HTTP[PUT] 的返回值
     if res['code'] == 200:  # 判断返回值为 200
@@ -492,7 +406,7 @@ def ql_enable(e_id):  # 方法 青龙变量启用 传递值 eid
 
 
 def ql_disable(e_id):  # 方法 青龙变量禁用 传递 eid
-    url = ql_url + 'api/envs/disable'
+    url = ql_url + 'open/envs/disable'
     data = '["{0}"]'.format(e_id)  # 格式化 POST 载荷
     res = json.loads(s.put(url=url, data=data).text)  # json模块读取 HTTP[PUT] 的返回值
     if res['code'] == 200:  # 判断返回值为 200
@@ -506,7 +420,7 @@ def ql_disable(e_id):  # 方法 青龙变量禁用 传递 eid
 def ql_insert(i_ck):  # 方法 插入新变量
     data = [{"value": i_ck, "name": "JD_COOKIE"}]  # POST数据载荷组合
     data = json.dumps(data)  # Json格式化数据
-    url = ql_url + 'api/envs'
+    url = ql_url + 'open/envs'
     s.post(url=url, data=data)  # HTTP[POST]请求 使用session
     logger.info("\n账号添加完成\n--------------------\n")  # 标准日志输出
 
