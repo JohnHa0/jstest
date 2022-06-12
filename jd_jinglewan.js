@@ -333,7 +333,7 @@ async function qlApiCrons(){
         }
         await httpRequest('get',urlObject)
         let result = httpResult;
-        //console.log(result)
+        console.log(result)
         if(result.code == 200) {
             for(let task of result.data) {
                 if(task.command.indexOf(scriptName) > -1) {
