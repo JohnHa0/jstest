@@ -287,7 +287,7 @@ class UserInfo {
             let mtime = logFile.mtime.getTime()
             let nowtime = Date.now()
             if(logFile.size > 2000 || mtime > (nowtime - 24*60*60*1000)) {
-                fs.unlinkSync(fileName);
+              //  fs.unlinkSync(fileName);
             }
         }
         
