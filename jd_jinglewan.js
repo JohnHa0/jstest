@@ -348,9 +348,9 @@ async function qlApiCrons(){
 }
 
 async function qlApiRun(task){
-	console.log("task_id:"+task._id)
+	console.log("task_id:"+task.id)
     try {
-        let body = `["${task._id}"]`
+        let body = `["${task.id}"]`
         let urlObject = {
             url: `http://${qlHost}/api/crons/run?t=${Date.now()}`,
             headers : {
