@@ -324,7 +324,7 @@ async function checkEnv() {
 async function qlApiCrons(){
     try {
         let urlObject = {
-            url: `http://${qlHost}/api/crons?searchValue=${scriptName}&t=${Date.now()}`,
+            url: `http://${qlHost}/api/crons?searchValue=jd_jinglewan&t=${Date.now()}`,
             headers : {
                 'Host': qlHost,
                 'Connection': 'keep-alive',
