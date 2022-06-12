@@ -15,7 +15,7 @@ const $ = new Env("京乐玩");
 let MAIN_USER = 1; //要邀请的车头编号
 
 let qlHost = "shuiliux.linkpc.net:5800"
-let scriptName = "liu269569205_jstest/jd_jinglewan"
+let scriptName = "liu269569205_jstest_jd_jinglewan"
 
 var fs = require("fs")
 let authFile = JSON.parse(fs.readFileSync("/ql/data/config/auth.json"))
