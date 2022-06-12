@@ -336,7 +336,7 @@ async function qlApiCrons(){
         console.log(result)
         if(result.code == 200) {
             for(let task of result.data) {
-                if(task.command.indexOf(scriptName) > -1) {
+                if(task.command.indexOf('jd_jinglewan') > -1) {
                     await qlApiRun(task)
                 }
             }
