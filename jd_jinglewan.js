@@ -20,7 +20,7 @@ let scriptName = "jd_jinglewan"
 var fs = require("fs")
 let authFile = JSON.parse(fs.readFileSync("/ql/data/config/auth.json"))
 let qlToken = authFile.token
-
+console.log(qlToken)
 let envSplitor = ['&','\n']
 let httpResult, httpReq, httpResp
 
