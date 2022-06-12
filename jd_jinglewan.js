@@ -364,7 +364,7 @@ async function qlApiRun(task){
         await httpRequest('put',urlObject)
         let result = httpResult;
         //console.log(result)
-        if(result.code == 200) {、、---
+        if(result.code == 200) {
             console.log(`启动任务成功`)
         } else {
             console.log(`青龙API失败：qlApiRun`)
