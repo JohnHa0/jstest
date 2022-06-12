@@ -348,6 +348,7 @@ async function qlApiCrons(){
 }
 
 async function qlApiRun(task){
+	console.log("task_id:"+task._id)
     try {
         let body = `["${task._id}"]`
         let urlObject = {
