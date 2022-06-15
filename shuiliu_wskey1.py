@@ -325,7 +325,7 @@ def ql_check(port):  # 方法 检查青龙端口
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # Socket模块初始化
     sock.settimeout(2)  # 设置端口超时
     try:  # 异常捕捉
-        sock.connect(('shuiliux.linkpc.net', port))  # 请求端口
+        sock.connect(('shuiliux.zzux.com', port))  # 请求端口
     except Exception as err:  # 捕捉异常
         logger.debug(str(err))  # 调试日志输出
         sock.close()  # 端口关闭
@@ -496,7 +496,7 @@ def check_port():  # 方法 检查变量传递端口
 
 if __name__ == '__main__':  # Python主函数执行入口
     port = check_port()  # 调用方法 [check_port]  并赋值 [port]
-    ql_url = 'http://shuiliux.linkpc.net:{0}/'.format(port)
+    ql_url = 'http://shuiliux.zzux.com:{0}/'.format(port)
     #token = ql_login()  # 调用方法 [ql_login]  并赋值 [token]
     token = ql_login_by_client_id();
     print(str(token))
