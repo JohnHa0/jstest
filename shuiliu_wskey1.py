@@ -484,7 +484,7 @@ def check_port():  # 方法 检查变量传递端口
             logger.info("使用默认端口5700")  # 标准日志输出
             return 5700  # 返回端口 5700
     else:  # 判断分支
-        port = 5800  # 默认5700端口
+        port = 5900  # 默认5700端口
     if not ql_check(port):  # 调用方法 [ql_check] 传递 [port]
         logger.info(str(port) + "端口检查失败, 如果改过端口, 请在变量中声明端口 \n在config.sh中加入 export QL_PORT=\"端口号\"")  # 标准日志输出
         logger.info("\n如果你很确定端口没错, 还是无法执行, 在GitHub给我发issus\n--------------------\n")  # 标准日志输出
