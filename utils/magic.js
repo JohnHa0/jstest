@@ -755,6 +755,23 @@ class Env {
                 `return ${data?.data?.result?.algo || data?.result?.algo}`)()
         }
     }
+	 async getShopInfo (venderId = this.venderId) {
+        try {
+            let url = `https://wq.jd.com/mshop/QueryShopMemberInfoJson?venderId=${venderId
+                || this.venderId}`
+            let headers = {
+                "Accept": "*/*",
+                "Accept-Encoding": "gzip, deflate, br",
+                "Accept-Language": "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7",
+                "Referer": 'https://h5.m.jd.com/',
+                "User-Agent": `Mozilla/5.0 (Linux; U; Android 10; zh-cn; MI 8 Build/QKQ1.190828.002) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/79.0.3945.147 Mobile Safari/537.36 XiaoMi/MiuiBrowser/13.5.40`,
+                'Cookie': this.cookie
+            }
+            return await this.get(url, headers);
+        } catch (e) {
+            return {}
+        }
+    }
 }
 
 module.exports = {Env, CryptoJS};
