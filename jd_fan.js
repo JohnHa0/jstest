@@ -24,6 +24,10 @@ if ($.isNode()) {
 }
 let activityList = [
     {'id':'20f3bf50733f4b9bbd333b3705d14272','endTime':1656626274000},//
+		{'id':'016de52c3bd94dd1892fd503a8dfa1e5','endTime':1656626274000},//
+		{'id':'b7ec89d5067f4f86bb77c8c371832280','endTime':1656626274000},//
+		{'id':'c923f03a1cc144edab77975e6c792436','endTime':1656626274000},//
+
 		
 ];
 !(async()=>{
@@ -54,7 +58,7 @@ async function main(_0x3f7ec5){
 	_0x3f7ec5.activityId=getUrlData(_0x3f7ec5.thisActivityUrl,'activityId');
 	_0x3f7ec5.runFlag=true;
 	if(_0x3f7ec5.helpFalg){
-		doInfo();
+		//doInfo();
 	}for(let _0x42703b=0;_0x42703b<_0x3f7ec5.cookiesArr.length&&(_0x42703b<RUNCK)&&_0x3f7ec5.activityId&&_0x3f7ec5.runFlag;_0x42703b++){
 		_0x3f7ec5.cookie=_0x3f7ec5.cookiesArr[_0x42703b];
 		_0x3f7ec5.UserName=decodeURIComponent(_0x3f7ec5.cookie.match(/pt_pin=(.+?);/)&&_0x3f7ec5.cookie.match(/pt_pin=(.+?);/)[1]);
