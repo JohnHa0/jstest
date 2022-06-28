@@ -13,7 +13,7 @@ var isOK=true;
 		for(var i=0;i<cookies.length;i++){
 			cookie=cookies[i];
 			await startGame();
-			time=11+Math.floor(Math.random()*6);//0-3
+			time=10+Math.floor(Math.random()*3);//0-3
 			if(options.length==10){
 				isOK=false;
 				console.log(`💩 等待时间:`+time);
