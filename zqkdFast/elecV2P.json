@@ -62,7 +62,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/leafxcy/JavaScript/08fde683f56f5a8fee282a62346677033ae1b7d2/zqkdFast/zqkdFast_reward_pro.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/liu269569205/jstest/master/zqkdFast/zqkdFast_reward_pro.js"
       }
     },
     {
