@@ -12,7 +12,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/liu269569205/jstest/master/zqkdFast/zqkdFast_shareRead.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/liu269569205/jstest/master/zqkdFast/zqkdFast_read.js"
       }
     },
     {
