@@ -5,7 +5,7 @@
 ============Quantumultx===============
 [task_local]
 #7.6-7.31 荣耀7月搜索有奖
-22 12,16,19 6-31 7 * jd_ry.js, tag=7.6-7.31 荣耀7月搜索有奖, enabled=true
+22 19,20 6-31 7 * jd_ry.js, tag=7.6-7.31 荣耀7月搜索有奖, enabled=true
 */
 
 const $ = new Env('7.6-7.31 荣耀7月搜索有奖');
@@ -162,7 +162,7 @@ async function run() {
       for(let i of $.rewards || []){
         console.log(`类型:${i.rewardType} ${i.rewardName} ${i.limitStr} ${$.time('yyyy.MM.dd',i.couponBeginTime)}-${$.time('yyyy.MM.dd',i.couponEndTime)}`)
         if(i.rewardType != 2){
-          let msg = `【京东账号${$.index}】${$.nickName || $.UserName}\n类型:${i.rewardType} ${i.rewardName} ${i.limitStr}\n活动地址:https://3.cn/103-VBNoE`
+          let msg = `【京东账号${$.index}】${$.nickName || $.UserName}\n类型:${i.rewardType} ${i.rewardName} ${i.limitStr}\n`
           if ($.isNode()){
             await notify.sendNotify(`${$.name}`, `${msg}`);
           }else{
@@ -184,8 +184,8 @@ async function run() {
         console.log('账号1获取不到[friendPin]退出执行，请重新执行')
         return
       }
-      //if(toFriend == 1 && $.index !== 1) updatefriend(friendPin,1)
-      //if($.index === 1) updatefriend(friendPin,0)
+     // if(toFriend == 1 && $.index !== 1) updatefriend(friendPin,1)
+    //  if($.index === 1) updatefriend(friendPin,0)
     }
     await $.wait(parseInt(Math.random() * 2000 + 5000, 10))
   } catch (e) {
@@ -202,11 +202,11 @@ function updatefriend(id,type) {
     }
   }
   if(type == 1) $.shareArr[index].count++
-  if($.shareArr[index].count >= 3 || type == 0){
+  if($.shareArr[index].count >= 10 || type == 0){
     console.log(`助力码[${$.shareArr[index].friendPin}] 已邀请${$.shareArr[index].count}`)
     for(let i in $.shareArr){
-      if($.shareArr[i] && $.shareArr[i].count < 3){
-       // friendPin = $.shareArr[i].friendPin
+      if($.shareArr[i] && $.shareArr[i].count < 10){
+        friendPin = $.shareArr[i].friendPin
         console.log(`更新助力码[${friendPin}] 账号${$.shareArr[i].index} 已邀请${$.shareArr[i].count}`)
         break
       }
