@@ -5,7 +5,7 @@
 ============Quantumultx===============
 [task_local]
 #7.6-7.31 荣耀7月搜索有奖
-22 19 6-31 7 * jd_ry.js, tag=7.6-7.31 荣耀7月搜索有奖, enabled=true
+22 12,16,19 6-31 7 * jd_ry.js, tag=7.6-7.31 荣耀7月搜索有奖, enabled=true
 */
 
 const $ = new Env('7.6-7.31 荣耀7月搜索有奖');
