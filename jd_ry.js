@@ -184,8 +184,8 @@ async function run() {
         console.log('账号1获取不到[friendPin]退出执行，请重新执行')
         return
       }
-      if(toFriend == 1 && $.index !== 1) updatefriend(friendPin,1)
-      if($.index === 1) updatefriend(friendPin,0)
+      //if(toFriend == 1 && $.index !== 1) updatefriend(friendPin,1)
+      //if($.index === 1) updatefriend(friendPin,0)
     }
     await $.wait(parseInt(Math.random() * 2000 + 5000, 10))
   } catch (e) {
