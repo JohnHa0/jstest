@@ -206,7 +206,7 @@ function updatefriend(id,type) {
     console.log(`助力码[${$.shareArr[index].friendPin}] 已邀请${$.shareArr[index].count}`)
     for(let i in $.shareArr){
       if($.shareArr[i] && $.shareArr[i].count < 3){
-        friendPin = $.shareArr[i].friendPin
+       // friendPin = $.shareArr[i].friendPin
         console.log(`更新助力码[${friendPin}] 账号${$.shareArr[i].index} 已邀请${$.shareArr[i].count}`)
         break
       }
