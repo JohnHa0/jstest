@@ -5,7 +5,7 @@
 ============Quantumultx===============
 [task_local]
 #7.6-7.31 荣耀7月搜索有奖
-22 19,20 6-31 7 * jd_ry.js, tag=7.6-7.31 荣耀7月搜索有奖, enabled=true
+22 19 6-31 7 * jd_ry.js, tag=7.6-7.31 荣耀7月搜索有奖, enabled=true
 */
 
 const $ = new Env('7.6-7.31 荣耀7月搜索有奖');
@@ -164,9 +164,9 @@ async function run() {
         if(i.rewardType != 2){
           let msg = `【京东账号${$.index}】${$.nickName || $.UserName}\n类型:${i.rewardType} ${i.rewardName} ${i.limitStr}\n`
           if ($.isNode()){
-            await notify.sendNotify(`${$.name}`, `${msg}`);
+            //await notify.sendNotify(`${$.name}`, `${msg}`);
           }else{
-            $.msg($.name, ``, `${msg}`);
+            //$.msg($.name, ``, `${msg}`);
           }
         }
       }
@@ -185,7 +185,7 @@ async function run() {
         return
       }
      // if(toFriend == 1 && $.index !== 1) updatefriend(friendPin,1)
-    //  if($.index === 1) updatefriend(friendPin,0)
+     // if($.index === 1) updatefriend(friendPin,0)
     }
     await $.wait(parseInt(Math.random() * 2000 + 5000, 10))
   } catch (e) {
