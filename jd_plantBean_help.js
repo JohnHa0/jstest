@@ -42,6 +42,7 @@ let awardState = '';//上期活动的京豆是否收取
 let randomCount = $.isNode() ? 20 : 5;
 let num;
 $.newShareCode = [];
+let llerror=false;
 let lnrun = 0;
 let lnruns = 0;
 !(async () => {  
@@ -58,7 +59,7 @@ let lnruns = 0;
       $.isLogin = true;
       $.nickName = '';
       $.hotFlag = false; //是否火爆
-      await TotalBean();
+      //await TotalBean();
       console.log(`\n开始【京东账号${$.index}】${$.nickName || $.UserName}\n`);
       if (!$.isLogin) {
         $.msg($.name, `【提示】cookie已失效`, `京东账号${$.index} ${$.nickName || $.UserName}\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action`, { "open-url": "https://bean.m.jd.com/bean/signIndex.action" });
@@ -71,17 +72,8 @@ let lnruns = 0;
       message = '';
       subTitle = '';
       option = {};
-	  await shareCodesFormat();
       await jdPlantBean();
 	  await $.wait(2 * 1000);
-	  lnrun++;
-	  await doHelp();
-	  if (lnrun == 3) {
-		  console.log(`\n【访问接口次数达到3次，休息一分钟.....】\n`);
-		  await $.wait(60 * 1000);
-		  lnrun = 0;
-	  }
-	  await $.wait(3 * 1000);
     }
   }
   if ($.isNode() && allMessage) {
@@ -95,11 +87,10 @@ let lnruns = 0;
 
 async function jdPlantBean() {
   try {
-    await plantBeanIndex();
-    if ($.plantBeanIndexResult.errorCode === 'PB101') {
-      console.log(`\n活动太火爆了，还是去买买买吧！\n`)
-      return
-    }
+    console.log(`获取任务及基本信息`)
+    await plantBeanIndex(); 
+    if(llerror)
+		return;
     for (let i = 0; i < $.plantBeanIndexResult.data.roundList.length; i++) {
       if ($.plantBeanIndexResult.data.roundList[i].roundState === "2") {
         num = i
@@ -119,6 +110,14 @@ async function jdPlantBean() {
       awardState = roundList[num - 1].awardState;
       $.taskList = $.plantBeanIndexResult.data.taskList;
       subTitle = `【京东昵称】${$.plantBeanIndexResult.data.plantUserInfo.plantNickName}`;
+	  lnrun++;
+	  await doHelp();
+		if (lnrun == 3) {
+		console.log(`\n【访问接口次数达到3次，休息半分钟.....】\n`);
+		await $.wait(30 * 1000);
+		lnrun = 0;
+		}
+	    await $.wait(3 * 1000);
     } else {
       console.log(`种豆得豆-初始失败:  ${JSON.stringify($.plantBeanIndexResult)}`);
     }
@@ -126,36 +125,15 @@ async function jdPlantBean() {
     $.logErr(e);
     const errMsg = `京东账号${$.index} ${$.nickName || $.UserName}\n任务执行异常，请检查执行日志 ‼️‼️`;
     // if ($.isNode()) await notify.sendNotify(`${$.name}`, errMsg);
-    $.msg($.name, '', `${errMsg}`)
+    //$.msg($.name, '', `${errMsg}`)
   }
-}
-//格式化助力码
-function shareCodesFormat() {
-  return new Promise(async resolve => {
-    // console.log(`第${$.index}个京东账号的助力码:::${$.shareCodesArr[$.index - 1]}`)
-    newShareCodes = [];
-    if ($.shareCodesArr[$.index - 1]) {
-      newShareCodes = $.shareCodesArr[$.index - 1].split('@');
-    } else {
-      console.log(`由于您第${$.index}个京东账号未提供shareCode,将采纳本脚本自带的助力码\n`)
-      const tempIndex = $.index > shareCodes.length ? (shareCodes.length - 1) : ($.index - 1);
-      newShareCodes = shareCodes[tempIndex].split('@');
-    }
-    // const readShareCodeRes = await readShareCode();
-    // if (readShareCodeRes && readShareCodeRes.code === 200) {
-    //   newShareCodes = [...new Set([...newShareCodes, ...(readShareCodeRes.data || [])])];
-    // }
-    console.log(`第${$.index}个京东账号将要助力的好友${JSON.stringify(newShareCodes)}`)
-    resolve();
-  })
 }
 //助力好友
 async function doHelp() {
 
-  console.log(`\n【开始账号内互助】--\n`);
- 
-  $.newShareCode = [...newShareCodes,...(jdPlantBeanShareArr || [])]
-  // console.log($.newShareCode)
+  console.log(`\n【开始账号内互助】\n`);
+  $.newShareCode = [...(jdPlantBeanShareArr || [])]
+  
   for (let plantUuid of $.newShareCode) {
     console.log(`【${$.UserName}】开始助力: ${plantUuid}`);
     if (!plantUuid) continue;
@@ -170,9 +148,9 @@ async function doHelp() {
 		  await $.wait(30 * 1000);
 		  lnruns = 0;
 	  }
-    if ($.helpResult && $.helpResult.code === '0') {
+        if ($.helpResult && $.helpResult.code === '0' && $.helpResult.data) {
       console.log(`助力好友结果: ${JSON.stringify($.helpResult.data.helpShareRes)}`);
-      if ($.helpResult.data.helpShareRes) {
+      if ($.helpResult.data && $.helpResult.data.helpShareRes) {
         if ($.helpResult.data.helpShareRes.state === '1') {
           console.log(`助力好友${plantUuid}成功`)
           console.log(`${$.helpResult.data.helpShareRes.promptText}\n`);
@@ -302,11 +280,43 @@ async function helpShare(plantUuid) {
   //console.log(`助力结果的code:${$.helpResult && $.helpResult.code}`);
 }
 async function plantBeanIndex() {
-  $.plantBeanIndexResult = await request('plantBeanIndex');//plantBeanIndexBody
+	llerror=false;
+    $.plantBeanIndexResult = await request('plantBeanIndex'); //plantBeanIndexBody
+    if ($.plantBeanIndexResult.errorCode === 'PB101') {
+        console.log(`\n活动太火爆了，还是去买买买吧！\n`)
+		llerror=true;
+        return
+    }
+    if ($.plantBeanIndexResult.errorCode) {
+        console.log(`获取任务及基本信息出错，10秒后重试\n`)
+        await $.wait(10000);
+        $.plantBeanIndexResult = await request('plantBeanIndex'); 
+        if ($.plantBeanIndexResult.errorCode === 'PB101') {
+            console.log(`\n活动太火爆了，还是去买买买吧！\n`)
+			llerror=true;
+            return
+        }
+    }
+    if ($.plantBeanIndexResult.errorCode) {
+        console.log(`获取任务及基本信息出错，30秒后重试\n`)
+        await $.wait(30000);
+        $.plantBeanIndexResult = await request('plantBeanIndex'); 
+        if ($.plantBeanIndexResult.errorCode === 'PB101') {
+            console.log(`\n活动太火爆了，还是去买买买吧！\n`)
+			llerror=true;
+            return
+        }
+    }
+    if ($.plantBeanIndexResult.errorCode) {
+        console.log(`获取任务及基本信息失败，活动异常，换个时间再试试吧....`)
+        console.log("错误代码;" + $.plantBeanIndexResult.errorCode)
+		llerror=true;
+        return
+    }
 }
 function requestGet(function_id, body = {}) {
   if (!body.version) {
-    body["version"] = "9.2.4.1";
+    body["version"] = "9.0.0.1";
   }
   body["monitor_source"] = "plant_app_plant_index";
   body["monitor_refer"] = "";
