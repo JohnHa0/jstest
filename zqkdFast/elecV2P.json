@@ -2,7 +2,7 @@
   "name": "elecV2P 定时任务订阅",
   "author": "留个名字",
   "note": "xx 导出的任务订阅。该订阅适用于 elecV2P，与其他软件并不兼容。相关说明参考：https://github.com/elecV2/elecV2P-dei/tree/master/docs/06-task.md",
-  "date": "2022-06-30 22:19:11",
+  "date": "2022-07-19 14:33:37",
   "type": "task",
   "list": [
     {
@@ -29,7 +29,7 @@
       "name": "极速版日常任务",
       "type": "cron",
       "time": "5,35 8-20 * * *",
-      "running": true,
+      "running": false,
       "job": {
         "type": "runjs",
         "target": "https://ghproxy.com/https://raw.githubusercontent.com/liu269569205/jstest/master/zqkdFast/zqkdFast_daily.js"
@@ -48,7 +48,7 @@
     {
       "name": "极速版分享阅读",
       "type": "cron",
-      "time": "10 7,11,17 * * *",
+      "time": "10 7,8,11,12,17,18 * * *",
       "running": true,
       "job": {
         "type": "runjs",
@@ -69,7 +69,7 @@
       "name": "饿了么",
       "type": "cron",
       "time": "57 0,9,14,21 * * *",
-      "running": true,
+      "running": false,
       "job": {
         "type": "runjs",
         "target": "https://ghproxy.com/https://raw.githubusercontent.com/leafTheFish/DeathNote/main/elm.js"
