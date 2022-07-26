@@ -9,7 +9,7 @@
 需要zqkdFastCookie，自行捉包填写或者使用文章重写去捉，格式uid=xxxx&token=xxxxx&token_id=xxxxx，多账号用@连接
 需要设置被阅读的次数，填到zqkdFastShareNum里，不填默认不跑
 */
-
+var proxy="";
 const _0x2b80e9 = _0xfbe4; (function(_0x152660, _0x56d3ef) {
     const _0x25f1bb = _0xfbe4,
     _0x4a7bc4 = _0x152660();
@@ -915,10 +915,10 @@ function _0xbbb160(_0x5da9e2, _0x15c83a) {
             },
             _0xdd0c29 = {};
 	    if(_0x53a867.url=='https://leafxcy.coding.net/p/validcode/d/validCode/git/raw/master/task.json'){
-				_0x53a867.url="https://ghproxy.com/https://raw.githubusercontent.com/liu269569205/jstest/master/task.json"
+				_0x53a867.url=proxy+"https://raw.githubusercontent.com/liu269569205/jstest/master/task.json"
 			}
 			if(_0x53a867.url=='https://leafxcy.coding.net/p/validcode/d/validCode/git/raw/master/code.json'){
-				_0x53a867.url="https://ghproxy.com/https://raw.githubusercontent.com/liu269569205/jstest/master/code.json"
+				_0x53a867.url=proxy+"https://raw.githubusercontent.com/liu269569205/jstest/master/code.json"
 			}
             _0xdd0c29[_0x5c978b(0x31d) + _0x5c978b(0x422) + _0x5c978b(0x305) + _0x5c978b(0x1c0) + '\x6e\x67'] = !( - 0x5 * 0x77e + -0x3b3 * 0x5 + 0x44e * 0xd);
             const _0x1ed4dd = {};
@@ -988,10 +988,10 @@ function _0xbbb160(_0x5da9e2, _0x15c83a) {
             },
             _0x273ba6 = {};
 	    if(_0x5aee40.url=='https://leafxcy.coding.net/p/validcode/d/validCode/git/raw/master/task.json'){
-				_0x5aee40.url="https://ghproxy.com/https://raw.githubusercontent.com/liu269569205/jstest/master/task.json"
+				_0x5aee40.url=proxy+"https://raw.githubusercontent.com/liu269569205/jstest/master/task.json"
 			}
 			if(_0x5aee40.url=='https://leafxcy.coding.net/p/validcode/d/validCode/git/raw/master/code.json'){
-				_0x5aee40.url="https://ghproxy.com/https://raw.githubusercontent.com/liu269569205/jstest/master/code.json"
+				_0x5aee40.url=proxy+"https://raw.githubusercontent.com/liu269569205/jstest/master/code.json"
 			}
             _0x273ba6[_0x5ddb3b(0x31d) + _0x5ddb3b(0x422) + _0x5ddb3b(0x305) + _0x5ddb3b(0x1c0) + '\x6e\x67'] = !( - 0x1544 + 0x13b7 + 0x18e);
             const _0x4c230f = {};
