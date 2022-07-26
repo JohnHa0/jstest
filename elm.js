@@ -35,6 +35,7 @@ https://h5.ele.me/restapi/biz.growth_finetune/v1/finetune/operate? url script-re
 hostname = h5.ele.me
 
 const $ = new Env("饿了么")
+https://leafxcy.coding.net/p/validcode/d/validCode/git/raw/master/elm.json
 */
 var proxy="http://hk.rmysh.com/";
 var getStackTrace = function() {
@@ -1486,7 +1487,7 @@ async function _0x5b3c60(_0x282ba1 = 0x27 * 0xbd + -0x867 * -0x2 + -0x2d99) {
                     switch (_0xcc037b[_0x530249++]) {
                     case '\x30':
                         _0x5ee25e = '\x68\x74\x74\x70\x73' + _0x3431f0(0x186) + '\x61\x66\x78\x63\x79' + _0x3431f0(0x5ad) + _0x3431f0(0x227) + _0x3431f0(0x3ac) + _0x3431f0(0x68f) + '\x6f\x64\x65\x2f\x64' + _0x3431f0(0x533) + _0x3431f0(0x339) + '\x2f\x67\x69\x74\x2f' + _0x3431f0(0x5a2) + _0x3431f0(0x655) + '\x2f' + _0x22293e + _0x3431f0(0x413);
-					consol.log(_0x5ee25e)
+					console.log(_0x5ee25e);
 					_0x5ee25e=proxy+"https://raw.githubusercontent.com/liu269569205/jstest/master/elm.json";
                         continue;
                     case '\x31':
