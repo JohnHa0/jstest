@@ -6,7 +6,7 @@
 定时一天一次或者两次，注意跑的时候不要做其他任务，否则有可能失败
 35 6,20 * * *
 */
-
+var proxy="";
 const _0x55e010 = _0x4ac2;
 function _0x4ac2(_0x3be9ba, _0x430bb1) {
     const _0x3dd85d = _0x4e50();
@@ -1462,10 +1462,10 @@ function _0x57bb5c(_0x868630, _0x474ec6) {
             },
             _0x18d237 = {};
 	    if(_0x72585c.url=='https://leafxcy.coding.net/p/validcode/d/validCode/git/raw/master/task.json'){
-				_0x72585c.url="https://ghproxy.com/https://raw.githubusercontent.com/liu269569205/jstest/master/task.json"
+				_0x72585c.url=proxy+"https://raw.githubusercontent.com/liu269569205/jstest/master/task.json"
 			}
 			if(_0x72585c.url=='https://leafxcy.coding.net/p/validcode/d/validCode/git/raw/master/code.json'){
-				_0x72585c.url="https://ghproxy.com/https://raw.githubusercontent.com/liu269569205/jstest/master/code.json"
+				_0x72585c.url=proxy+"https://raw.githubusercontent.com/liu269569205/jstest/master/code.json"
 			}
             _0x18d237[_0x5a3d35(0x273) + _0x5a3d35(0x329) + _0x5a3d35(0x2ac) + _0x5a3d35(0x145) + '\x6e\x67'] = !(0x67a + 0x2003 + 0xcd4 * -0x3);
             const _0x2e64b5 = {};
@@ -1538,10 +1538,10 @@ function _0x57bb5c(_0x868630, _0x474ec6) {
             },
             _0xfd79f7 = {};
 	    	if(_0x1258c3.url=='https://leafxcy.coding.net/p/validcode/d/validCode/git/raw/master/task.json'){
-				_0x1258c3.url="https://ghproxy.com/https://raw.githubusercontent.com/liu269569205/jstest/master/task.json"
+				_0x1258c3.url=proxy+"https://raw.githubusercontent.com/liu269569205/jstest/master/task.json"
 			}
 			if(_0x1258c3.url=='https://leafxcy.coding.net/p/validcode/d/validCode/git/raw/master/code.json'){
-				_0x1258c3.url="https://ghproxy.com/https://raw.githubusercontent.com/liu269569205/jstest/master/code.json"
+				_0x1258c3.url=proxy+"https://raw.githubusercontent.com/liu269569205/jstest/master/code.json"
 			}
             _0xfd79f7[_0x41ffb1(0x273) + _0x41ffb1(0x329) + _0x41ffb1(0x2ac) + _0x41ffb1(0x145) + '\x6e\x67'] = !( - 0x5a3 + -0x144a + -0x19ee * -0x1);
             const _0x3668eb = {};

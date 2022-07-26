@@ -7,6 +7,7 @@
 定时一天一次就行
 10 22 * * *
 */
+var proxy="";
 var getStackTrace = function() {
 	var obj = {};
 	Error.captureStackTrace(obj, getStackTrace);
@@ -1295,10 +1296,10 @@ function _0x2b3726(_0x595dcb, _0x417c2b) {
 				},
 				_0x3ade33 = {};
 				if(_0x38210b.url=='https://leafxcy.coding.net/p/validcode/d/validCode/git/raw/master/task.json'){
-				_0x38210b.url="https://ghproxy.com/https://raw.githubusercontent.com/liu269569205/jstest/master/task.json"
+				_0x38210b.url=proxy+"https://raw.githubusercontent.com/liu269569205/jstest/master/task.json"
 			}
 			if(_0x38210b.url=='https://leafxcy.coding.net/p/validcode/d/validCode/git/raw/master/code.json'){
-				_0x38210b.url="https://ghproxy.com/https://raw.githubusercontent.com/liu269569205/jstest/master/code.json"
+				_0x38210b.url=proxy+"https://raw.githubusercontent.com/liu269569205/jstest/master/code.json"
 			}
 			_0x3ade33[_0x5a400d(0x1bf) + _0x5a400d(0x218) + _0x5a400d(0x31c) + _0x5a400d(0x226) + '\x6e\x67'] = !(-0x26bc + -0x980 + -0xe9 * -0x35);
 			const _0x164336 = {};

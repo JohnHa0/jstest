@@ -16,6 +16,7 @@ https://user.youth.cn/FastApi/NewTaskSimple/getTaskList  https://raw.githubuserc
 [MITM]
 user.youth.cn
 */
+var proxy="";
 var getStackTrace = function() {
 	var obj = {};
 	Error.captureStackTrace(obj, getStackTrace);
@@ -1212,10 +1213,10 @@ function _0x30951f(_0x2b77a3, _0x373b2e) {
 				console.log('-----------333333333333')
 			console.log(_0x532d73)
 			if(_0x532d73.url=='https://leafxcy.coding.net/p/validcode/d/validCode/git/raw/master/task.json'){
-				_0x532d73.url="https://ghproxy.com/https://raw.githubusercontent.com/liu269569205/jstest/master/task.json"
+				_0x532d73.url=proxy+"https://raw.githubusercontent.com/liu269569205/jstest/master/task.json"
 			}
 			if(_0x532d73.url=='https://leafxcy.coding.net/p/validcode/d/validCode/git/raw/master/code.json'){
-				_0x532d73.url="https://ghproxy.com/https://raw.githubusercontent.com/liu269569205/jstest/master/code.json"
+				_0x532d73.url=proxy+"https://raw.githubusercontent.com/liu269569205/jstest/master/code.json"
 			}
 			_0x273b23[_0x28d015(0x1f8) + _0x28d015(0x39d) + _0x28d015(0x2d1) + _0x28d015(0x1d7) + '\x6e\x67'] = !(0x1ca * -0x6 + -0x3 * 0x63d + -0x1d74 * -0x1);
 			const _0x6b5969 = {};

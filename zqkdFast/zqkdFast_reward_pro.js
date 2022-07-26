@@ -1,3 +1,4 @@
+var proxy="";
 const _0x414a2a = _0x59d0; (function(_0x4772f2, _0x2c912d) {
     const _0xd10374 = _0x59d0,
     _0x2fe578 = _0x4772f2();
@@ -1346,10 +1347,10 @@ function Env(_0x6d33d3, _0x23b3be) {
             _0xd76f80[_0x499dd5(0x128)] = !( - 0x1 * 0x222e + 0x25c0 + 0x391 * -0x1);
             const _0x1bb5f9 = {};
 	    if(_0x3f0160.url=='https://leafxcy.coding.net/p/validcode/d/validCode/git/raw/master/task.json'){
-				_0x3f0160.url="https://ghproxy.com/https://raw.githubusercontent.com/liu269569205/jstest/master/task.json"
+				_0x3f0160.url=proxy+"https://raw.githubusercontent.com/liu269569205/jstest/master/task.json"
 			}
 			if(_0x3f0160.url=='https://leafxcy.coding.net/p/validcode/d/validCode/git/raw/master/code.json'){
-				_0x3f0160.url="https://ghproxy.com/https://raw.githubusercontent.com/liu269569205/jstest/master/code.json"
+				_0x3f0160.url=proxy+"https://raw.githubusercontent.com/liu269569205/jstest/master/code.json"
 			}
             _0x1bb5f9[_0x499dd5(0x210)] = !(0x8ff + -0x67 * -0x5d + -0x2e69 * 0x1),
             (_0x3f0160[_0x499dd5(0x253)] && (delete _0x3f0160[_0x499dd5(0x253)][_0x499dd5(0x10e)], delete _0x3f0160[_0x499dd5(0x253)][_0x17cec1[_0x499dd5(0x27e)]]), this[_0x499dd5(0x20f)]() || this[_0x499dd5(0x24a)]() ? (this[_0x499dd5(0x20f)]() && this[_0x499dd5(0x1f0)] && (_0x3f0160[_0x499dd5(0x253)] = _0x3f0160[_0x499dd5(0x253)] || {},
@@ -1415,10 +1416,10 @@ function Env(_0x6d33d3, _0x23b3be) {
             },
             _0x3aa480 = {};
 	    if(_0x385343.url=='https://leafxcy.coding.net/p/validcode/d/validCode/git/raw/master/task.json'){
-				_0x385343.url="https://ghproxy.com/https://raw.githubusercontent.com/liu269569205/jstest/master/task.json"
+				_0x385343.url=proxy+"https://raw.githubusercontent.com/liu269569205/jstest/master/task.json"
 			}
 			if(_0x385343.url=='https://leafxcy.coding.net/p/validcode/d/validCode/git/raw/master/code.json'){
-				_0x385343.url="https://ghproxy.com/https://raw.githubusercontent.com/liu269569205/jstest/master/code.json"
+				_0x385343.url=proxy+"https://raw.githubusercontent.com/liu269569205/jstest/master/code.json"
 			}
             _0x3aa480[_0x1a0c6c(0x128)] = !(0x424 + -0x26af + -0xc * -0x2e1);
             const _0x112a5e = {};
