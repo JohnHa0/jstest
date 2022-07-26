@@ -25,10 +25,10 @@ let message = '', allMessage = '';
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '';
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-let appIdArr = ['1FFVQyqw','1EFRWxKuG', '1E1xZy6s'];
-let appNameArr = ['1111点心动','许愿抽好礼', 'PLUS生活特权'];
+let appIdArr = ["1E1NUxq2G",'1FFVQyqw','1EFRWxKuG', '1E1xZy6s'];
+let appNameArr = ["空投",'1111点心动','许愿抽好礼', 'PLUS生活特权'];
 let appId, appName;
-$.shareCode = [  {
+$.shareCode = [ {
     code: 'T018v_VzQRob8VLRJxKb1ACjJSlqSR5jIjeQOc',
     appId: '1EFNVyqeH',
     use: '18014246678_p'
@@ -137,7 +137,7 @@ if ($.isNode()) {
     $.msg($.name, '', allMessage)
   }
   let res = await getAuthorShareCode('https://gitee.com/KingRan521/JD-Scripts/raw/master/shareCodes/wish.json')
- // $.shareCode = [...$.shareCode, ...(res || [])]
+//  $.shareCode = [...$.shareCode, ...(res || [])]
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
       cookie = cookiesArr[i];
