@@ -9,7 +9,7 @@ cron:21 1 30-31,1-4 7,8 *
 ============Quantumultx===============
 [task_local]
 #7.30-8.4 惊喜派送 纵享甜蜜
-21 1 30-31,1-4 7,8 * jd_opencardL209.js, tag=7.30-8.4 惊喜派送 纵享甜蜜, enabled=true
+21 13,16 30-31,1-4 7,8 * jd_opencardL209.js, tag=7.30-8.4 惊喜派送 纵享甜蜜, enabled=true
 
 
 
