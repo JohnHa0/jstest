@@ -15,7 +15,7 @@ cron:1 1 1 1 *
 ============Quantumultx===============
 [task_local]
 #8.24-9.10 千礼共明月 月满惠佳节
-1 1 1 1 * jd_opencardL227.js, tag=8.24-9.10 千礼共明月 月满惠佳节, enabled=true
+20 12,16 * * * jd_opencardL227.js, tag=8.24-9.10 千礼共明月 月满惠佳节, enabled=true
 
 */
 
