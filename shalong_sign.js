@@ -5,7 +5,7 @@ https://raw.githubusercontent.com/star261/jd/main/scripts/jd_fan.js
 *
 */
 const $ = new Env('陕西好猫签到');
-const notify = $.isNode() ? require('./sendNotify') : '';
+//const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [];
 var delay=1000;
 var data1=null;
@@ -30,9 +30,21 @@ return
 
 async function main(usertoken) {
 	var url='https://wx.hhl1916.com/opc/ms/score/signIn?openid='+usertoken
-  let myRequest = getGetRequest(url);
+  const options = {
+      "url": url,
+      "headers": {
+        "Accept": "application/json,text/plain, */*",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Accept-Language": "zh-cn",
+        "Connection": "keep-alive",
+        "Cookie": 'JSESSIONID=46C9C1C469BB1A785525BC793577532D; Hm_lvt_de9d577d9634f5c5b343ba0eadf73a0e=1662026413; Hm_lpvt_de9d577d9634f5c5b343ba0eadf73a0e=1662026413',
+        "Referer": "https://wx.hhl1916.com/opc/ms/customer/toCustomerSign?openid=oqxQpvxmL5Uxfba_31ifbAxOhtMU",
+        "User-Agent": `Mozilla/5.0 (Linux; Android 11; Mi 10 Pro Build/RKQ1.200826.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/86.0.4240.99 XWEB/3263 MMWEBSDK/20210902 Mobile Safari/537.36 MMWEBID/7818 MicroMessenger/8.0.15.2020(0x28000F31) Process/toolsmp WeChat/arm64 Weixin NetType/WIFI Language/zh_CN ABI/arm64`
+      }
+    }
   return new Promise(async resolve => {
-        $.get(myRequest, (err, resp, data) => {
+        $.post(options, (err, resp, data) => {
             try {
 				console.log(data)
                 data = JSON.parse(data);
