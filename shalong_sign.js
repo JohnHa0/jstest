@@ -4,7 +4,7 @@ https://raw.githubusercontent.com/star261/jd/main/scripts/jd_fan.js
 * cron 34 6,18 * * *
 *
 */
-const $ = new Env('陕西好猫签到');
+const $ = new Env('沙龙签到');
 //const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [];
 var delay=1000;
