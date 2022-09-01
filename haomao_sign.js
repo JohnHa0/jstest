@@ -1,17 +1,15 @@
 /*
-* 粉丝互动，没啥水
-* 修改温某的脚本，由于温某不干活，只能自己动手修改了
-* 注意：脚本会加购，脚本会加购，脚本会加购
-* 若发现脚本里没有的粉丝互动活动。欢迎反馈给我
+* 陕西好猫签到
 https://raw.githubusercontent.com/star261/jd/main/scripts/jd_fan.js
 * cron 34 6,18 * * *
-* */
+*
+*/
 const $ = new Env('陕西好猫签到');
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [];
 var delay=1000;
 var data1=null;
-var usertokens=process.env.HAOMAO_USERTOKEN??'3cb929a6aa1f46448b1ca078c13e1406&633beb1461b3457e9ed61b8b7e8fc40e';
+var usertokens=process.env.HAOMAO_USERTOKEN??'d662045a565b421fb03d513676afe80a';
 if(!usertokens){
 	console.log('设置HAOMAO_USERTOKEN')
 return
@@ -62,7 +60,7 @@ function getGetRequest(url) {
         'Referer': 'https://sxzy.yunzhi.co/pointmall/goods.html?&goodsType=5',
         'user-agent': 'Mozilla/5.0 (Linux; Android 11; Mi 10 Pro Build/RKQ1.200826.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045713 Mobile Safari/537.36 MMWEBID/4775 MicroMessenger/8.0.1.1841(0x28000151) Process/tools WeChat/arm64 Weixin NetType/WIFI Language/zh_CN ABI/arm64',
         'content-type': 'application/x-www-form-urlencoded',
-        'Cookie': 'Hm_lvt_b2c43c6ebb9a45d9c48685989bd3602c=1629535753,1629627699; Hm_lpvt_b2c43c6ebb9a45d9c48685989bd3602c=1629631320',
+        'Cookie': 'Hm_lvt_b2c43c6ebb9a45d9c48685989bd3602c=1638759865; Hm_lpvt_b2c43c6ebb9a45d9c48685989bd3602c=1638759922',
     }
     return  {url: url, method: `GET`, headers: headers};
 }
