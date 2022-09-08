@@ -11,7 +11,7 @@
 请求太频繁会被黑ip
 请更换IP后再执行脚本
 
-cron:29 11,12,16,19 8-16 9 *
+cron:29 11,19 8-16 9 *
 ============Quantumultx===============
 [task_local]
 #9.8-9.16 福满中秋 聚惠相随
@@ -392,7 +392,7 @@ async function dealReturn(Q0QQOQQ,O0Q0OQO){
 						$.endTime=OO0OOQO.data.endTime||OO0OOQO.data.activityVo&&OO0OOQO.data.activityVo.endTime||OO0OOQO.data.activity.endTime||0;
 						$.hasEnd=OO0OOQO.data.isEnd||false;
 						$.score=OO0OOQO.data.actorInfo.score||0;
-						$.actorUuid=OO0OOQO.data.actorInfo.uuid||'';
+						//$.actorUuid=OO0OOQO.data.actorInfo.uuid||'';
 						$.assistCount=OO0OOQO.data.actorInfo.assistCount||0;
 					}else if(OO0OOQO.errorMessage){
 						console.log(Q0QQOQQ+' '+(OO0OOQO.errorMessage||''));
@@ -889,7 +889,9 @@ function geth5st(){
 	let QQO0OOQ=O00OOOO[random(0,O00OOOO.length)];
 	return O0OQOOO[_0x80d0('‫a','%HoM')](encodeURIComponent,O0OQOOO.DqrqH(O0OQOOO[_0x80d0('‫b','vWDW')](O0OQOOO[_0x80d0('‮c','Da%Y')](Q0OQ0O0,';')+QQO0OOO,QQO0OOQ),Date[_0x80d0('‮d','7]Bn')]()));
 }
-Date[_0x80d0('‫e','gM9$')][_0x80d0('‫f','wj)i')]=function(QOQQOQQ){var QQQQOOQ={'wGAVl':function(Q0O0O0O,QQOOQQ0){return Q0O0O0O/QQOOQQ0;
+Date[_0x80d0('‫e','gM9$')][_0x80d0('‫f','wj)i')]=function(QOQQOQQ){
+	var QQQQOOQ={'wGAVl':function(Q0O0O0O,QQOOQQ0){
+		return Q0O0O0O/QQOOQQ0;
 	},'aborC':function(QQOOQQO,QQQQ00O){
 		return QQOOQQO+QQQQ00O;
 	},'khvyA':function(OQOQQ0O,OQOQ0Q0){
