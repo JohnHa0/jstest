@@ -58,7 +58,10 @@ let NoNeedCodes = [
   'MTAxODc2NTEzNDAwMDAwMDAyNzY1MjM4MQ==',
   'MTAxODc2NTEzNDAwMDAwMDAxOTQ0OTg4Mw==',
   'MTAxODc2NTE0NzAwMDAwMDAyMTc3MTY5NQ==',
-  'MTAxODExNTM5NDAwMDAwMDAzOTgyMDQyNw=='
+  'MTAxODExNTM5NDAwMDAwMDAzOTgyMDQyNw==',
+  'MTEyNDI1MTYxMDAwMDAwMDkwNjMwMjYz',
+  'MTAxNzIxMDc1MTAwMDAwMDA1Mjc0Mjc1NQ=='
+  ''
 ];
 if ($.isNode()) {
     Object.keys(jdCookieNode).forEach((item) => {
