@@ -61,7 +61,6 @@ let NoNeedCodes = [
   'MTAxODExNTM5NDAwMDAwMDAzOTgyMDQyNw==',
   'MTEyNDI1MTYxMDAwMDAwMDkwNjMwMjYz',
   'MTAxNzIxMDc1MTAwMDAwMDA1Mjc0Mjc1NQ=='
-  ''
 ];
 if ($.isNode()) {
     Object.keys(jdCookieNode).forEach((item) => {
