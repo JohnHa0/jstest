@@ -32,8 +32,7 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
 let goodsUrl = '', taskInfoKey = [];
 let notify = $.isNode() ? require('./sendNotify') : '';
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
-let newShareCodes = [];
-let NoNeedCodes = [
+let newShareCodes = [
   'MTAxODcxOTI2NTAwMDAwMDAyNTc4NTQ4MQ==',
   'MTE1NDAxNzgwMDAwMDAwNDY5NTA3OTU=',
   'MTE1NDQ5OTUwMDAwMDAwMzkxNzA5NTk=',
@@ -60,7 +59,8 @@ let NoNeedCodes = [
   'MTAxODc2NTE0NzAwMDAwMDAyMTc3MTY5NQ==',
   'MTAxODExNTM5NDAwMDAwMDAzOTgyMDQyNw==',
   'MTEyNDI1MTYxMDAwMDAwMDkwNjMwMjYz',
-  'MTAxNzIxMDc1MTAwMDAwMDA1Mjc0Mjc1NQ=='
+  'MTAxNzIxMDc1MTAwMDAwMDA1Mjc0Mjc1NQ=='];
+let NoNeedCodes = [
 ];
 if ($.isNode()) {
     Object.keys(jdCookieNode).forEach((item) => {
