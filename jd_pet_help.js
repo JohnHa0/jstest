@@ -33,7 +33,33 @@ let goodsUrl = '', taskInfoKey = [];
 let notify = $.isNode() ? require('./sendNotify') : '';
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let newShareCodes = [];
-let NoNeedCodes = [];
+let NoNeedCodes = [
+  'MTAxODcxOTI2NTAwMDAwMDAyNTc4NTQ4MQ==',
+  'MTE1NDAxNzgwMDAwMDAwNDY5NTA3OTU=',
+  'MTE1NDQ5OTUwMDAwMDAwMzkxNzA5NTk=',
+  'MTE1NDQ5MzYwMDAwMDAwMzk4MTM2Mjc=',
+  'MTAxODExNTM5NDAwMDAwMDAzOTgxMjM5NQ==',
+  'MTAxODExNDYxMTAwMDAwMDAwMzk4NDIwODU=',
+  'MTE1NDUwMTI0MDAwMDAwMDQ0NjA2NTk3',
+  'MTE1NDQ5OTIwMDAwMDAwMzg5NjE4MTk=',
+  'MTE1NDY3NTIwMDAwMDAwNDk4ODgzMTM=',
+  'MTEzMzI1MTE4NDAwMDAwMDA1MDE1MTQxMQ==',
+  'MTE1NDQ5OTUwMDAwMDAwNDY1MDc2Njk=',
+  'MTE1NDAxNzgwMDAwMDAwNDM3OTQzNTE=',
+  'MTAxODc2NTEzMDAwMDAwMDAyNDAyNzA1MQ==',
+  'MTEzMzI1MTE4NDAwMDAwMDA1MTc4NDAzNw==',
+  'MTE5MzEwNTEzODAwMDAwMDA1MDA2MTMxOQ==',
+  'MTAxNzIyNTU1NDAwMDAwMDA1MTgzNDk0NQ==',
+  'MTE5MzEwNTEzODAwMDAwMDA1OTQzMzQ2Nw==',
+  'MTAxODc2NTEzMjAwMDAwMDAyMjM5NDU0Nw==',
+  'MTAxODc2NTEzMjAwMDAwMDAxOTk1MTAyNw==',
+  'MTAxODc2NTEzMTAwMDAwMDAyMTc3MDE1Nw==',
+  'MTAxNzIxMDc1MTAwMDAwMDA3NDY5ODc5MQ==',
+  'MTAxODc2NTEzNDAwMDAwMDAyNzY1MjM4MQ==',
+  'MTAxODc2NTEzNDAwMDAwMDAxOTQ0OTg4Mw==',
+  'MTAxODc2NTE0NzAwMDAwMDAyMTc3MTY5NQ==',
+  'MTAxODExNTM5NDAwMDAwMDAzOTgyMDQyNw=='
+];
 if ($.isNode()) {
     Object.keys(jdCookieNode).forEach((item) => {
         if (jdCookieNode[item]) {
