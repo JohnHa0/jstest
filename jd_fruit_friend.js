@@ -25,40 +25,7 @@ cron "10 2 * * *" script-path=jd_fruit_friend.js,tag=东东农场好友删减奖
 */
 const $ = new Env('东东农场好友删减奖励');
 let cookiesArr = [], cookie = '', isBox = false, notify,allMessage = '';
-let newShareCodes=['1a4a44dceefd441a98908c9f0b2250f7',
-  '0787fab43daf4c469175500e873a7c1a',
-  '4603f5156f1d418c80a24b1bc13acc15',
-  'dcad4f20fee642faa6b3a311fef82fad',
-  '137166710cff4398a67bb092fa279768',
-  '69082ab90b4c42009407378e8bc156dd',
-  'b57e0b9027ee481f8a2f5fcdddaddd0c',
-  '137166710cff4398a67bb092fa279768',
-  '46176610056843639eba20f3ca37f127',
-  '94fc168dbaf44296a6cc73a85dab4f17',
-  '9d11ca1fe2dd48908d92919b39abdaed',
-  '7142a35676194d99bc603227344133ac',
-  '41a38fe8a71646e9860a243e80874e17',
-  '806a96a8ac6e4c6fbead87727426a4f9',
-  '42f58335913b4db9928fc3a74ae13fcb',
-  'df31e67276d04fc982b5037c41dcef95',
-  'd0b62c923f91437a911e66ef1727368e',
-  '517719a6101d4d6cae68f233fabf1cb5',
-  '9f7f5823508c4364a7cf26e888af2114',
-  '5fd3e0afb1db4c64a5cf4dc2a9515913',
-  '7d34db5e543348e59a4537e8a1a48397',
-  '996e1777ac7f48fb8839415e8a4b6f83',
-  '6a5d5cb31ff040769749c89ebe1c3184',
-  'f1242fa1c72e4178a02163f087d06ad8',
-  'af40f1ac0f6748eba4fd0c862b1ef306',
-  '1b7415eb4f7f46c6a3e663fc33c89e9d',
-  '8d59e65cda6c44d6b029bc51e982619f',
-  '8c221fd4944a476a9b5ced6b6fdaefb9',
-  '87101c43e171460a93129afc1d28167e',
-  '9c1be1dd3302485d80dc8c1aadfc4fc9',
-  'b4b550591fcd45db92db05c247906f62',
-  '54c57d4b4ce94f43ad3e7873c3457785',
-  '102f1f90903a46ea9bfdacea9e4d00f8',
-  'fdac98e31ef3475d9063b867f077b275'];
+let newShareCodes=[];
 let message = '', subTitle = '', option = {}, isFruitFinished = false;
 const retainWater = $.isNode() ? (process.env.retainWater ? process.env.retainWater : 100) : ($.getdata('retainWater') ? $.getdata('retainWater') : 100);//保留水滴大于多少g,默认100g;
 let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭通知推送
@@ -109,18 +76,19 @@ let llgetshare = false;
               message = '';
               subTitle = '';
               option = {};
+							$.UA = require('./USER_AGENTS').UARAM();
               $.retry = 0;
-			  llgetshare = false;
-              await GetCollect();
-			  if(llgetshare){
-				  await $.wait(5000);
-				  lnrun++;				  
-			  }
-			  if(lnrun == 10){
-				  console.log(`\n【访问接口次数达到10次，休息一分钟.....】\n`);
-				  await $.wait(60*1000);
-				  lnrun = 0;
-			  }
+							llgetshare = false;
+										await GetCollect();
+							if(llgetshare){
+								await $.wait(5000);
+								lnrun++;				  
+							}
+							if(lnrun == 10){
+								console.log(`\n【访问接口次数达到10次，休息一分钟.....】\n`);
+								await $.wait(60*1000);
+								lnrun = 0;
+							}
           }
       }
       if (boolneedUpdate) {
@@ -515,7 +483,8 @@ async function signForFarm() {
  */
 async function initForFarm() {
   const functionId = arguments.callee.name.toString();
-  $.farmInfo = await request(functionId, {"babelChannel":"121","sid":"3c52b5f17ab2a42398939a27887eaf8w","un_area":"17_1381_0_0","version":18,"channel":1});
+  $.farmInfo = await request(functionId, {"babelChannel":"121","sid":"3c52b5f17ab2a42398939a27887eaf8w","version":18,"channel":1});
+  // console.log($.farmInfo);
   // return new Promise(resolve => {
   //   const option =  {
   //     url: `${JD_API_HOST}?functionId=initForFarm`,
@@ -561,11 +530,11 @@ async function initForFarm() {
 async function taskInitForFarm() {
   console.log('\n初始化任务列表')
   const functionId = arguments.callee.name.toString();
-  $.farmTask = await request(functionId, { "version": 14, "channel": 1, "babelChannel": "120" });
+  $.farmTask = await request(functionId, {"version":18,"channel":1,"babelChannel":"121"});
 }
 //获取好友列表API
 async function friendListInitForFarm() {
-  $.friendList = await request('friendListInitForFarm', { "version": 4, "channel": 1 });
+  $.friendList = await request('friendListInitForFarm', {"version": 18,"channel": 1,"babelChannel":"45"});
   // console.log('aa', aa);
 }
 // 领取邀请好友的奖励API
@@ -574,7 +543,7 @@ async function awardInviteFriendForFarm() {
 }
 //为好友浇水API
 async function waterFriendForFarm(shareCode) {
-  const body = { "shareCode": shareCode, "version": 6, "channel": 1 }
+  const body = {"shareCode": shareCode, "version": 18, "channel": 1, "babelChannel":"121"};
   $.waterFriendForFarmRes = await request('waterFriendForFarm', body);
 }
 async function showMsg() {
@@ -712,7 +681,7 @@ function taskUrl(function_id, body = {}) {
       "Accept": "*/*",
       "Origin": "https://carry.m.jd.com",
       "Accept-Encoding": "gzip, deflate, br",
-      "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"),
+      "User-Agent": $.UA,
       "Accept-Language": "zh-CN,zh-Hans;q=0.9",
       "Referer": "https://carry.m.jd.com/",
       "Cookie": cookie
