@@ -41,7 +41,25 @@ let roundList = [];
 let awardState = '';//上期活动的京豆是否收取
 let randomCount = $.isNode() ? 20 : 5;
 let num;
-$.newShareCode = [];
+$.newShareCode = ['qj27hlitp6mgcyqbob6wwx7tj43h7wlwy7o5jii',
+  'afjmnwak3un3yht2nki7sshoe4',
+  'nkvdrkoit5o65u6cqxfqokj5jowdql73wx7b6ua',
+  'bknudbr7e4sqxmsp532nxr25bbxmrwgs6mgds2q',
+  'ds3ya4fnmkg56gqcbgnblg7poe3h7wlwy7o5jii',
+  'e7lhibzb3zek3d6p3d5ogub42tx2rqi723ifufy',
+  'balkka7c6kpsfw26dacq6xlifvh3v6im74mc4oq',
+  'olmijoxgmjutylhiecx3eqtoenmllyl7yg6to4q',
+  '4npkonnsy7xi2b5ihl7rhluvzuvispehmcausna',
+  'olmijoxgmjutyp63wgrnv57oeihleb2n7v7bwza',
+  'ow4ucxfufqlsrrhli6ja6z4nvu',
+  '4npkonnsy7xi3oxqxierdr6e72fjkyh6r2j3m5y',
+  'dul2mvofmv6izi2nkykzfbvjim5ac3f4ijdgqji',
+  'piscwbxss6ebgtsbwws3h447ny',
+  'olmijoxgmjutz6qcgpctgxwqfc5ba5fly5jlhba',
+  'zzkvskl23pqknovmfamzavosl4n6p3f56mkfloa',
+  'rtsljotwy2w34g4bbzdjby3jvfxw57c4fghlsgi',
+  '2x5iqlezcpwnjzevs74hjgidya3h7wlwy7o5jii',
+  'mlrdw3aw26j3xszjqhzasmdcokudvrcoxnoqw3a'];
 let llerror=false;
 let lnrun = 0;
 let lnruns = 0;
