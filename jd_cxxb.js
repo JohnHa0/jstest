@@ -1,3 +1,14 @@
+/*
+双11 
+
+[task_local]
+#东东萌宠
+30 8 * * * jd_pet.js, tag=双11, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jdmc.png, enabled=true
+
+=================================Loon===================================
+[Script]
+cron "30 8 * * *" script-path=jd_pet.js,tag=双11
+ */
 const CryptoJS = require("crypto-js");
 const $ = new Env('穿行寻宝');
 const notify = $.isNode() ? require('./sendNotify') : '';
