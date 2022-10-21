@@ -182,6 +182,10 @@ async function travel() {
 			for(let k=0;k<10;k++){
 				await $.wait(1000)
 				let shareresult= await doApi("getWelfareScore", {"type":1}, null, true);
+				if(shareresult==null) {
+					console.log("\n分享任务做完了:\n");
+					break;
+				}
 				console.log("\n分享:\n")
 				console.log(shareresult)
 			}
