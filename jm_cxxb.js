@@ -81,7 +81,7 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
             $.joyytoken = await getToken()
             $.blog_joyytoken = await getToken("50999", "4")
             // cookie = $.ZooFaker.getCookie(cookie + `joyytoken=${appid}${$.joyytoken};`)
-            await travel()
+          //  await travel()
             helpSysInfoArr.push({
                 cookie,
                 pin: $.UserName,
@@ -136,6 +136,8 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
         // cookie = cookie.replace(/joyytoken=\S+?;/, "joyytoken=;")
         if (teamPlayerAutoTeam.hasOwnProperty($.UserName)) {
             const { groupJoinInviteId, groupNum, groupName } = teamLeaderArr[teamPlayerAutoTeam[$.UserName]]
+				
+			console.log(groupJoinInviteId)
             console.log(`${groupName}人数：${groupNum}，正在去加入他的队伍...`)
             await joinTeam(groupJoinInviteId)
             teamLeaderArr[teamPlayerAutoTeam[$.UserName]].groupNum += 1
