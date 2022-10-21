@@ -152,6 +152,7 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
 async function travel() {
     try {
         const mainMsgPopUp = await doApi("getMainMsgPopUp", { "channel": "1" })
+		if(mainMsgPopUp==null) {console.log("异常账户，退出");return;}
         mainMsgPopUp?.score && formatMsg(mainMsgPopUp.score, "首页弹窗")
         const homeData = await doApi("getHomeData")
         // console.log(homeData)
