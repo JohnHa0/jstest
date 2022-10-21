@@ -137,7 +137,7 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
         if (teamPlayerAutoTeam.hasOwnProperty($.UserName)) {
             const { groupJoinInviteId, groupNum, groupName } = teamLeaderArr[teamPlayerAutoTeam[$.UserName]]
             console.log(`${groupName}人数：${groupNum}，正在去加入他的队伍...`)
-            await joinTeam(groupJoinInviteId)
+            await joinTeam("-HE-pbNob0skZ7bGriaMMWU5iWtYkFTVHORsrbviXshCaQKYV4H3geEDPw")
             teamLeaderArr[teamPlayerAutoTeam[$.UserName]].groupNum += 1
             await $.wait(2000)
         }
