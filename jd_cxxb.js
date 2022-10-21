@@ -177,7 +177,12 @@ async function travel() {
                 scoreResult?.score && formatMsg(scoreResult.score, "每日签到", ap.join("，"))
             }
             const collectAutoScore = await doApi("collectAutoScore", null, null, true)
-            collectAutoScore.produceScore && formatMsg(collectAutoScore.produceScore, "定时收集")
+            collectAutoScore.produceScore && formatMsg(collectAutoScore.produceScore, "定时收集");
+			for(let k=0;k<10;k++){
+				let shareresult=await doApi("promote_getWelfareScore", {"type":1}, null, true);
+				console.log("\n分享:\n")
+				console.log(shareresult)
+			}
             console.log("\n去做主App任务\n")
             for (let i = 0; i < 4; i++) {
                 await doAppTask()
