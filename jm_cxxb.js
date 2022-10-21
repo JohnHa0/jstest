@@ -81,7 +81,7 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
             $.joyytoken = await getToken()
             $.blog_joyytoken = await getToken("50999", "4")
             // cookie = $.ZooFaker.getCookie(cookie + `joyytoken=${appid}${$.joyytoken};`)
-          //  await travel()
+            await travel()
             helpSysInfoArr.push({
                 cookie,
                 pin: $.UserName,
@@ -182,7 +182,7 @@ async function travel() {
             collectAutoScore.produceScore && formatMsg(collectAutoScore.produceScore, "定时收集")
             console.log("\n去做主App任务\n")
             for (let i = 0; i < 4; i++) {
-                await doAppTask()
+               // await doAppTask()
             }
 
             //console.log("\n去看看战队\n")
