@@ -179,7 +179,8 @@ async function travel() {
             const collectAutoScore = await doApi("collectAutoScore", null, null, true)
             collectAutoScore.produceScore && formatMsg(collectAutoScore.produceScore, "定时收集");
 			for(let k=0;k<10;k++){
-				let shareresult=await doApi("promote_getWelfareScore", {"type":1}, null, true);
+				await $.wait(1000)
+				let shareresult= await doApi("promote_getWelfareScore", {"type":1}, null, true);
 				console.log("\n分享:\n")
 				console.log(shareresult)
 			}
