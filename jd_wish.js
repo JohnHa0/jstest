@@ -28,71 +28,7 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
 let appIdArr = ["1FVRZxKiD"];
 let appNameArr = ["超级大转盘"];
 let appId, appName;
-$.shareCode = [{
-    code: 'T018v_VzQRob8VLRJxKb1ACjJSlqSR5jIjeQOc',
-    appId: '1EFNVyqeH',
-    use: '18014246678_p'
-  },
-  {
-    code: 'T018v_VzQRob8VLRJxKb1ADjRXlq-7zx55awQ',
-    appId: '1FFVQyqw',
-    use: '18014246678_p'
-  },
-  {
-    code: 'T0205KkcH2Vkpja9fl-G_KF3CjJSlqSR5jIjeQOc',
-    appId: '1EFNVyqeH',
-    use: 'jd_oKMcRZnuBXfM'
-  },
-  {
-    code: 'T0205KkcH2Vkpja9fl-G_KF3DjRXlq-7zx55awQ',
-    appId: '1FFVQyqw',
-    use: 'jd_oKMcRZnuBXfM'
-  },
-  {
-    code: 'T0205KkcNkptry6lVWSt7r17CjJSlqSR5jIjeQOc',
-    appId: '1EFNVyqeH',
-    use: 'jd_FdDjJBENiJzA'
-  },
-  {
-    code: 'T0205KkcNkptry6lVWSt7r17DjRXlq-7zx55awQ',
-    appId: '1FFVQyqw',
-    use: 'jd_FdDjJBENiJzA'
-  },
-  {
-    code: 'T012vPt6RRgQ91TSCjJSlqSR5jIjeQOc',
-    appId: '1EFNVyqeH',
-    use: '269569205'
-  },
-  {
-    code: 'T012vPt6RRgQ91TSDjRXlq-7zx55awQ',
-    appId: '1FFVQyqw',
-    use: '269569205'
-  },
-  {
-    code: 'T018v_V6QRsb_F3XIR-b1ACjJSlqSR5jIjeQOc',
-    appId: '1EFNVyqeH',
-    use: '18915299015_p'
-  },
-  {
-    code: 'T018v_V6QRsb_F3XIR-b1ADjRXlq-7zx55awQ',
-    appId: '1FFVQyqw',
-    use: '18915299015_p'
-  },
-  {
-    code: 'T0225KkcRB9K8lHVdhL0lP4JdACjJSlqSR5jIjeQOc',
-    appId: '1EFNVyqeH',
-    use: 'jd_41c752f800930'
-  },
-  {
-    code: 'T0225KkcRB9K8lHVdhL0lP4JdADjRXlq-7zx55awQ',
-    appId: '1FFVQyqw',
-    use: 'jd_41c752f800930'
-  },
-  {
-    code: 'T020anTTlJSiI_NH9rRFTV6qCjJSlqSR5jIjeQOc',
-    appId: '1EFNVyqeH',
-    use: '乐事无极限'
-  }];
+$.shareCode = [];
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
     cookiesArr.push(jdCookieNode[item])
@@ -141,7 +77,7 @@ if ($.isNode()) {
     if ($.isNode()) await notify.sendNotify($.name, allMessage);
     $.msg($.name, '', allMessage)
   }
- // let res = await getAuthorShareCode('https://gitee.com/KingRan521/JD-Scripts/raw/master/shareCodes/wish.json')
+  //let res = await getAuthorShareCode('https://gitee.com/KingRan521/JD-Scripts/raw/master/shareCodes/wish.json')
  // $.shareCode = [...$.shareCode, ...(res || [])]
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
@@ -200,6 +136,10 @@ async function jd_wish() {
     $.canLottery = true
     for (let j = 0; j < forNum && $.canLottery; j++) {
       await interact_template_getLotteryResult()
+			if (j == 9 && $.canLottery) {
+        console.log('抽太多次了，下次再继续吧！');
+        break
+      }
       await $.wait(2000)
     }
 
