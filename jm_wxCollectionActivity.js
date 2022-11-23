@@ -1,27 +1,3 @@
-/*
-活动名称：加购有礼 · 超级无线
-活动链接：https://lzkj-isv.isvjcloud.com/wxCollectionActivity/activity?activityId=<活动id>
-         https://cjhy-isv.isvjcloud.com/wxCollectionActivity/activity?activityId=<活动id>
-         https://lzkj-isv.isvjd.com/wxCollectionActivity/activity2/activity?activityId=<活动id>
-         https://cjhy-isv.isvjd.com/wxCollectionActivity/activity2/activity?activityId=<活动id>
-环境变量：jd_wxCollectionActivity_activityUrl // 活动链接
-					jd_wxCollectionActivity_openCard  // 默认不开卡
-					jd_wxCollectionActivity_num  // 运行账号数量，默认前7账号  跑太多账号493！
-					jd_wxCollectionActivity_blacklist 黑名单 用&隔开 pin值
-					JD_LZ_OPEN // 是否开启LZ活动运行，默认运行
-					JD_CJ_OPEN // 是否开启CJ活动运行，默认运行
-				 
-需要安装依赖  ds
-支持缓存token   需要在容器安装依赖：
-npm install -g ds  （或者直接在青龙面板-依赖管理-添加依赖-类型 nodejs -名称：ds  安装即可使用）
-
-cron:8 8 8 8 *
-============Quantumultx===============
-[task_local]
-#加购有礼通用-加密
-8 8 8 8 * jd_wxCollectionActivity.js, tag=加购有礼通用-加密, enabled=true
-
-*/
 
 const $ = new Env('加购有礼通用-加密');
 
