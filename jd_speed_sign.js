@@ -799,7 +799,7 @@ function taskGetUrl(function_id, body) {
 }
 
 function invite2() {
-  let inviterIdArr = [
+   let inviterIdArr = [
           "ghNQyGlIWbUdlPK/1zsTFQ==",
 	  "U6lCo5WEZMTUabR8RPhsmU5yrUVGTyQoPdAatEc+880=",
 	  "jl555FG2wDz4KjwztQvjww==",
@@ -810,7 +810,7 @@ function invite2() {
   let inviterId = inviterIdArr[Math.floor((Math.random() * inviterIdArr.length))]
   let options = {
     url: "https://api.m.jd.com/",
-    body: `functionId=TaskInviteService&body=${JSON.stringify({"method":"participateInviteTask","data":{"channel":"1","encryptionInviterPin":encodeURIComponent(inviterId),"type":1}})}&appid=market-task-h5&uuid=&_t=${Date.now()}`,
+    body: `functionId=TaskInviteServiceNew&body={"method":"participateInviteTask","data":{"channel":"1","encryptionInviterPin":"${code}","type":1}}&appid=jx_h5&uuid=&_t=${Date.now()}`,
     headers: {
       "Host": "api.m.jd.com",
       "Accept": "application/json, text/plain, */*",
@@ -831,12 +831,13 @@ function invite2() {
 
 function invite() {
   let t = +new Date()
-  let inviterIdArr = [
-         "ghNQyGlIWbUdlPK/1zsTFQ==",
+    let inviterIdArr = [
+          "ghNQyGlIWbUdlPK/1zsTFQ==",
 	  "U6lCo5WEZMTUabR8RPhsmU5yrUVGTyQoPdAatEc+880=",
 	  "jl555FG2wDz4KjwztQvjww==",
 	  "FrDZBDwlRNX/Fet29mBTjg==",
 	  "X0t80OyY6c/49K0DgQRRfA==",
+    
   ]
   let inviterId = inviterIdArr[Math.floor((Math.random() * inviterIdArr.length))]
   let options = {
