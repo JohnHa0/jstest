@@ -826,7 +826,8 @@ function invite2() {
 
   }
   $.post(options, (err, resp, data) => {
-    // console.log(data)
+	  console.log("帮助")
+     console.log(data)
   })
 }
 
@@ -857,7 +858,8 @@ function invite() {
     }
   }
   $.post(options, (err, resp, data) => {
-    // console.log(data)
+    console.log("帮助")
+     console.log(data)
   })
 }
 
