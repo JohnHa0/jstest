@@ -800,11 +800,11 @@ function taskGetUrl(function_id, body) {
 
 function invite2() {
   let inviterIdArr = [
-          "ghNQyGlIWbUdlPK/1zsTFQ==",
+         /* "ghNQyGlIWbUdlPK/1zsTFQ==",
 	  "U6lCo5WEZMTUabR8RPhsmU5yrUVGTyQoPdAatEc+880=",
 	  "jl555FG2wDz4KjwztQvjww==",
 	  "FrDZBDwlRNX/Fet29mBTjg==",
-	  "X0t80OyY6c/49K0DgQRRfA==",
+	  "X0t80OyY6c/49K0DgQRRfA==",*/
 	  "E9cx6cIwwOksEkmNi4Mv6Q=="
     
   ]
@@ -834,11 +834,11 @@ function invite2() {
 function invite() {
   let t = +new Date()
   let inviterIdArr = [
-         "ghNQyGlIWbUdlPK/1zsTFQ==",
+     /*    "ghNQyGlIWbUdlPK/1zsTFQ==",
 	  "U6lCo5WEZMTUabR8RPhsmU5yrUVGTyQoPdAatEc+880=",
 	  "jl555FG2wDz4KjwztQvjww==",
 	  "FrDZBDwlRNX/Fet29mBTjg==",
-	  "X0t80OyY6c/49K0DgQRRfA==",
+	  "X0t80OyY6c/49K0DgQRRfA==",*/
 	   "E9cx6cIwwOksEkmNi4Mv6Q=="
   ]
   let inviterId = inviterIdArr[Math.floor((Math.random() * inviterIdArr.length))]
