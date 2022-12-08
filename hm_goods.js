@@ -16,7 +16,7 @@ var code=0;
 	//await notify.sendNotify(``, "测试");return;
 		do{
 			await main1();
-			console.log(data1)
+			//console.log(data1)
 			if(data1.code==601){
 				await notify.sendNotify(``, data1.msg);
 				return;
@@ -111,7 +111,7 @@ function getGetRequest(url) {
 			'Sec-Fetch-Site':'same-origin',
 			'Referer':'https://sxzy.yunzhi.co/pointmall/sc_goods.html?classType=61'
     }
-	console.log(url)
+	//console.log(url)
     return  {url: url, method: `GET`, headers: headers};
 }
 
