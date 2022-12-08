@@ -104,7 +104,7 @@ function getGetRequest(url) {
         'Referer': 'https://sxzy.yunzhi.co/pointmall/goods.html?&goodsType=5',
         'User-Agent': 'Mozilla/5.0 (Linux; Android 11; Mi 10 Pro Build/RKQ1.200826.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045713 Mobile Safari/537.36 MMWEBID/4775 MicroMessenger/8.0.1.1841(0x28000151) Process/tools WeChat/arm64 Weixin NetType/WIFI Language/zh_CN ABI/arm64',
         'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-        'Cookie': 'Hm_lvt_b2c43c6ebb9a45d9c48685989bd3602c=1638759865; Hm_lpvt_b2c43c6ebb9a45d9c48685989bd3602c=1638759994',
+        'Cookie': 'Hm_lvt_b2c43c6ebb9a45d9c48685989bd3602c=1670467531; Hm_lpvt_b2c43c6ebb9a45d9c48685989bd3602c=1670467564',
 			'Origin':'https://sxzy.yunzhi.co',
 			'Sec-Fetch-Dest':'empty',
 			'Sec-Fetch-Mode':'cors',
