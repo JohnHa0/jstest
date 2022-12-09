@@ -148,6 +148,7 @@ function getInfo(inviteId, flag = false) {
               if (data.data && data['data']['bizCode'] === 0) {
                 if (flag) {
                   console.log(`【京东账号${$.index}（${$.UserName}）的${$.name}好友互助码】${data.data && data.data.result.userActBaseInfo.inviteId}`);
+				  console.log(`${data.data && data.data.result.userActBaseInfo.inviteId}`);
                   if (data.data && data.data.result.userActBaseInfo.inviteId) {
                     $.shareCodes.push(data.data.result.userActBaseInfo.inviteId)
                   }
