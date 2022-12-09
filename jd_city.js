@@ -15,12 +15,12 @@ let exchangeFlag = $.isNode() ? (process.env.JD_CITY_EXCHANGE === "true" ? true 
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
 let uuid, UA;
-$.shareCodes = ['ou7yXKoFZGRGL17EBpfUh3c',
+$.shareCodes = ['oeD7WKgOYmJFZBqrCpeJ9ytp3ClT',
+  'ryUL_h4PB4xFmydMJG0u3AQDpfB9W4',
+  'ou7yXKoFZGRGL17EBpfUh3c',
+  'ryUXa1fYWFBNRrEStLG90RDeqMqPgFC',
   '-ryUBtdxNQYpPVe2Io24u_Vr5IqAq9Q',
-  '-ryUL_h4PB4xFmydMJG0u3AQDpfB9W4',
-  'oeDyWKkOb21DYherCpeJ9wsHT9YD',
-  '-ryUXa1fYWFBNRrEStLG90RDeqMqPgFC',
-  'dGFbjSa3sMPTtbx1k3Jlu-Bdk89aiQ8',]
+  'oeDyWKkOb21DYherCpeJ9wsHT9YD',]
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
     cookiesArr.push(jdCookieNode[item])
