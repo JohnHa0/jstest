@@ -1,11 +1,11 @@
 #!/bin/bash
-# new Env('BBK-赚京豆');
+# new Env('BBK-点点券助力');
 # export JD_LOG_XYZ_TOKEN="从机器人获取的token"
 # export Proxy_Url="代理网址 例如：星空、熊猫 生成选择txt 一次一个"
-# export ZJD_HELP_PINS="jd_xxx&jd_xxx" #助力指定pin
-# export ZJD_DELAY="2" # 助力等待多少秒
-# export ZJD_HELP_STARTCK="10" #助力前10个ck，从第11个ck开始助力 可选参数
-# export ZJD_USE_PROXY="true" #强制使用代理
+# export DD_HELP_PINS="jd_xxx&jd_xxx" #助力指定pin
+# export DD_DELAY="2" # 助力等待多少秒
+# export DD_HELP_STARTCK="10" #助力前10个ck，从第11个ck开始助力 可选参数
+# export DD_USE_PROXY="true" #强制使用代理
 pwd
 _ftype=""
 get_arch=`arch`
@@ -36,7 +36,7 @@ else
     if [ -f "$PWD/BBK/$_ftype.bbk" ]; then
         echo "$PWD/BBK/$_ftype.bbk"
         eval "chmod +x ./BBK/$_ftype.bbk"
-        eval "./BBK/$_ftype.bbk -t zjd_help"
+        eval "./BBK/$_ftype.bbk -t dd_help"
     else
         if [ ! -f "$PWD/$_ftype.bbk" ]; then
             echo "在$PWD/BBK目录、$PWD目录下均未找到文件$_ftype.bbk"
@@ -44,6 +44,6 @@ else
         fi
         echo "$PWD/$_ftype.bbk"
         eval "chmod +x $PWD/$_ftype.bbk"
-        eval "$PWD/$_ftype.bbk -t zjd_help"
+        eval "$PWD/$_ftype.bbk -t dd_help"
     fi
 fi
