@@ -1,26 +1,3 @@
-/*
-年货节red
-加密
-脚本锁佣建议用新的京粉号
-https://u.jd.com/xxxxxxx
-
-返利变量：JD_nhj_rebateCode，若需要返利给自己，请自己修改环境变量[JD_nhj_rebateCode]
-xxxxxxx换成自己的返利 就是链接后面那7位字母
-export JD_nhj_rebateCode="xxxxxxx"
-
-需要助力ck中的pin值
-pin1换成对应的pin值 用,分开(填中文)
-只助力2个 满了脚本自动从ck1开始替换未满的
-export JD_nhj_rebatePin="pin1,pin2"
-
-每次脚本领取红包次数
-export JD_nhj_redTimes="0"
-0=不限制 1=领取1次
-
-0 0,10,20 * * * https://raw.githubusercontent.com/smiek2121/scripts/master/gua_nhj_Red.js 年货节red
-
-*/
-
 let rebateCodes = ''; // 返利变量
 let rebatePin = ''; // 助力pin变量
 let redTimes = 0 // 领取次数
