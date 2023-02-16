@@ -34,7 +34,7 @@ from tools.tool import timestamp, get_environ, print_now
 from tools.ql_api import get_cookie
 from tools.send_msg import push
 from tools.notify import send
-from login.telecom_login import TelecomLogin
+from tools.telecom_login import TelecomLogin
 from string import ascii_letters, digits
 import threading
 
