@@ -1,0 +1,29 @@
+{
+    "code": 200,
+    "message": "查询成功",
+    "data": [{
+        "hosId": "10001",
+        "hosName": "杨浦院区",
+        "categoryId": "1045",
+        "categoryName": "(杨)非计划免疫门诊",
+        "kindId": "2",
+        "kindName": "专科门诊",
+        "itemId": "2410",
+        "itemName": "(杨)非计划免疫门诊",
+        "itemExId": "812",
+        "regMoney": "25",
+        "planId": "2995492",
+        "planDate": "2022-02-28",
+        "planWeek": "1",
+        "timeFlag": 0,
+        "limitMedical": 1,
+        "beginTime": "08:00",
+        "endTime": "08:30",
+        "allowCount": 100,
+        "exceCount": 0,
+        "existAllowCount": 0,
+        "existExceCount": 0,
+        "status": 1,
+        "address": "请到产科楼2楼体检中心就诊"
+    }]
+}

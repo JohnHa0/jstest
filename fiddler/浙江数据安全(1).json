@@ -1,0 +1,410 @@
+{
+    "number": 1,
+    "last": true,
+    "size": 2000,
+    "numberOfElements": 16,
+    "totalPages": 1,
+    "content": [{
+        "paperQuestionEntity": {
+            "id": 1245686783803395,
+            "createdTime": "2022-09-05T07:22:49.652Z",
+            "updatedTime": null,
+            "paperid": 1243183728033792,
+            "questionid": 1242164990312638,
+            "userid": "18017545866"
+        },
+        "questionBankEntity": {
+            "id": 1242164990312638,
+            "createdTime": "2022-08-26T14:08:28.886Z",
+            "updatedTime": null,
+            "createdBy": null,
+            "updatedBy": null,
+            "questionnumber": null,
+            "topic": "对在履行职责中知悉的个人信息、商业秘密、保密商务信息等（）依法予以保密。",
+            "answer": null,
+            "items": "[{\"sequ\":\"A\",\"items\":\"不得\"},{\"sequ\":\"B\",\"items\":\"无需\"},{\"sequ\":\"C\",\"items\":\"--------\"}]",
+            "type": "1Radio",
+            "score": 5.0,
+            "classification": null,
+            "basis": null
+        }
+    },
+    {
+        "paperQuestionEntity": {
+            "id": 1245686783803397,
+            "createdTime": "2022-09-05T07:22:49.652Z",
+            "updatedTime": null,
+            "paperid": 1243183728033792,
+            "questionid": 1242170342244374,
+            "userid": "18017545866"
+        },
+        "questionBankEntity": {
+            "id": 1242170342244374,
+            "createdTime": "2022-08-26T14:29:44.182Z",
+            "updatedTime": null,
+            "createdBy": null,
+            "updatedBy": null,
+            "questionnumber": null,
+            "topic": "加快推动数字产业化，应鼓励（）开放搜索、电商、社交等数据，发展第三方大数据产业。",
+            "answer": null,
+            "items": "[{\"sequ\":\"A\",\"items\":\"政府\"},{\"sequ\":\"B\",\"items\":\"个人\"},{\"sequ\":\"C\",\"items\":\"---------\"},{\"sequ\":\"D\",\"items\":\"国家\"}]",
+            "type": "1Radio",
+            "score": 5.0,
+            "classification": null,
+            "basis": null
+        }
+    },
+    {
+        "paperQuestionEntity": {
+            "id": 1245686783803393,
+            "createdTime": "2022-09-05T07:22:49.652Z",
+            "updatedTime": null,
+            "paperid": 1243183728033792,
+            "questionid": 1242172787523828,
+            "userid": "18017545866"
+        },
+        "questionBankEntity": {
+            "id": 1242172787523828,
+            "createdTime": "2022-08-26T14:39:27.939Z",
+            "updatedTime": null,
+            "createdBy": null,
+            "updatedBy": null,
+            "questionnumber": null,
+            "topic": "公共数据主管部门、公共管理和服务机构应采取相关技术手段及时向上级部门上报相关审计结果，包括但不限于：",
+            "answer": null,
+            "items": "[{\"sequ\":\"A\",\"items\":\"事件发生时间\"},{\"sequ\":\"B\",\"items\":\"事件名称\"},{\"sequ\":\"C\",\"items\":\"事件设备地址\"},{\"sequ\":\"D\",\"items\":\"------\"}]",
+            "type": "1Radio",
+            "score": 5.0,
+            "classification": null,
+            "basis": null
+        }
+    },
+    {
+        "paperQuestionEntity": {
+            "id": 1245686783803396,
+            "createdTime": "2022-09-05T07:22:49.652Z",
+            "updatedTime": null,
+            "paperid": 1243183728033792,
+            "questionid": 1242172791717915,
+            "userid": "18017545866"
+        },
+        "questionBankEntity": {
+            "id": 1242172791717915,
+            "createdTime": "2022-08-26T14:39:28.158Z",
+            "updatedTime": null,
+            "createdBy": null,
+            "updatedBy": null,
+            "questionnumber": null,
+            "topic": "浙江省公共数据访问权限管理规范中，明确的公共数据资源载体的访问权限管理要求中不包括下列哪种？",
+            "answer": null,
+            "items": "[{\"sequ\":\"A\",\"items\":\"主机\"},{\"sequ\":\"B\",\"items\":\"数据库\"},{\"sequ\":\"C\",\"items\":\"云存储\"},{\"sequ\":\"D\",\"items\":\"----------\"}]",
+            "type": "1Radio",
+            "score": 5.0,
+            "classification": null,
+            "basis": null
+        }
+    },
+    {
+        "paperQuestionEntity": {
+            "id": 1245686783803394,
+            "createdTime": "2022-09-05T07:22:49.652Z",
+            "updatedTime": null,
+            "paperid": 1243183728033792,
+            "questionid": 1242172791717928,
+            "userid": "18017545866"
+        },
+        "questionBankEntity": {
+            "id": 1242172791717928,
+            "createdTime": "2022-08-26T14:39:28.234Z",
+            "updatedTime": null,
+            "createdBy": null,
+            "updatedBy": null,
+            "questionnumber": null,
+            "topic": "开放的公共数据存在错误、遗漏时，公民、法人和其他组织可以通过公共数据平台项公共数据开放主题提出意见建议，公共数据开放主体应当在（）个工作日内处理完毕。",
+            "answer": null,
+            "items": "[{\"sequ\":\"A\",\"items\":\"7\"},{\"sequ\":\"B\",\"items\":\"----------\"},{\"sequ\":\"C\",\"items\":\"15\"},{\"sequ\":\"D\",\"items\":\"30\"}]",
+            "type": "1Radio",
+            "score": 5.0,
+            "classification": null,
+            "basis": null
+        }
+    },
+    {
+        "paperQuestionEntity": {
+            "id": 1245686783803392,
+            "createdTime": "2022-09-05T07:22:49.652Z",
+            "updatedTime": null,
+            "paperid": 1243183728033792,
+            "questionid": 1243064601411731,
+            "userid": "18017545866"
+        },
+        "questionBankEntity": {
+            "id": 1243064601411731,
+            "createdTime": "2022-08-29T01:43:12.842Z",
+            "updatedTime": null,
+            "createdBy": null,
+            "updatedBy": null,
+            "questionnumber": null,
+            "topic": "设区的市公共数据主管部门应当会同（）有关部门，按照省有关标准和指导规范的要求建设本级公共数据平台。县(市、区)应当按照互联互通、共建共享原则，依托设区的市公共数据平台建设本级公共数据平台；确有必要的，可以单独建设。",
+            "answer": null,
+            "items": "[{\"sequ\":\"A\",\"items\":\"-------------\"},{\"sequ\":\"B\",\"items\":\"上级\"},{\"sequ\":\"C\",\"items\":\"省级\"},{\"sequ\":\"D\",\"items\":\"下级\"}]",
+            "type": "1Radio",
+            "score": 5.0,
+            "classification": null,
+            "basis": null
+        }
+    },
+    {
+        "paperQuestionEntity": {
+            "id": 1245686783803401,
+            "createdTime": "2022-09-05T07:22:49.652Z",
+            "updatedTime": null,
+            "paperid": 1243183728033792,
+            "questionid": 1242164990312548,
+            "userid": "18017545866"
+        },
+        "questionBankEntity": {
+            "id": 1242164990312548,
+            "createdTime": "2022-08-26T14:08:28.155Z",
+            "updatedTime": null,
+            "createdBy": null,
+            "updatedBy": null,
+            "questionnumber": null,
+            "topic": "公共管理和服务机构收集数据应当按照（）和（）收集。",
+            "answer": null,
+            "items": "[{\"sequ\":\"A\",\"items\":\"法定权限\"},{\"sequ\":\"B\",\"items\":\"------\"},{\"sequ\":\"C\",\"items\":\"------\"},{\"sequ\":\"D\",\"items\":\"标准规范\"}]",
+            "type": "2CheckBox",
+            "score": 10.0,
+            "classification": null,
+            "basis": null
+        }
+    },
+    {
+        "paperQuestionEntity": {
+            "id": 1245686783803400,
+            "createdTime": "2022-09-05T07:22:49.652Z",
+            "updatedTime": null,
+            "paperid": 1243183728033792,
+            "questionid": 1242164990312626,
+            "userid": "18017545866"
+        },
+        "questionBankEntity": {
+            "id": 1242164990312626,
+            "createdTime": "2022-08-26T14:08:28.810Z",
+            "updatedTime": null,
+            "createdBy": null,
+            "updatedBy": null,
+            "questionnumber": null,
+            "topic": "公共数据主管部门、公共管理和服务机构应当建立健全数据全流程质量管控体系，加强数据质量事前、事中和事后的监督检查，及时更新已变更、失效数据，实现问题数据可追溯、可定责，保证数据的（）。",
+            "answer": null,
+            "items": "[{\"sequ\":\"A\",\"items\":\"------\",\"checked\":true,\"disabled\":false},{\"sequ\":\"B\",\"items\":\"--------\",\"checked\":true,\"disabled\":false},{\"sequ\":\"C\",\"items\":\"--------\",\"checked\":true,\"disabled\":false},{\"sequ\":\"D\",\"items\":\"唯一性\",\"checked\":false,\"disabled\":false}]",
+            "type": "2CheckBox",
+            "score": 10.0,
+            "classification": null,
+            "basis": null
+        }
+    },
+    {
+        "paperQuestionEntity": {
+            "id": 1245686783803399,
+            "createdTime": "2022-09-05T07:22:49.652Z",
+            "updatedTime": null,
+            "paperid": 1243183728033792,
+            "questionid": 1242187824103575,
+            "userid": "18017545866"
+        },
+        "questionBankEntity": {
+            "id": 1242187824103575,
+            "createdTime": "2022-08-26T15:39:12.361Z",
+            "updatedTime": null,
+            "createdBy": null,
+            "updatedBy": null,
+            "questionnumber": null,
+            "topic": "数据资源目录体系采用省市两级建设模式，省市两级目录系统，实现（）管理。各市、县（市、区）应基于全省一体化目录架构，依托市级公共数据目录系统编制本级数据目录。",
+            "answer": null,
+            "items": "[{\"sequ\":\"A\",\"items\":\"-----\"},{\"sequ\":\"B\",\"items\":\"--------\"},{\"sequ\":\"C\",\"items\":\"------\"},{\"sequ\":\"D\",\"items\":\"--------\"}]",
+            "type": "2CheckBox",
+            "score": 10.0,
+            "classification": null,
+            "basis": null
+        }
+    },
+    {
+        "paperQuestionEntity": {
+            "id": 1245686783803398,
+            "createdTime": "2022-09-05T07:22:49.652Z",
+            "updatedTime": null,
+            "paperid": 1243183728033792,
+            "questionid": 1242187824103605,
+            "userid": "18017545866"
+        },
+        "questionBankEntity": {
+            "id": 1242187824103605,
+            "createdTime": "2022-08-26T15:39:12.509Z",
+            "updatedTime": null,
+            "createdBy": null,
+            "updatedBy": null,
+            "questionnumber": null,
+            "topic": "县级平台应建立健全运维保障规章制度，对（）等进行规范，建立完善的内控制度，以确保服务过程实施规范性。",
+            "answer": null,
+            "items": "[{\"sequ\":\"A\",\"items\":\"-------\"},{\"sequ\":\"B\",\"items\":\"----------\"},{\"sequ\":\"C\",\"items\":\"----\"},{\"sequ\":\"D\",\"items\":\"--------\"}]",
+            "type": "2CheckBox",
+            "score": 10.0,
+            "classification": null,
+            "basis": null
+        }
+    },
+    {
+        "paperQuestionEntity": {
+            "id": 1245686783803402,
+            "createdTime": "2022-09-05T07:22:49.652Z",
+            "updatedTime": null,
+            "paperid": 1243183728033792,
+            "questionid": 1242187824103606,
+            "userid": "18017545866"
+        },
+        "questionBankEntity": {
+            "id": 1242187824103606,
+            "createdTime": "2022-08-26T15:39:12.513Z",
+            "updatedTime": null,
+            "createdBy": null,
+            "updatedBy": null,
+            "questionnumber": null,
+            "topic": "各设区市大数据局会同网信、公安等部门，定期对所辖县级平台建设和使用情况进行安全检查和评价。应用成效评价包括（）。",
+            "answer": null,
+            "items": "[{\"sequ\":\"A\",\"items\":\"-------\"},{\"sequ\":\"B\",\"items\":\"--------\"},{\"sequ\":\"C\",\"items\":\"--------\"},{\"sequ\":\"D\",\"items\":\"-------\"}]",
+            "type": "2CheckBox",
+            "score": 10.0,
+            "classification": null,
+            "basis": null
+        }
+    },
+    {
+        "paperQuestionEntity": {
+            "id": 1245686783803404,
+            "createdTime": "2022-09-05T07:22:49.652Z",
+            "updatedTime": null,
+            "paperid": 1243183728033792,
+            "questionid": 1242164990312590,
+            "userid": "18017545866"
+        },
+        "questionBankEntity": {
+            "id": 1242164990312590,
+            "createdTime": "2022-08-26T14:08:28.497Z",
+            "updatedTime": null,
+            "createdBy": null,
+            "updatedBy": null,
+            "questionnumber": null,
+            "topic": "设区的市、县(市、区)公共数据主管部门应当在本级公共数据平台建立和完善跨地域、跨部门专题数据库。公共管理和服务机构应当根据公共数据目录，按照应用需求将公共数据统一归集到本级公共数据平台专题数据库。A",
+            "answer": null,
+            "items": "[{\"sequ\":\"A\",\"items\":\"-----\"},{\"sequ\":\"B\",\"items\":\"错误\"}]",
+            "type": "3TrueorFalse",
+            "score": 4.0,
+            "classification": null,
+            "basis": null
+        }
+    },
+    {
+        "paperQuestionEntity": {
+            "id": 1245686783803407,
+            "createdTime": "2022-09-05T07:22:49.652Z",
+            "updatedTime": null,
+            "paperid": 1243183728033792,
+            "questionid": 1242164990312613,
+            "userid": "18017545866"
+        },
+        "questionBankEntity": {
+            "id": 1242164990312613,
+            "createdTime": "2022-08-26T14:08:28.704Z",
+            "updatedTime": null,
+            "createdBy": null,
+            "updatedBy": null,
+            "questionnumber": null,
+            "topic": "自然人、法人或者非法人组织对涉及自身的公共数据有异议或者发现公共数据不准确、不完整的，也可以向公共数据主管部门提出校核申请。A",
+            "answer": null,
+            "items": "[{\"sequ\":\"A\",\"items\":\"----------\"},{\"sequ\":\"B\",\"items\":\"错误\"}]",
+            "type": "3TrueorFalse",
+            "score": 4.0,
+            "classification": null,
+            "basis": null
+        }
+    },
+    {
+        "paperQuestionEntity": {
+            "id": 1245686783803403,
+            "createdTime": "2022-09-05T07:22:49.652Z",
+            "updatedTime": null,
+            "paperid": 1243183728033792,
+            "questionid": 1242170342244385,
+            "userid": "18017545866"
+        },
+        "questionBankEntity": {
+            "id": 1242170342244385,
+            "createdTime": "2022-08-26T14:29:44.240Z",
+            "updatedTime": null,
+            "createdBy": null,
+            "updatedBy": null,
+            "questionnumber": null,
+            "topic": "自然人、法人或者非法人组织的数据活动坚持促进发展与保护隐私并重，统筹好政府与市场、效率与公平、应用与安全的关系。A",
+            "answer": null,
+            "items": "[{\"sequ\":\"A\",\"items\":\"--------\"},{\"sequ\":\"B\",\"items\":\"错误\"}]",
+            "type": "3TrueorFalse",
+            "score": 4.0,
+            "classification": null,
+            "basis": null
+        }
+    },
+    {
+        "paperQuestionEntity": {
+            "id": 1245686783803405,
+            "createdTime": "2022-09-05T07:22:49.652Z",
+            "updatedTime": null,
+            "paperid": 1243183728033792,
+            "questionid": 1243064601411692,
+            "userid": "18017545866"
+        },
+        "questionBankEntity": {
+            "id": 1243064601411692,
+            "createdTime": "2022-08-29T01:43:12.652Z",
+            "updatedTime": null,
+            "createdBy": null,
+            "updatedBy": null,
+            "questionnumber": null,
+            "topic": "公共数据按照共享属性分为共享和不共享数据。B",
+            "answer": null,
+            "items": "[{\"sequ\":\"A\",\"items\":\"正确\"},{\"sequ\":\"B\",\"items\":\"---------\"}]",
+            "type": "3TrueorFalse",
+            "score": 4.0,
+            "classification": null,
+            "basis": null
+        }
+    },
+    {
+        "paperQuestionEntity": {
+            "id": 1245686783803406,
+            "createdTime": "2022-09-05T07:22:49.652Z",
+            "updatedTime": null,
+            "paperid": 1243183728033792,
+            "questionid": 1243065574490243,
+            "userid": "18017545866"
+        },
+        "questionBankEntity": {
+            "id": 1243065574490243,
+            "createdTime": "2022-08-29T01:47:04.262Z",
+            "updatedTime": null,
+            "createdBy": null,
+            "updatedBy": null,
+            "questionnumber": null,
+            "topic": "公共管理和服务机构通过共享获取的公共数据，应当用于本机构依法履行职责的需要，不得用于或者变相用于其他目的。A",
+            "answer": null,
+            "items": "[{\"sequ\":\"A\",\"items\":\"------\"},{\"sequ\":\"B\",\"items\":\"错误\"}]",
+            "type": "3TrueorFalse",
+            "score": 4.0,
+            "classification": null,
+            "basis": null
+        }
+    }],
+    "first": true,
+    "totalElements": 16,
+    "empty": false
+}

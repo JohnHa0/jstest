@@ -1,0 +1,157 @@
+{
+	"errcode": 200,
+	"errmsg": "",
+	"subject": [{
+		"id": 200539,
+		"type": "check",
+		"content": "",
+		"fileurl": "",
+		"timelng": 0,
+		"mincount": 0,
+		"maxcount": 0,
+		"answer": [{
+			"id": 111383,
+			"title": "---------- 陕西榆林",
+			"no": "A",
+			"content": "",
+			"fileurl": ""
+		}, {
+			"id": 111384,
+			"title": "甘肃定西 内蒙古乌海",
+			"no": "B",
+			"content": "",
+			"fileurl": ""
+		}],
+		"title": "宁东基地与（）共同构成了中国能源化工的金三角。",
+		"selcount": 1
+	}, {
+		"id": 200623,
+		"type": "check",
+		"content": "",
+		"fileurl": "",
+		"timelng": 0,
+		"mincount": 0,
+		"maxcount": 0,
+		"answer": [{
+			"id": 111552,
+			"title": "985高校毕业博士",
+			"no": "A",
+			"content": "",
+			"fileurl": ""
+		}, {
+			"id": 111553,
+			"title": "------",
+			"no": "B",
+			"content": "",
+			"fileurl": ""
+		}],
+		"title": "根据自治区高层次人才分类，属于第一类（A类）的主要包括发达国家院士、中国社会科学院学部委员、国家杰出青年科学基金获得者（）。",
+		"selcount": 1
+	}, {
+		"id": 200524,
+		"type": "check",
+		"content": "",
+		"fileurl": "",
+		"timelng": 0,
+		"mincount": 0,
+		"maxcount": 0,
+		"answer": [{
+			"id": 111353,
+			"title": "---------",
+			"no": "A",
+			"content": "",
+			"fileurl": ""
+		}, {
+			"id": 111356,
+			"title": "科技创新示范区",
+			"no": "B",
+			"content": "",
+			"fileurl": ""
+		}],
+		"title": "2008年，国务院《关于进一步促进宁夏经济社会发展的若干意见》中明确将宁东基地建设成为国家重要的大型煤炭基地、“西电东送火电基地”、煤化工产业基地和（）。",
+		"selcount": 1
+	}, {
+		"id": 200517,
+		"type": "check",
+		"content": "",
+		"fileurl": "",
+		"timelng": 0,
+		"mincount": 0,
+		"maxcount": 0,
+		"answer": [{
+			"id": 111338,
+			"title": "党的七大 ",
+			"no": "A",
+			"content": "",
+			"fileurl": ""
+		}, {
+			"id": 111339,
+			"title": "----------",
+			"no": "B",
+			"content": "",
+			"fileurl": ""
+		}],
+		"title": "解决由新民主主义革命向社会主义革命转变的重大问题会议是（）。",
+		"selcount": 1
+	}, {
+		"id": 200622,
+		"type": "check",
+		"content": "",
+		"fileurl": "",
+		"timelng": 0,
+		"mincount": 0,
+		"maxcount": 0,
+		"answer": [{
+			"id": 111550,
+			"title": "---------",
+			"no": "A",
+			"content": "",
+			"fileurl": ""
+		}, {
+			"id": 111551,
+			"title": "xxxxxxxx",
+			"no": "B",
+			"content": "",
+			"fileurl": ""
+		}],
+		"title": "为助推技术技能革新成果广泛运用和绝技绝活的传承拓展，鼓励企业、技工院校创建“技能大师工作室”“（）”开展新知识、 新技术、新工艺攻关、技能研习、技能传承和技能创新等活动。",
+		"selcount": 1
+	}, {
+		"id": 200681,
+		"type": "judge",
+		"content": "",
+		"fileurl": "",
+		"timelng": 0,
+		"mincount": 0,
+		"maxcount": 0,
+		"answer": [{
+			"id": 111667,
+			"title": "-------",
+			"no": "A",
+			"content": "",
+			"fileurl": ""
+		}, {
+			"id": 111668,
+			"title": "错误",
+			"no": "B",
+			"content": "",
+			"fileurl": ""
+		}],
+		"title": "2022年，自治区第十三次党代会提出要将宁东基地构建成“产业集聚，产城融合”示范区。（）",
+		"selcount": 1
+	}],
+	"total": {
+		"answer": 2,
+		"useranswer": 1,
+		"subject": 6,
+		"usersubject": 0,
+		"usersubjectcorrect": 0,
+		"usetime": "0",
+		"usetimestr": "000",
+		"score": 0,
+		"money": 0
+	},
+	"timestamp": 1675393787261,
+	"timetotal": 90000,
+	"userid": 10020386
+}

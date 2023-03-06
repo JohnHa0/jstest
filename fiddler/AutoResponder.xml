@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AutoResponder LastSave="2021-12-13T15:40:36.4576118+08:00" FiddlerVersion="5.0.20204.45441">
+  <State Enabled="true" AcceptAllConnects="true" Fallthrough="true" UseLatency="false">
+    <ResponseRule Match="EXACT:http://118.190.155.203:10001/resources/bui/js/bui.js" Action="D:\ljj\fiddler\bui-my-1(1).js" Enabled="true" />
+    <ResponseRule Match="EXACT:http://zsjs.123js.cn/Mobile2_Redis/js/jquery.js" Action="D:\ljj\fiddler\新余答题.js" Enabled="true" />
+    <ResponseRule Match="EXACT:http://zsjs.123js.cn/Mobile2_Redis/js/jquery.js" Action="D:\ljj\fiddler\新余答题.js" Enabled="true" />
+    <ResponseRule Match="EXACT:https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js" Action="D:\ljj\fiddler\问卷宝jquery.js" Enabled="true" />
+    <ResponseRule Match="EXACT:https://assets.rrxh5.cc/lib/weplus/pluginGameHelper-3.0.min.js?v=v5.7.8v5.7.6.39.1" Action="D:\ljj\fiddler\人人秀叠瓶子plugingamehelper.js" DisableAfterMatch="true" Enabled="false" />
+    <ResponseRule Match="EXACT:https://as.eqh5.com/fv/view-cef29b4.min.js" Action="D:\ljj\fiddler\view-答题.js" Enabled="false" />
+    <ResponseRule Match="EXACT:https://lib.eqh5.com/jquery/2.0.3/jquery.min.js" Action="D:\ljj\fiddler\易企秀-答题选择rule中答案.js" Enabled="true" />
+    <ResponseRule Match="EXACT:https://pinky-static.teown.com/3manswer/static/js/3manswer.min.js" Action="D:\ljj\fiddler\3M.3manswer.js" Enabled="true" />
+    <ResponseRule Match="EXACT:https://view.youth.cn/20190527watchMoney/static/js/2.db18256b0ad7cb80f7bd.js" Action="D:\ljj\fiddler\中青.2.db.js" Enabled="true" />
+    <ResponseRule Match="EXACT:https://cdn.via.cool/web/zy/sport0808/js/chunk-b2431b82.680c8d3c.js" Action="D:\ljj\fiddler\陕西好猫1.js" Enabled="true" />
+    <ResponseRule Match="EXACT:https://cdn.via.cool/web/zy/sport0808/js/app.2a546982.js" Action="D:\ljj\fiddler\陕西好猫app.js" Enabled="true" />
+    <ResponseRule Match="EXACT:https://wk3.bookan.com.cn/static/js/app.2315234a7e149f328eaa.js" Action="D:\ljj\fiddler\太原.app.js" Enabled="true" />
+    <ResponseRule Match="EXACT:https://web-bookan.bookan.com.cn/answer4_data/js/chunk-0baa871b.8b6bd579.js" Action="D:\ljj\fiddler\太原.职工书屋.js" Enabled="true" />
+    <ResponseRule Match="EXACT:https://txoss.xwbank.com/h5/game/main.min.js?v=v27637531859" Action="D:\ljj\fiddler\健康main.js" Enabled="true" />
+    <ResponseRule Match="EXACT:http://zsjs.123js.cn/js/jQuery.js" Action="D:\ljj\fiddler\123js.注入法刷答题.js" Enabled="false" />
+    <ResponseRule Match="EXACT:http://zsjs.123js.cn/Mobile2_Redis/js/jquery.js" Action="D:\ljj\fiddler\123js.注入法刷答题.js" Enabled="false" />
+    <ResponseRule Match="EXACT:https://as.eqh5.com/gc/js/view-e8a21307.min.js" Action="D:\ljj\fiddler\view-易企秀.js" Enabled="true" />
+    <ResponseRule Match="EXACT:https://gdcdn.ycwemedia.com/guangdong/activity/daxigua/202107/assets/main/index.js" Action="D:\ljj\fiddler\合成.index.js" Enabled="false" />
+    <ResponseRule Match="EXACT:https://assets.rrxh5.cc/lib/weplus/pluginGameHelper-3.0.min.js?v=v5.7.8.3v6.1.1.1.0" Action="D:\ljj\fiddler\人人秀叠瓶子plugingamehelper.js" Enabled="true" />
+    <ResponseRule Match="EXACT:http://weixin2.cnjxol.com/tpl/static/problem/js/yyucadapter.js" Action="D:\ljj\fiddler\灵台发布答题注入.js" Enabled="true" />
+    <ResponseRule Match="EXACT:https://static.mocentre.cn/staticflie/rcb_answer_tb/js/index.js?v=123" Action="D:\ljj\fiddler\农信index.js" Enabled="true" />
+    <ResponseRule Match="regex:https://static.mocentre.cn/staticflie/rcb_answer_tb/js/index.js(.*)$" Action="D:\ljj\fiddler\农信index.js" Enabled="true" />
+    <ResponseRule Match="regex:https://tb.mocentre.cn/Wap/RcbQuestion/getRandQuestionList(.*)$" Action="D:\ljj\fiddler\农信test.json" Enabled="true" />
+    <ResponseRule Match="EXACT:https://as.eqh5.com/fv/view-060f30a.min.js" Action="D:\ljj\fiddler\view-060f30a.min.js" Enabled="true" />
+    <ResponseRule Match="EXACT:https://huodong.2500city.com/api/210913/activity/get_questions_v2" Action="D:\ljj\fiddler\农信test.json" Enabled="false" />
+    <ResponseRule Match="EXACT:http://shuxiang.w.chineseall.cn/static-topic/zhongqiu/zhongqiugame/js/page.min.js" Action="D:\ljj\fiddler\筋膜枪.js" Enabled="true" />
+    <ResponseRule Match="EXACT:https://test.gyntv.com.cn/back/cbdio-visit/cbdio-visit//web/practiceVisit/getQuestionList/3/49914" Action="D:\ljj\fiddler\贵阳发布.json" Enabled="false" />
+    <ResponseRule Match="EXACT:https://test.gyntv.com.cn/cbdio-visit/mobile_html/Question/js/Ajax.js" Action="D:\ljj\fiddler\贵阳发布.ajax.js" Enabled="false" />
+    <ResponseRule Match="regex:https://hdg.faisys.com/js/module/areaLimit.min.js(.*)$" Action="D:\ljj\fiddler\凡客位置arealimit.js" Enabled="true" />
+    <ResponseRule Match="EXACT:https://huodong.2500city.com/api/210913/activity/billboard/mine" Action="D:\ljj\fiddler\test.json" Enabled="false" />
+    <ResponseRule Match="EXACT:https://nfcms-mainsiteoss.southcn.com/theory/__tpl_asset/zt/dszsjs/js/index.js" Action="D:\ljj\fiddler\党史知识index.js" Enabled="true" />
+    <ResponseRule Match="EXACT:https://feb-activity.bestdo.com/static/index/question/js/index.js" Action="D:\ljj\fiddler\金融工运index.js" Enabled="false" />
+    <ResponseRule Match="regex:https://feb-activity.bestdo.com/static/index/jquery.min.js(.*)$" Action="D:\ljj\fiddler\金融工云.js" Enabled="true" />
+    <ResponseRule Match="EXACT:https://explorecdn.fengchuanba.com/static/js/app.76b6eb587d7cfaaff672.js" Action="D:\ljj\fiddler\fcb.app.js" Enabled="true" />
+    <ResponseRule Match="EXACT:http://hzkpb.hangzhou.com.cn/friend/question20211122/list.php" Action="D:\ljj\fiddler\绩效杭州.html" Enabled="true" />
+    <ResponseRule Match="regex:https://hdg.faisys.com/js/utils/areaLimit.min.js(.*)" Action="D:\ljj\fiddler\凡客位置arealimit.js" Enabled="true" />
+    <ResponseRule Match="EXACT:https://a.ytdcloud.com/js/jweixin-1.6.0.js" Action="D:\ljj\fiddler\wxjssdk.js" Enabled="true" />
+  </State>
+</AutoResponder>

@@ -1,0 +1,178 @@
+function Get-Temperature {
+    $t = Get-WmiObject MSAcpi_ThermalZoneTemperature -Namespace "root/wmi"
+    $returntemp = @()
+    foreach ($temp in $t.CurrentTemperature)
+    {
+    $currentTempKelvin = $temp/10
+    $currentTempCelsius = $currentTempKelvin - 273.15
+
+    $currentTempFahrenheit = (9/5) * $currentTempCelsius + 32
+
+    $returntemp += $currentTempCelsius.ToString() + " C : " + $currentTempFahrenheit.ToString() + " F : " + $currentTempKelvin + "K"
+    }
+    return $returntemp
+}
+
+Get-Temperature
+
+复制代码
+
+ 
+
+二、结果的输出
+
+CPU温度查询代码输出结果
+
+ 
+
+三、API Reference
+
+https://wutils.com/wmi/root/wmi/msacpi_thermalzonetemperature/
+
+https://docs.microsoft.com/en-us/documentation/
+
+ 
+
+=========== End
+
+ 
+分类: win32
+好文要顶 关注我 收藏该文
+lsgxeva
+粉丝 - 289 关注 - 2
++加关注
+0
+0
+« 上一篇： UC30安装包
+» 下一篇： Compiling and Installing Yate on Windows
+posted @ 2022-05-11 00:10  lsgxeva  阅读(2064)  评论(0)  编辑  收藏  举报
+刷新评论刷新页面返回顶部
+登录后才能查看或发表评论，立即 登录 或者 逛逛 博客园首页
+【推荐】HPC+时代携手亚马逊云科技，共赴数字化升级的星辰大海
+编辑推荐：
+· 一次服务器被入侵的处理过程分享
+· 踩坑了！0作为除数，不一定会抛出异常！
+· 基于开源方案构建统一的文件在线预览的实现历程
+· 有意思的方向裁切 overflow: clip
+· PerfView专题：使用 Diff 功能洞察 C# 内存泄漏增量
+最新新闻：
+· 百度养“抖”防老
+· 美团盈利三重门
+· 弃增长求盈利，爱奇艺被迫“二选一”
+· 四月融资，八月倒闭，女学霸创立“饭圈元宇宙”奈何梦碎种子轮
+· 李彦宏把信心传递到每个人，百度再难不会难研发
+» 更多新闻...
+历史上的今天：
+2020-05-11 BypassAntiVirus
+2020-05-11 开源远控/C&C工具
+2020-05-11 QuasarRAT 使用
+2018-05-11 kvm虚拟化关闭虚拟网卡virbr0的方法
+2018-05-11 vadc-esx.ovf and vadc-kvm.xml
+公告
+昵称： lsgxeva
+园龄： 6年10个月
+粉丝： 289
+关注： 2
++加关注
+< 	2022年9月 	>
+日 	一 	二 	三 	四 	五 	六
+28 	29 	30 	31 	1 	2 	3
+4 	5 	6 	7 	8 	9 	10
+11 	12 	13 	14 	15 	16 	17
+18 	19 	20 	21 	22 	23 	24
+25 	26 	27 	28 	29 	30 	1
+2 	3 	4 	5 	6 	7 	8
+搜索
+ 
+ 
+常用链接
+
+    我的随笔
+    我的评论
+    我的参与
+    最新评论
+    我的标签
+
+随笔分类
+
+    a10(4)
+    AI(1)
+    algorithm(1)
+    Android(41)
+    ans(43)
+    bitcoin(4)
+    c++(106)
+    c++11(37)
+    ccna(43)
+    cmake(5)
+    cnns(17)
+    cocos(1)
+    CSharp(29)
+    DataStructure(6)
+    DesignPattern(39)
+    更多
+
+随笔档案
+
+    2022年8月(13)
+    2022年7月(15)
+    2022年6月(12)
+    2022年5月(13)
+    2022年4月(12)
+    2022年3月(9)
+    2022年2月(11)
+    2022年1月(13)
+    2021年12月(15)
+    2021年11月(7)
+    2021年10月(10)
+    2021年9月(9)
+    2021年8月(8)
+    2021年7月(24)
+    2021年6月(2)
+    更多
+
+阅读排行榜
+
+    1. Docker 创建镜像、修改、上传镜像(222230)
+    2. Git Submodule使用完整教程(131891)
+    3. IPV6地址格式分析(62280)
+    4. git diff命令详解(60572)
+    5. Qt基本控件及三大布局(59498)
+
+评论排行榜
+
+    1. Git Submodule使用完整教程(10)
+    2. c++11 类默认函数的控制："=default" 和 "=delete"函数(6)
+    3. babel从入门到入门(6)
+    4. libuv 简单使用(5)
+    5. Docker 创建镜像、修改、上传镜像(5)
+
+推荐排行榜
+
+    1. Git Submodule使用完整教程(15)
+    2. javaee, javaweb和javase的区别以及各自的知识体系(9)
+    3. Docker 创建镜像、修改、上传镜像(9)
+    4. c++11 类默认函数的控制："=default" 和 "=delete"函数(9)
+    5. C++标准转换运算符reinterpret_cast(6)
+
+最新评论
+
+    1. Re:SIMATIC S7-1500 SW Controller Install
+
+    能给个虚拟机让学习学习吗？感谢！！！
+    --计算机技术工作者
+    2. Re:从奈须蘑菇的空境看梵我一如
+
+    厉害
+    --welldon
+    3. Re:数据模型（LP32 ILP32 LP64 LLP64 ILP64 ）
+    “综上”中说“逻辑右移和算术右移一样”应该是不对的吧，只是对于 int 和 uint 来说，>> 得到的都是逻辑右移，而算术右移的话，应该是保留符号位的右移，负数的 int 符号位还是 1。纯个人理解...
+    --淋某人
+    4. Re:ThrottleStop教程
+    FIVR中Voltage与Static并非不可以调，Voltage表示运行电压，Static则将电压锁定为运行电压，但是对于我的电脑锁定后再进行烤鸡电压还是会因为睿频超出运行电压的范围（达到正常设置为...
+    --Himpq
+    5. Re:EVE-NG 社区懒人版
+
+    为什么模拟器里配置的Shell界面打不开
+    --缟涞
+

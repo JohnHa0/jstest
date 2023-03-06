@@ -1,0 +1,163 @@
+iconlist ">
+                                <div >
+                                一、单选题， 共 10 题（每题 10 分）</div>
+                                        <div class="hd">
+                                            <p>
+                                                <strong>1.&nbsp;下列不属于收集个人信息的合法性要求的有（）</strong>
+                                            </p>
+                                        </div>
+
+
+<input type="hidden" class="checkIsNull" name="AnswerViewModels[0].QuestionId" value="970" />
+
+<div id="topic_0" class="bd">
+    <ul>
+            <li><span ><input type="radio" value="1" name="AnswerViewModels[0].Answers" /></span><span>A、不得欺诈、诱骗、强迫个人信息主体提供其个人信息</span></li>
+            <li><span ><input type="radio" value="2" name="AnswerViewModels[0].Answers" /></span><span>------------</span></li>
+            <li><span ><input type="radio" value="3" name="AnswerViewModels[0].Answers" /></span><span>C、不得从非法渠道获取个人信息</span></li>
+    </ul>
+    <p><span id="infoShow0" style="margin-left: 200px; color: red;"></span></p>
+</div>                                        <div class="hd">
+                                            <p>
+                                                <strong>2.&nbsp;国家建立数据（），根据数据在经济社会发展中的重要程度，以及一旦遭到篡改、破坏、泄露或者非法获取、非法利用，对国家安全、公共利益或个人、组织合法权益造成的危害程度，对数据实行分类分级保护</strong>
+                                            </p>
+                                        </div>
+
+
+<input type="hidden" class="checkIsNull" name="AnswerViewModels[1].QuestionId" value="1034" />
+
+<div id="topic_1" class="bd">
+    <ul>
+            <li><span ><input type="radio" value="1" name="AnswerViewModels[1].Answers" /></span><span>A、销毁机制</span></li>
+            <li><span ><input type="radio" value="2" name="AnswerViewModels[1].Answers" /></span><span>---------</span></li>
+            <li><span ><input type="radio" value="3" name="AnswerViewModels[1].Answers" /></span><span>C、数据分享制度</span></li>
+    </ul>
+    <p><span id="infoShow1" style="margin-left: 200px; color: red;"></span></p>
+</div>                                        <div class="hd">
+                                            <p>
+                                                <strong>3.&nbsp;《数据安全法》经过十三届全国人大常委会第二十九次会议通过并正式颁布，于（）起施行</strong>
+                                            </p>
+                                        </div>
+
+
+<input type="hidden" class="checkIsNull" name="AnswerViewModels[2].QuestionId" value="1010" />
+
+<div id="topic_2" class="bd">
+    <ul>
+            <li><span ><input type="radio" value="1" name="AnswerViewModels[2].Answers" /></span><span>A、2021年6月1日</span></li>
+            <li><span ><input type="radio" value="2" name="AnswerViewModels[2].Answers" /></span><span>B、2021年8月1日</span></li>
+            <li><span ><input type="radio" value="3" name="AnswerViewModels[2].Answers" /></span><span>---------</span></li>
+    </ul>
+    <p><span id="infoShow2" style="margin-left: 200px; color: red;"></span></p>
+</div>                                        <div class="hd">
+                                            <p>
+                                                <strong>4.&nbsp;以下关于使用APP的习惯正确的是（）</strong>
+                                            </p>
+                                        </div>
+
+
+<input type="hidden" class="checkIsNull" name="AnswerViewModels[3].QuestionId" value="978" />
+
+<div id="topic_3" class="bd">
+    <ul>
+            <li><span ><input type="radio" value="1" name="AnswerViewModels[3].Answers" /></span><span>A、使用APP都需要收集个人信息，所以无所谓</span></li>
+            <li><span ><input type="radio" value="2" name="AnswerViewModels[3].Answers" /></span><span>B、为了获取更多积分，填写真实姓名、出生日期、手机号码等所有的信息</span></li>
+            <li><span ><input type="radio" value="3" name="AnswerViewModels[3].Answers" /></span><span>----------</span></li>
+    </ul>
+    <p><span id="infoShow3" style="margin-left: 200px; color: red;"></span></p>
+</div>                                        <div class="hd">
+                                            <p>
+                                                <strong>5.&nbsp;以下关于个人信息保护的做法不正确的是（）</strong>
+                                            </p>
+                                        </div>
+
+
+<input type="hidden" class="checkIsNull" name="AnswerViewModels[4].QuestionId" value="964" />
+
+<div id="topic_4" class="bd">
+    <ul>
+            <li><span ><input type="radio" value="1" name="AnswerViewModels[4].Answers" /></span><span>------------</span></li>
+            <li><span ><input type="radio" value="2" name="AnswerViewModels[4].Answers" /></span><span>B、在图书馆、打印店等公共场合，或是使用他人手机登录账号，不要选择自动保存密码，离开时记得退出账号</span></li>
+            <li><span ><input type="radio" value="3" name="AnswerViewModels[4].Answers" /></span><span>C、从常用应用商店下载App，不从陌生、不知名应用商店、网站页面下载App</span></li>
+    </ul>
+    <p><span id="infoShow4" style="margin-left: 200px; color: red;"></span></p>
+</div>                                        <div class="hd">
+                                            <p>
+                                                <strong>6.&nbsp;国家机关应当遵循公正、公平、便民的原则，按照规定及时、准确地公开政务数据。例外的情况为（）</strong>
+                                            </p>
+                                        </div>
+
+
+<input type="hidden" class="checkIsNull" name="AnswerViewModels[5].QuestionId" value="1050" />
+
+<div id="topic_5" class="bd">
+    <ul>
+            <li><span ><input type="radio" value="1" name="AnswerViewModels[5].Answers" /></span><span>---------</span></li>
+            <li><span ><input type="radio" value="2" name="AnswerViewModels[5].Answers" /></span><span>B、不方便公开除外</span></li>
+            <li><span ><input type="radio" value="3" name="AnswerViewModels[5].Answers" /></span><span>C、不想公开除外</span></li>
+    </ul>
+    <p><span id="infoShow5" style="margin-left: 200px; color: red;"></span></p>
+</div>                                        <div class="hd">
+                                            <p>
+                                                <strong>7.&nbsp;《数据安全法》中要求，国家数据安全协调机制统筹协调有关部门加强数据安全风险信息的（）工作</strong>
+                                            </p>
+                                        </div>
+
+
+<input type="hidden" class="checkIsNull" name="AnswerViewModels[6].QuestionId" value="1022" />
+
+<div id="topic_6" class="bd">
+    <ul>
+            <li><span ><input type="radio" value="1" name="AnswerViewModels[6].Answers" /></span><span>A、获取</span></li>
+            <li><span ><input type="radio" value="2" name="AnswerViewModels[6].Answers" /></span><span>B、分析</span></li>
+            <li><span ><input type="radio" value="3" name="AnswerViewModels[6].Answers" /></span><span>--------</span></li>
+    </ul>
+    <p><span id="infoShow6" style="margin-left: 200px; color: red;"></span></p>
+</div>                                        <div class="hd">
+                                            <p>
+                                                <strong>8.&nbsp;预防个人信息泄露不正确的方法有（）</strong>
+                                            </p>
+                                        </div>
+
+
+<input type="hidden" class="checkIsNull" name="AnswerViewModels[7].QuestionId" value="994" />
+
+<div id="topic_7" class="bd">
+    <ul>
+            <li><span ><input type="radio" value="1" name="AnswerViewModels[7].Answers" /></span><span>A、增强个人信息安全意识，不要轻易将个人信息提供给无关人员</span></li>
+            <li><span ><input type="radio" value="2" name="AnswerViewModels[7].Answers" /></span><span>B、妥善处置快递单、车票、购物小票等包含个人信息的单据</span></li>
+            <li><span ><input type="radio" value="3" name="AnswerViewModels[7].Answers" /></span><span>-----------</span></li>
+    </ul>
+    <p><span id="infoShow7" style="margin-left: 200px; color: red;"></span></p>
+</div>                                        <div class="hd">
+                                            <p>
+                                                <strong>9.&nbsp;身份证件号码、个人生物识别信息、通信记录和内容、健康生理信息等属于哪类信息（）</strong>
+                                            </p>
+                                        </div>
+
+
+<input type="hidden" class="checkIsNull" name="AnswerViewModels[8].QuestionId" value="967" />
+
+<div id="topic_8" class="bd">
+    <ul>
+            <li><span ><input type="radio" value="1" name="AnswerViewModels[8].Answers" /></span><span>-----------</span></li>
+            <li><span ><input type="radio" value="2" name="AnswerViewModels[8].Answers" /></span><span>B、属于公共信息</span></li>
+            <li><span ><input type="radio" value="3" name="AnswerViewModels[8].Answers" /></span><span>C、属于个人信息</span></li>
+    </ul>
+    <p><span id="infoShow8" style="margin-left: 200px; color: red;"></span></p>
+</div>                                        <div class="hd">
+                                            <p>
+                                                <strong>10.&nbsp;按照我国刑法规定，非法获取、出售或者提供公民行踪轨迹信息、通信内容、征信信息、财务信息（）条以上，将依法承担刑事责任</strong>
+                                            </p>
+                                        </div>
+
+
+<input type="hidden" class="checkIsNull" name="AnswerViewModels[9].QuestionId" value="972" />
+
+<div id="topic_9" class="bd">
+    <ul>
+            <li><span ><input type="radio" value="1" name="AnswerViewModels[9].Answers" /></span><span>-----------</span></li>
+            <li><span ><input type="radio" value="2" name="AnswerViewModels[9].Answers" /></span><span>B、100条</span></li>
+            <li><span ><input type="radio" value="3" name="AnswerViewModels[9].Answers" /></span><span>C、200条</span></li>
+    </ul>
+    <p>

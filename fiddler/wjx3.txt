@@ -1,0 +1,503 @@
+id="fieldset1">
+   <div class="field ui-field-contain" id="div1" topic="1" data-role="fieldcontain" type="3">
+    <div class="field-label">
+     1、全国全民健康生活方式日为哪一天?（ ）
+    </div>
+    <div class="ui-controlgroup">
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="1" id="q1_1" name="q1" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q1_1">
+       A. ------
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="2" id="q1_2" name="q1" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q1_2">
+       B. 9月15日
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="3" id="q1_3" name="q1" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q1_3">
+       C. 9月27日
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="4" id="q1_4" name="q1" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q1_4">
+       D.9月30日
+      </div>
+     </div>
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+   <div class="field ui-field-contain" id="div2" topic="2" data-role="fieldcontain" type="3">
+    <div class="field-label">
+     2、2021年全民健康生活方式行动的主题是?（ ）
+    </div>
+    <div class="ui-controlgroup">
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="1" id="q2_1" name="q2" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q2_1">
+       A.我行动，我健康，我快乐
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="2" id="q2_2" name="q2" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q2_2">
+       B.和谐我生活，健康中国人
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="3" id="q2_3" name="q2" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q2_3">
+       C.健康一二一
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="4" id="q2_4" name="q2" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q2_4">
+       D.----------
+      </div>
+     </div>
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+   <div class="field ui-field-contain" id="div3" topic="3" data-role="fieldcontain" type="3">
+    <div class="field-label">
+     3、中国居民膳食指南推荐，健康成人每天烹调油用量不超过多少克？（ ）
+    </div>
+    <div class="ui-controlgroup">
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="1" id="q3_1" name="q3" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q3_1">
+       A.10
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="2" id="q3_2" name="q3" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q3_2">
+       B.15
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="3" id="q3_3" name="q3" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q3_3">
+       C. ----------
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="4" id="q3_4" name="q3" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q3_4">
+       D.35
+      </div>
+     </div>
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+   <div class="field ui-field-contain" id="div4" topic="4" data-role="fieldcontain" type="3">
+    <div class="field-label">
+     4、为了预防和控制高血压，建议每人每天食盐摄入量应当不超过多少克？（ ）
+    </div>
+    <div class="ui-controlgroup">
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="1" id="q4_1" name="q4" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q4_1">
+       A.-------
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="2" id="q4_2" name="q4" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q4_2">
+       B.10
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="3" id="q4_3" name="q4" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q4_3">
+       C.15
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="4" id="q4_4" name="q4" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q4_4">
+       D.20
+      </div>
+     </div>
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+   <div class="field ui-field-contain" id="div5" topic="5" data-role="fieldcontain" type="3">
+    <div class="field-label">
+     5、中国居民膳食指南推荐，健康成人每天糖用量不超过（ ）克，最好控制在（ ）克以下？
+    </div>
+    <div class="ui-controlgroup">
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="1" id="q5_1" name="q5" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q5_1">
+       A.50，30
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="2" id="q5_2" name="q5" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q5_2">
+       B.-----------
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="3" id="q5_3" name="q5" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q5_3">
+       C.40，30
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="4" id="q5_4" name="q5" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q5_4">
+       D.40，25
+      </div>
+     </div>
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+   <div class="field ui-field-contain" id="div6" topic="6" data-role="fieldcontain" type="3">
+    <div class="field-label">
+     6、成年男性一天适量饮酒的酒精限量是不超过（ ）克。
+    </div>
+    <div class="ui-controlgroup">
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="1" id="q6_1" name="q6" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q6_1">
+       A.-------------
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="2" id="q6_2" name="q6" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q6_2">
+       B.30
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="3" id="q6_3" name="q6" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q6_3">
+       C.35
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="4" id="q6_4" name="q6" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q6_4">
+       D.50
+      </div>
+     </div>
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+   <div class="field ui-field-contain" id="div7" topic="7" data-role="fieldcontain" type="3">
+    <div class="field-label">
+     7、某个成年人身高为1.72米，体重为75公斤，正常体重指数为多少？是否超重？( &nbsp; )
+    </div>
+    <div class="ui-controlgroup">
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="1" id="q7_1" name="q7" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q7_1">
+       A.2------------
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="2" id="q7_2" name="q7" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q7_2">
+       B.25.4，否
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="3" id="q7_3" name="q7" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q7_3">
+       C.43.6，是
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="4" id="q7_4" name="q7" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q7_4">
+       D.43.6，否
+      </div>
+     </div>
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+   <div class="field ui-field-contain" id="div8" topic="8" data-role="fieldcontain" type="3">
+    <div class="field-label">
+     8、“三减三健”中三减定义：( )
+    </div>
+    <div class="ui-controlgroup">
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="1" id="q8_1" name="q8" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q8_1">
+       A.减脂、减油、减糖
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="2" id="q8_2" name="q8" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q8_2">
+       B.减盐、减脂、减糖
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="3" id="q8_3" name="q8" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q8_3">
+       C.--------------
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="4" id="q8_4" name="q8" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q8_4">
+       D.减盐、减油、减脂
+      </div>
+     </div>
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+   <div class="field ui-field-contain" id="div9" topic="9" data-role="fieldcontain" type="3">
+    <div class="field-label">
+     9、“三减三健”中三健定义: ( &nbsp; &nbsp;)
+    </div>
+    <div class="ui-controlgroup">
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="1" id="q9_1" name="q9" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q9_1">
+       A.健康血压、健康体重、健康骨骼
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="2" id="q9_2" name="q9" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q9_2">
+       B.健康口腔、健康血糖、健康骨骼
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="3" id="q9_3" name="q9" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q9_3">
+       C.--------------
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="4" id="q9_4" name="q9" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q9_4">
+       D.健康口腔、健康体重、健康血脂
+      </div>
+     </div>
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+   <div class="field ui-field-contain" id="div10" topic="10" data-role="fieldcontain" type="3">
+    <div class="field-label">
+     10、在温和气候条件下，成年男性每日最少饮用多少ml水，女性最少饮用多少ml水？（ ）
+    </div>
+    <div class="ui-controlgroup">
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="1" id="q10_1" name="q10" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q10_1">
+       A.1100，900
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="2" id="q10_2" name="q10" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q10_2">
+       B.1300，1100
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="3" id="q10_3" name="q10" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q10_3">
+       C.1500，1300
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="4" id="q10_4" name="q10" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q10_4">
+       D.-------------
+      </div>
+     </div>
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+   <div class="field ui-field-contain" id="div11" topic="11" data-role="fieldcontain" type="3">
+    <div class="field-label">
+     11、下列说法中正确的是（ &nbsp;）
+    </div>
+    <div class="ui-controlgroup">
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="1" id="q11_1" name="q11" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q11_1">
+       A、无糖的食物不含热量，可以放心食用
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="2" id="q11_2" name="q11" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q11_2">
+       B、甜度越高的食物含糖量越多
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="3" id="q11_3" name="q11" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q11_3">
+       C、淀粉也是糖的一种，减少添加糖的摄入也包括减少淀粉的摄入
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="4" id="q11_4" name="q11" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q11_4">
+       --------------
+      </div>
+     </div>
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+   <div class="field ui-field-contain" id="div12" topic="12" data-role="fieldcontain" type="3">
+    <div class="field-label">
+     12、高温烹调油、植物奶油、起酥油等都可能含有反式脂肪酸，要减少反式脂肪酸摄入，每日不超过（ &nbsp;）克？
+    </div>
+    <div class="ui-controlgroup">
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="1" id="q12_1" name="q12" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q12_1">
+       A. -------------
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="2" id="q12_2" name="q12" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q12_2">
+       B.4
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="3" id="q12_3" name="q12" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q12_3">
+       C.6
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="4" id="q12_4" name="q12" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q12_4">
+       D.8
+      </div>
+     </div>
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+   <div class="field ui-field-contain" id="div13" topic="13" data-role="fieldcontain" type="3">
+    <div class="field-label">
+     13、为及时发现口腔疾病并进行早期治疗，建议成年人隔多长时间至少进行一次口腔检查。（ &nbsp;）
+    </div>
+    <div class="ui-controlgroup">
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="1" id="q13_1" name="q13" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q13_1">
+       A、半年
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="2" id="q13_2" name="q13" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q13_2">
+       B、--------------
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="3" id="q13_3" name="q13" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q13_3">
+       C、二年
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="4" id="q13_4" name="q13" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q13_4">
+       D、三年
+      </div>
+     </div>
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+   <div class="field ui-field-contain" id="div14" topic="14" data-role="fieldcontain" type="3">
+    <div class="field-label">
+     14、下列关于口腔健康说法不正确的是。（ &nbsp;）
+    </div>
+    <div class="ui-controlgroup">
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="1" id="q14_1" name="q14" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q14_1">
+       A、------------
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="2" id="q14_2" name="q14" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q14_2">
+       B、餐后、食用零食和饮用碳酸饮料后，应及时用清水漱口，清除食物残渣，或咀嚼无糖口香糖，可降低龋齿产生的风险。
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="3" id="q14_3" name="q14" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q14_3">
+       C、--------------
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="4" id="q14_4" name="q14" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q14_4">
+       D、儿童易患龋齿且进展较快，应每半年进行一次口腔检查。
+      </div>
+     </div>
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+   <div class="field ui-field-contain" id="div15" topic="15" data-role="fieldcontain" type="3">
+    <div class="field-label">
+     15、预防儿童恒磨牙窝沟龋最有效的方法是。（ &nbsp; ）
+    </div>
+    <div class="ui-controlgroup">
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="1" id="q15_1" name="q15" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q15_1">
+       A、早晚刷牙
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="2" id="q15_2" name="q15" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q15_2">
+       B、饭后漱口
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="3" id="q15_3" name="q15" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q15_3">
+       C、窝沟封闭
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="4" id="q15_4" name="q15" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q15_4">
+       D、定期口腔检查
+      </div>
+     </div>
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+   <div class="field ui-field-contain" id="div16" req="1" topic="16" nc="1" data-role="fieldcontain" type="1">
+    <div class="field-label">
+     您的姓名：
+     <span class="req">*</span>
+    </div>
+    <div class="ui-input-text selfMess" style="position:relative;">
+     <input type="text" id="q16" value="" name="q16" verify="姓名" style="padding-left:30px;" />
+     <img src="//image.wjx.com/images/wjxmobile/name@2x.png" alt="" style="position:absolute;top:3px;left:3px;" />
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+   <div class="field ui-field-contain" id="div17" req="1" topic="17" nc="1" data-role="fieldcontain" type="1">
+    <div class="field-label">
+     移动手机号：
+     <span class="req">*</span>
+    </div>
+    <div class="ui-input-text" style="position:relative;">
+     <input type="text" id="q17" value="" name="q17" />
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+  </fieldset>

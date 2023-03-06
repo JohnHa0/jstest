@@ -1,0 +1,963 @@
+id="fieldset1">
+   <div class="field ui-field-contain" id="div1" req="1" topic="1" nc="1" data-role="fieldcontain" type="9">
+    <div class="field-label">
+     基本信息：
+     <span class="req">*</span>
+    </div> 
+    <table cellspacing="0" id="divRefTab1" class="matrix-rating scaletablewrap customWidth">
+     <colgroup>
+      <col width="15%" />
+      <col width="85%" />
+     </colgroup>
+     <tbody>
+      <tr id="drv1_1t">
+       <td class="title" style="text-align:left;"><span class="itemTitleSpan">姓名：</span></td>
+      </tr>
+      <tr id="drv1_1">
+       <td>
+        <div class="rowtitlediv rowmaxwidth">
+         <span class="itemTitleSpan">姓名：</span>
+        </div></td>
+       <td style="text-align:left;">
+        <div class="ui-input-text" style="position:relative;">
+         <input autocomplete="off" rowid="1" type="text" id="q1_0" name="q1_0" onfocus="setTip(this)" onblur="hideTip(this)" onpropertychange="setTip(this);" oninput="setTip(this);/" />
+        </div></td>
+      </tr>
+      <tr id="drv1_2t">
+       <td class="title" style="text-align:left;"><span class="itemTitleSpan">手机号：</span></td>
+      </tr>
+      <tr id="drv1_2">
+       <td>
+        <div class="rowtitlediv rowmaxwidth">
+         <span class="itemTitleSpan">手机号：</span>
+        </div></td>
+       <td style="text-align:left;">
+        <div class="ui-input-text" style="position:relative;">
+         <input autocomplete="off" rowid="2" type="tel" pattern="[0-9]*" id="q1_1" name="q1_1" verify="手机" style="padding-left:30px;" onfocus="setTip(this)" onblur="hideTip(this)" onpropertychange="setTip(this);" oninput="setTip(this);/" />
+         <i class="iconfontNew imgiconfont"></i>
+        </div></td>
+      </tr>
+      <tr id="drv1_3t">
+       <td class="title" style="text-align:left;"><span class="itemTitleSpan">原单位：</span></td>
+      </tr>
+      <tr id="drv1_3">
+       <td>
+        <div class="rowtitlediv rowmaxwidth">
+         <span class="itemTitleSpan">原单位：</span>
+        </div></td>
+       <td style="text-align:left;">
+        <div class="ui-input-text" style="position:relative;">
+         <input autocomplete="off" rowid="3" type="text" id="q1_2" name="q1_2" onfocus="setTip(this)" onblur="hideTip(this)" onpropertychange="setTip(this);" oninput="setTip(this);/" />
+        </div></td>
+      </tr>
+      <tr id="drv1_4t">
+       <td class="title" style="text-align:left;"><span class="itemTitleSpan">所属街镇：</span></td>
+      </tr>
+      <tr id="drv1_4">
+       <td>
+        <div class="rowtitlediv rowmaxwidth">
+         <span class="itemTitleSpan">所属街镇：</span>
+        </div></td>
+       <td style="text-align:left;"><input type="text" rowid="4" id="q1_3" verify="指定选项" name="q1_3" style="display:none;" />
+        <div class="ui-select" style="text-align:left">
+         <select onchange="setChoice(this);" style="height:40px;line-height:40px;"><option value="">请选择</option><option value="岳阳街道">岳阳街道</option><option value="永丰街道">永丰街道</option><option value="方松街道">方松街道</option><option value="中山街道">中山街道</option><option value="广富林街道">广富林街道</option><option value="九里亭街道">九里亭街道</option><option value="泗泾镇">泗泾镇</option><option value="佘山镇">佘山镇</option><option value="车墩镇">车墩镇</option><option value="新桥镇">新桥镇</option><option value="洞泾镇">洞泾镇</option><option value="九亭  镇">九亭 镇</option><option value="泖港镇">泖港镇</option><option value="石湖荡镇">石湖荡镇</option><option value="新浜镇">新浜镇</option><option value="叶榭镇">叶榭镇</option><option value="小昆山镇">小昆山镇</option></select>
+        </div></td>
+      </tr>
+     </tbody>
+    </table>
+    <div class="errorMessage"></div>
+   </div>
+  </fieldset>
+  <fieldset class="fieldset" pg="2" style="display:none;" mintime="1" maxtime="60" id="fieldset2">
+   <div class="field ui-field-contain" id="div2" req="1" topic="31" data-role="fieldcontain" type="3">
+    <div class="field-label">
+     1. 坚定贯彻新时代（ ）的总体方略，坚定不移推进祖国统一大业。
+     <span class="req">*</span>
+    </div>
+    <div class="ui-controlgroup column1">
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="1" id="q2_1" name="q2" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q2_1">
+       A、一国两制
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="2" id="q2_2" name="q2" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q2_2">
+       ----------
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="3" id="q2_3" name="q2" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q2_3">
+       C、和平统一
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="4" id="q2_4" name="q2" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q2_4">
+       D、台湾问题
+      </div>
+     </div>
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+  </fieldset>
+  <fieldset class="fieldset" pg="3" style="display:none;" mintime="1" maxtime="60" id="fieldset3">
+   <div class="field ui-field-contain" id="div3" req="1" topic="103" data-role="fieldcontain" type="3">
+    <div class="field-label">
+     2. 以经济建设为中心，坚持（ ），坚持改革开放，构成十一届三中全会的基本内容。
+     <span class="req">*</span>
+    </div>
+    <div class="ui-controlgroup column1">
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="1" id="q3_1" name="q3" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q3_1">
+       A、实事求是
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="2" id="q3_2" name="q3" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q3_2">
+       B、毛泽东思想
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="3" id="q3_3" name="q3" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q3_3">
+       C、邓小平理论
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="4" id="q3_4" name="q3" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q3_4">
+       ---------
+      </div>
+     </div>
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+  </fieldset>
+  <fieldset class="fieldset" pg="4" style="display:none;" mintime="1" maxtime="60" id="fieldset4">
+   <div class="field ui-field-contain" id="div4" req="1" topic="63" data-role="fieldcontain" type="3">
+    <div class="field-label">
+     3. 为民造福是立党为公，执政为民的（ ）。
+     <span class="req">*</span>
+    </div>
+    <div class="ui-controlgroup column1">
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="1" id="q4_1" name="q4" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q4_1">
+       A、核心要求
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="2" id="q4_2" name="q4" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q4_2">
+       B、基本要求
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="3" id="q4_3" name="q4" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q4_3">
+       ---------
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="4" id="q4_4" name="q4" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q4_4">
+       D、根本要求
+      </div>
+     </div>
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+  </fieldset>
+  <fieldset class="fieldset" pg="5" style="display:none;" mintime="1" maxtime="60" id="fieldset5">
+   <div class="field ui-field-contain" id="div5" req="1" topic="7" data-role="fieldcontain" type="3">
+    <div class="field-label">
+     4. 党的二十大报告指出，（ ）是全面建设社会主义现代化国家的首要任务。
+     <span class="req">*</span>
+    </div>
+    <div class="ui-controlgroup column1">
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="1" id="q5_1" name="q5" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q5_1">
+       A、发展
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="2" id="q5_2" name="q5" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q5_2">
+       -----------
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="3" id="q5_3" name="q5" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q5_3">
+       C、高效益发展
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="4" id="q5_4" name="q5" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q5_4">
+       D、实现全过程民主
+      </div>
+     </div>
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+  </fieldset>
+  <fieldset class="fieldset" pg="6" style="display:none;" mintime="1" maxtime="60" id="fieldset6">
+   <div class="field ui-field-contain" id="div6" req="1" topic="11" data-role="fieldcontain" type="3">
+    <div class="field-label">
+     5. 健全新型举国体制，强化国家战略科技力量，提升国家创新体系整体效能，形成具有全球竞争力的（ ）。
+     <span class="req">*</span>
+    </div>
+    <div class="ui-controlgroup column1">
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="1" id="q6_1" name="q6" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q6_1">
+       A、创新生态
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="2" id="q6_2" name="q6" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q6_2">
+       B、开放生态
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="3" id="q6_3" name="q6" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q6_3">
+       ----------
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="4" id="q6_4" name="q6" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q6_4">
+       D、创新体系
+      </div>
+     </div>
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+  </fieldset>
+  <fieldset class="fieldset" pg="7" style="display:none;" mintime="1" maxtime="60" id="fieldset7">
+   <div class="field ui-field-contain" id="div7" req="1" topic="101" data-role="fieldcontain" type="3">
+    <div class="field-label">
+     6. 1964年12月至1965年1 月，三届全国人大一次会议举行。这次会议提出了（ ）的任务。
+     <span class="req">*</span>
+    </div>
+    <div class="ui-controlgroup column1">
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="1" id="q7_1" name="q7" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q7_1">
+       A、调整国民经济
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="2" id="q7_2" name="q7" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q7_2">
+       B、建设工业化国家
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="3" id="q7_3" name="q7" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q7_3">
+       C、发展制造业
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="4" id="q7_4" name="q7" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q7_4">
+       -------
+      </div>
+     </div>
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+  </fieldset>
+  <fieldset class="fieldset" pg="8" style="display:none;" mintime="1" maxtime="60" id="fieldset8">
+   <div class="field ui-field-contain" id="div8" req="1" topic="3" data-role="fieldcontain" type="3">
+    <div class="field-label">
+     7. 党的二十大报告指出，从现在起，中国共产党的中心任务就是团结带领全国各族人民全面建成社会主义现代化强国、实现第二个百年奋斗目标，以（ ）全面推进中华民族伟大复兴。
+     <span class="req">*</span>
+    </div>
+    <div class="ui-controlgroup column1">
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="1" id="q8_1" name="q8" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q8_1">
+       A、中国现代化
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="2" id="q8_2" name="q8" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q8_2">
+       B、中国化现代化
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="3" id="q8_3" name="q8" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q8_3">
+       C、中国特色现代化
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="4" id="q8_4" name="q8" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q8_4">
+       ----------
+      </div>
+     </div>
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+  </fieldset>
+  <fieldset class="fieldset" pg="9" style="display:none;" mintime="1" maxtime="60" id="fieldset9">
+   <div class="field ui-field-contain" id="div9" req="1" topic="93" data-role="fieldcontain" type="3">
+    <div class="field-label">
+     8. 人民解放军发动渡江战役，于1949年4月23日占领（ ），宣告延续22年的国民党反动统治的覆灭。
+     <span class="req">*</span>
+    </div>
+    <div class="ui-controlgroup column1">
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="1" id="q9_1" name="q9" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q9_1">
+       A、北平
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="2" id="q9_2" name="q9" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q9_2">
+       B、上海
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="3" id="q9_3" name="q9" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q9_3">
+       --------
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="4" id="q9_4" name="q9" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q9_4">
+       D、天津
+      </div>
+     </div>
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+  </fieldset>
+  <fieldset class="fieldset" pg="10" style="display:none;" mintime="1" maxtime="60" id="fieldset10">
+   <div class="field ui-field-contain" id="div10" req="1" topic="129" data-role="fieldcontain" type="3">
+    <div class="field-label">
+     9. 第一个与新中国建交的西方大国是（ ），对中国加强同西欧的关系起到了重要作用。
+     <span class="req">*</span>
+    </div>
+    <div class="ui-controlgroup column1">
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="1" id="q10_1" name="q10" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q10_1">
+       A、英国
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="2" id="q10_2" name="q10" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q10_2">
+       B、德国
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="3" id="q10_3" name="q10" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q10_3">
+       C、美国
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="4" id="q10_4" name="q10" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q10_4">
+       ---------
+      </div>
+     </div>
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+  </fieldset>
+  <fieldset class="fieldset" pg="11" style="display:none;" mintime="1" maxtime="60" id="fieldset11">
+   <div class="field ui-field-contain" id="div11" req="1" topic="137" data-role="fieldcontain" type="3">
+    <div class="field-label">
+     10. 农村改革以前，农民生产积极性不高，以下分析其原因的表述中，你认为不准确的一项是(  )。
+     <span class="req">*</span>
+    </div>
+    <div class="ui-controlgroup column1">
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="1" id="q11_1" name="q11" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q11_1">
+       A、农村人民公社是吃大锅饭
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="2" id="q11_2" name="q11" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q11_2">
+       B、农民缺少生产自主权
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="3" id="q11_3" name="q11" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q11_3">
+       C、农民劳动一年，收入却不多
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="4" id="q11_4" name="q11" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q11_4">
+       -------------
+      </div>
+     </div>
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+  </fieldset>
+  <fieldset class="fieldset" pg="12" style="display:none;" mintime="1" maxtime="60" id="fieldset12">
+   <div class="field ui-field-contain" id="div12" req="1" topic="15" data-role="fieldcontain" type="3">
+    <div class="field-label">
+     11. （ ）是社会主义民主政治的本质属性，是最广泛、最真实、最管用的民主。
+     <span class="req">*</span>
+    </div>
+    <div class="ui-controlgroup column1">
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="1" id="q12_1" name="q12" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q12_1">
+       A、人民当家作主
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="2" id="q12_2" name="q12" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q12_2">
+       B、公平、公正、公开
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="3" id="q12_3" name="q12" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q12_3">
+       ------
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="4" id="q12_4" name="q12" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q12_4">
+       D、人民民主
+      </div>
+     </div>
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+  </fieldset>
+  <fieldset class="fieldset" pg="13" style="display:none;" mintime="1" maxtime="60" id="fieldset13">
+   <div class="field ui-field-contain" id="div13" req="1" topic="148" data-role="fieldcontain" type="3">
+    <div class="field-label">
+     12. 1864年英、法、德、意四国工人代表在伦敦开会成立，马克思代表德国工人参加该组织的工作，并逐渐用（ ）作为组织指导思想。
+     <span class="req">*</span>
+    </div>
+    <div class="ui-controlgroup column1">
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="1" id="q13_1" name="q13" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q13_1">
+       A、空想社会主义理论
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="2" id="q13_2" name="q13" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q13_2">
+       B、特色社会主义理论
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="3" id="q13_3" name="q13" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q13_3">
+       --------
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="4" id="q13_4" name="q13" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q13_4">
+       D、无政府主义理论
+      </div>
+     </div>
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+  </fieldset>
+  <fieldset class="fieldset" pg="14" style="display:none;" mintime="1" maxtime="60" id="fieldset14">
+   <div class="field ui-field-contain" id="div14" req="1" topic="58" data-role="fieldcontain" type="3">
+    <div class="field-label">
+     13. 党的二十大报告指出，拥有马克思主义科学理论指导是我们党坚定信仰信念、把握历史主动的（ ）。
+     <span class="req">*</span>
+    </div>
+    <div class="ui-controlgroup column1">
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="1" id="q14_1" name="q14" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q14_1">
+       A、根本要求
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="2" id="q14_2" name="q14" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q14_2">
+       -------
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="3" id="q14_3" name="q14" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q14_3">
+       C、本质要求
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="4" id="q14_4" name="q14" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q14_4">
+       D、根本出发点
+      </div>
+     </div>
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+  </fieldset>
+  <fieldset class="fieldset" pg="15" style="display:none;" mintime="1" maxtime="60" id="fieldset15">
+   <div class="field ui-field-contain" id="div15" req="1" topic="80" data-role="fieldcontain" type="3">
+    <div class="field-label">
+     14. 1921年7月在中国共产党第一次全国代表大会上，（ ）被推选为中央局书记。
+     <span class="req">*</span>
+    </div>
+    <div class="ui-controlgroup column1">
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="1" id="q15_1" name="q15" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q15_1">
+       A、毛泽东
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="2" id="q15_2" name="q15" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q15_2">
+       B、李大钊
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="3" id="q15_3" name="q15" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q15_3">
+       ---------
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="4" id="q15_4" name="q15" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q15_4">
+       D、蔡和森
+      </div>
+     </div>
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+  </fieldset>
+  <fieldset class="fieldset" pg="16" style="display:none;" mintime="1" maxtime="60" id="fieldset16">
+   <div class="field ui-field-contain" id="div16" req="1" topic="128" data-role="fieldcontain" type="3">
+    <div class="field-label">
+     15. 党的（ ）首次使用“邓小平理论”这个科学称谓。
+     <span class="req">*</span>
+    </div>
+    <div class="ui-controlgroup column1">
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="1" id="q16_1" name="q16" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q16_1">
+       A、十三大
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="2" id="q16_2" name="q16" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q16_2">
+       B、十四大
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="3" id="q16_3" name="q16" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q16_3">
+       ---------
+      </div>
+     </div>
+     <div class="ui-radio">
+      <span class="jqradiowrapper"><input type="radio" value="4" id="q16_4" name="q16" style="display:none;" /><a class="jqradio" href="javascript:;"></a></span>
+      <div class="label" for="q16_4">
+       D、十六大
+      </div>
+     </div>
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+  </fieldset>
+  <fieldset class="fieldset" pg="17" style="display:none;" mintime="1" maxtime="60" id="fieldset17"></fieldset>
+  <fieldset class="fieldset" pg="18" style="display:none;" mintime="1" maxtime="60" id="fieldset18"></fieldset>
+  <fieldset class="fieldset" pg="19" style="display:none;" mintime="1" maxtime="60" id="fieldset19"></fieldset>
+  <fieldset class="fieldset" pg="20" style="display:none;" mintime="1" maxtime="60" id="fieldset20"></fieldset>
+  <fieldset class="fieldset" pg="21" style="display:none;" mintime="1" maxtime="60" id="fieldset21"></fieldset>
+  <fieldset class="fieldset" pg="22" style="display:none;" mintime="1" maxtime="60" id="fieldset22"></fieldset>
+  <fieldset class="fieldset" pg="23" style="display:none;" mintime="1" maxtime="60" id="fieldset23"></fieldset>
+  <fieldset class="fieldset" pg="24" style="display:none;" mintime="1" maxtime="60" id="fieldset24"></fieldset>
+  <fieldset class="fieldset" pg="25" style="display:none;" mintime="1" maxtime="60" id="fieldset25"></fieldset>
+  <fieldset class="fieldset" pg="26" style="display:none;" mintime="1" maxtime="60" id="fieldset26"></fieldset>
+  <fieldset class="fieldset" pg="27" style="display:none;" mintime="1" maxtime="60" id="fieldset27"></fieldset>
+  <fieldset class="fieldset" pg="28" style="display:none;" mintime="1" maxtime="60" id="fieldset28"></fieldset>
+  <fieldset class="fieldset" pg="29" style="display:none;" mintime="1" maxtime="60" id="fieldset29"></fieldset>
+  <fieldset class="fieldset" pg="30" style="display:none;" mintime="1" maxtime="60" id="fieldset30"></fieldset>
+  <fieldset class="fieldset" pg="31" style="display:none;" mintime="1" maxtime="60" id="fieldset31"></fieldset>
+  <fieldset class="fieldset" pg="32" style="display:none;" mintime="1" maxtime="60" id="fieldset32"></fieldset>
+  <fieldset class="fieldset" pg="33" style="display:none;" mintime="1" maxtime="60" id="fieldset33"></fieldset>
+  <fieldset class="fieldset" pg="34" style="display:none;" mintime="1" maxtime="60" id="fieldset34"></fieldset>
+  <fieldset class="fieldset" pg="35" style="display:none;" mintime="1" maxtime="60" id="fieldset35"></fieldset>
+  <fieldset class="fieldset" pg="36" style="display:none;" mintime="1" maxtime="60" id="fieldset36"></fieldset>
+  <fieldset class="fieldset" pg="37" style="display:none;" mintime="1" maxtime="60" id="fieldset37"></fieldset>
+  <fieldset class="fieldset" pg="38" style="display:none;" mintime="1" maxtime="60" id="fieldset38"></fieldset>
+  <fieldset class="fieldset" pg="39" style="display:none;" mintime="1" maxtime="60" id="fieldset39"></fieldset>
+  <fieldset class="fieldset" pg="40" style="display:none;" mintime="1" maxtime="60" id="fieldset40"></fieldset>
+  <fieldset class="fieldset" pg="41" style="display:none;" mintime="1" maxtime="60" id="fieldset41"></fieldset>
+  <fieldset class="fieldset" pg="42" style="display:none;" mintime="1" maxtime="60" id="fieldset42"></fieldset>
+  <fieldset class="fieldset" pg="43" style="display:none;" mintime="1" maxtime="60" id="fieldset43"></fieldset>
+  <fieldset class="fieldset" pg="44" style="display:none;" mintime="1" maxtime="60" id="fieldset44"></fieldset>
+  <fieldset class="fieldset" pg="45" style="display:none;" mintime="1" maxtime="60" id="fieldset45"></fieldset>
+  <fieldset class="fieldset" pg="46" style="display:none;" mintime="1" maxtime="60" id="fieldset46"></fieldset>
+  <fieldset class="fieldset" pg="47" style="display:none;" mintime="1" maxtime="60" id="fieldset47"></fieldset>
+  <fieldset class="fieldset" pg="48" style="display:none;" mintime="1" maxtime="60" id="fieldset48"></fieldset>
+  <fieldset class="fieldset" pg="49" style="display:none;" mintime="1" maxtime="60" id="fieldset49"></fieldset>
+  <fieldset class="fieldset" pg="50" style="display:none;" mintime="1" maxtime="60" id="fieldset50"></fieldset>
+  <fieldset class="fieldset" pg="51" style="display:none;" mintime="1" maxtime="60" id="fieldset51"></fieldset>
+  <fieldset class="fieldset" pg="52" style="display:none;" mintime="1" maxtime="60" id="fieldset52"></fieldset>
+  <fieldset class="fieldset" pg="53" style="display:none;" mintime="1" maxtime="60" id="fieldset53"></fieldset>
+  <fieldset class="fieldset" pg="54" style="display:none;" mintime="1" maxtime="60" id="fieldset54"></fieldset>
+  <fieldset class="fieldset" pg="55" style="display:none;" mintime="1" maxtime="60" id="fieldset55"></fieldset>
+  <fieldset class="fieldset" pg="56" style="display:none;" mintime="1" maxtime="60" id="fieldset56"></fieldset>
+  <fieldset class="fieldset" pg="57" style="display:none;" mintime="1" maxtime="60" id="fieldset57"></fieldset>
+  <fieldset class="fieldset" pg="58" style="display:none;" mintime="1" maxtime="60" id="fieldset58"></fieldset>
+  <fieldset class="fieldset" pg="59" style="display:none;" mintime="1" maxtime="60" id="fieldset59"></fieldset>
+  <fieldset class="fieldset" pg="60" style="display:none;" mintime="1" maxtime="60" id="fieldset60"></fieldset>
+  <fieldset class="fieldset" pg="61" style="display:none;" mintime="1" maxtime="60" id="fieldset61"></fieldset>
+  <fieldset class="fieldset" pg="62" style="display:none;" mintime="1" maxtime="60" id="fieldset62"></fieldset>
+  <fieldset class="fieldset" pg="63" style="display:none;" mintime="1" maxtime="60" id="fieldset63"></fieldset>
+  <fieldset class="fieldset" pg="64" style="display:none;" mintime="1" maxtime="60" id="fieldset64"></fieldset>
+  <fieldset class="fieldset" pg="65" style="display:none;" mintime="1" maxtime="60" id="fieldset65"></fieldset>
+  <fieldset class="fieldset" pg="66" style="display:none;" mintime="1" maxtime="60" id="fieldset66"></fieldset>
+  <fieldset class="fieldset" pg="67" style="display:none;" mintime="1" maxtime="60" id="fieldset67"></fieldset>
+  <fieldset class="fieldset" pg="68" style="display:none;" mintime="1" maxtime="60" id="fieldset68"></fieldset>
+  <fieldset class="fieldset" pg="69" style="display:none;" mintime="1" maxtime="60" id="fieldset69"></fieldset>
+  <fieldset class="fieldset" pg="70" style="display:none;" mintime="1" maxtime="60" id="fieldset70"></fieldset>
+  <fieldset class="fieldset" pg="71" style="display:none;" mintime="1" maxtime="60" id="fieldset71"></fieldset>
+  <fieldset class="fieldset" pg="72" style="display:none;" mintime="1" maxtime="60" id="fieldset72"></fieldset>
+  <fieldset class="fieldset" pg="73" style="display:none;" mintime="1" maxtime="60" id="fieldset73"></fieldset>
+  <fieldset class="fieldset" pg="74" style="display:none;" mintime="1" maxtime="60" id="fieldset74"></fieldset>
+  <fieldset class="fieldset" pg="75" style="display:none;" mintime="1" maxtime="60" id="fieldset75"></fieldset>
+  <fieldset class="fieldset" pg="76" style="display:none;" mintime="1" maxtime="60" id="fieldset76"></fieldset>
+  <fieldset class="fieldset" pg="77" style="display:none;" mintime="1" maxtime="60" id="fieldset77"></fieldset>
+  <fieldset class="fieldset" pg="78" style="display:none;" mintime="1" maxtime="60" id="fieldset78"></fieldset>
+  <fieldset class="fieldset" pg="79" style="display:none;" mintime="1" maxtime="60" id="fieldset79"></fieldset>
+  <fieldset class="fieldset" pg="80" style="display:none;" mintime="1" maxtime="60" id="fieldset80"></fieldset>
+  <fieldset class="fieldset" pg="81" style="display:none;" mintime="1" maxtime="60" id="fieldset81"></fieldset>
+  <fieldset class="fieldset" pg="82" style="display:none;" mintime="1" maxtime="60" id="fieldset82"></fieldset>
+  <fieldset class="fieldset" pg="83" style="display:none;" mintime="1" maxtime="60" id="fieldset83"></fieldset>
+  <fieldset class="fieldset" pg="84" style="display:none;" mintime="1" maxtime="60" id="fieldset84"></fieldset>
+  <fieldset class="fieldset" pg="85" style="display:none;" mintime="1" maxtime="60" id="fieldset85"></fieldset>
+  <fieldset class="fieldset" pg="86" style="display:none;" mintime="1" maxtime="60" id="fieldset86"></fieldset>
+  <fieldset class="fieldset" pg="87" style="display:none;" mintime="1" maxtime="60" id="fieldset87"></fieldset>
+  <fieldset class="fieldset" pg="88" style="display:none;" mintime="1" maxtime="60" id="fieldset88"></fieldset>
+  <fieldset class="fieldset" pg="89" style="display:none;" mintime="1" maxtime="60" id="fieldset89"></fieldset>
+  <fieldset class="fieldset" pg="90" style="display:none;" mintime="1" maxtime="60" id="fieldset90"></fieldset>
+  <fieldset class="fieldset" pg="91" style="display:none;" mintime="1" maxtime="60" id="fieldset91"></fieldset>
+  <fieldset class="fieldset" pg="92" style="display:none;" mintime="1" maxtime="60" id="fieldset92"></fieldset>
+  <fieldset class="fieldset" pg="93" style="display:none;" mintime="1" maxtime="60" id="fieldset93"></fieldset>
+  <fieldset class="fieldset" pg="94" style="display:none;" mintime="1" maxtime="60" id="fieldset94"></fieldset>
+  <fieldset class="fieldset" pg="95" style="display:none;" mintime="1" maxtime="60" id="fieldset95"></fieldset>
+  <fieldset class="fieldset" pg="96" style="display:none;" mintime="1" maxtime="60" id="fieldset96"></fieldset>
+  <fieldset class="fieldset" pg="97" style="display:none;" mintime="1" maxtime="60" id="fieldset97"></fieldset>
+  <fieldset class="fieldset" pg="98" style="display:none;" mintime="1" maxtime="60" id="fieldset98"></fieldset>
+  <fieldset class="fieldset" pg="99" style="display:none;" mintime="1" maxtime="60" id="fieldset99"></fieldset>
+  <fieldset class="fieldset" pg="100" style="display:none;" mintime="1" maxtime="60" id="fieldset100"></fieldset>
+  <fieldset class="fieldset" pg="101" style="display:none;" mintime="1" maxtime="60" id="fieldset101"></fieldset>
+  <fieldset class="fieldset" pg="102" style="display:none;" mintime="1" maxtime="60" id="fieldset102"></fieldset>
+  <fieldset class="fieldset" pg="103" style="display:none;" mintime="1" maxtime="60" id="fieldset103"></fieldset>
+  <fieldset class="fieldset" pg="104" style="display:none;" mintime="1" maxtime="60" id="fieldset104"></fieldset>
+  <fieldset class="fieldset" pg="105" style="display:none;" mintime="1" maxtime="60" id="fieldset105"></fieldset>
+  <fieldset class="fieldset" pg="106" style="display:none;" mintime="1" maxtime="60" id="fieldset106"></fieldset>
+  <fieldset class="fieldset" pg="107" style="display:none;" mintime="1" maxtime="60" id="fieldset107"></fieldset>
+  <fieldset class="fieldset" pg="108" style="display:none;" mintime="1" maxtime="60" id="fieldset108"></fieldset>
+  <fieldset class="fieldset" pg="109" style="display:none;" mintime="1" maxtime="60" id="fieldset109"></fieldset>
+  <fieldset class="fieldset" pg="110" style="display:none;" mintime="1" maxtime="60" id="fieldset110"></fieldset>
+  <fieldset class="fieldset" pg="111" style="display:none;" mintime="1" maxtime="60" id="fieldset111"></fieldset>
+  <fieldset class="fieldset" pg="112" style="display:none;" mintime="1" maxtime="60" id="fieldset112"></fieldset>
+  <fieldset class="fieldset" pg="113" style="display:none;" mintime="1" maxtime="60" id="fieldset113"></fieldset>
+  <fieldset class="fieldset" pg="114" style="display:none;" mintime="1" maxtime="60" id="fieldset114"></fieldset>
+  <fieldset class="fieldset" pg="115" style="display:none;" mintime="1" maxtime="60" id="fieldset115"></fieldset>
+  <fieldset class="fieldset" pg="116" style="display:none;" mintime="1" maxtime="60" id="fieldset116"></fieldset>
+  <fieldset class="fieldset" pg="117" style="display:none;" mintime="1" maxtime="60" id="fieldset117"></fieldset>
+  <fieldset class="fieldset" pg="118" style="display:none;" mintime="1" maxtime="60" id="fieldset118"></fieldset>
+  <fieldset class="fieldset" pg="119" style="display:none;" mintime="1" maxtime="60" id="fieldset119"></fieldset>
+  <fieldset class="fieldset" pg="120" style="display:none;" mintime="1" maxtime="60" id="fieldset120"></fieldset>
+  <fieldset class="fieldset" pg="121" style="display:none;" mintime="1" maxtime="60" id="fieldset121"></fieldset>
+  <fieldset class="fieldset" pg="122" style="display:none;" mintime="1" maxtime="60" id="fieldset122"></fieldset>
+  <fieldset class="fieldset" pg="123" style="display:none;" mintime="1" maxtime="60" id="fieldset123"></fieldset>
+  <fieldset class="fieldset" pg="124" style="display:none;" mintime="1" maxtime="60" id="fieldset124"></fieldset>
+  <fieldset class="fieldset" pg="125" style="display:none;" mintime="1" maxtime="60" id="fieldset125"></fieldset>
+  <fieldset class="fieldset" pg="126" style="display:none;" mintime="1" maxtime="60" id="fieldset126"></fieldset>
+  <fieldset class="fieldset" pg="127" style="display:none;" mintime="1" maxtime="60" id="fieldset127"></fieldset>
+  <fieldset class="fieldset" pg="128" style="display:none;" mintime="1" maxtime="60" id="fieldset128"></fieldset>
+  <fieldset class="fieldset" pg="129" style="display:none;" mintime="1" maxtime="60" id="fieldset129"></fieldset>
+  <fieldset class="fieldset" pg="130" style="display:none;" mintime="1" maxtime="60" id="fieldset130"></fieldset>
+  <fieldset class="fieldset" pg="131" style="display:none;" mintime="1" maxtime="60" id="fieldset131"></fieldset>
+  <fieldset class="fieldset" pg="132" style="display:none;" mintime="1" maxtime="60" id="fieldset132"></fieldset>
+  <fieldset class="fieldset" pg="133" style="display:none;" mintime="1" maxtime="60" id="fieldset133"></fieldset>
+  <fieldset class="fieldset" pg="134" style="display:none;" mintime="1" maxtime="60" id="fieldset134"></fieldset>
+  <fieldset class="fieldset" pg="135" style="display:none;" mintime="1" maxtime="60" id="fieldset135"></fieldset>
+  <fieldset class="fieldset" pg="136" style="display:none;" mintime="1" maxtime="60" id="fieldset136"></fieldset>
+  <fieldset class="fieldset" pg="137" style="display:none;" mintime="1" maxtime="60" id="fieldset137"></fieldset>
+  <fieldset class="fieldset" pg="138" style="display:none;" mintime="1" maxtime="60" id="fieldset138"></fieldset>
+  <fieldset class="fieldset" pg="139" style="display:none;" mintime="1" maxtime="60" id="fieldset139"></fieldset>
+  <fieldset class="fieldset" pg="140" style="display:none;" mintime="1" maxtime="60" id="fieldset140"></fieldset>
+  <fieldset class="fieldset" pg="141" style="display:none;" mintime="1" maxtime="60" id="fieldset141"></fieldset>
+  <fieldset class="fieldset" pg="142" style="display:none;" mintime="1" maxtime="60" id="fieldset142"></fieldset>
+  <fieldset class="fieldset" pg="143" style="display:none;" mintime="1" maxtime="60" id="fieldset143"></fieldset>
+  <fieldset class="fieldset" pg="144" style="display:none;" mintime="1" maxtime="60" id="fieldset144"></fieldset>
+  <fieldset class="fieldset" pg="145" style="display:none;" mintime="1" maxtime="60" id="fieldset145"></fieldset>
+  <fieldset class="fieldset" pg="146" style="display:none;" mintime="1" maxtime="60" id="fieldset146"></fieldset>
+  <fieldset class="fieldset" pg="147" style="display:none;" mintime="1" maxtime="60" id="fieldset147"></fieldset>
+  <fieldset class="fieldset" pg="148" style="display:none;" mintime="1" maxtime="60" id="fieldset148"></fieldset>
+  <fieldset class="fieldset" pg="149" style="display:none;" mintime="1" maxtime="60" id="fieldset149"></fieldset>
+  <fieldset class="fieldset" pg="150" style="display:none;" mintime="1" maxtime="60" id="fieldset150"></fieldset>
+  <fieldset class="fieldset" pg="151" style="display:none;" mintime="1" maxtime="60" id="fieldset151"></fieldset>
+  <fieldset class="fieldset" pg="152" style="display:none;" mintime="1" maxtime="60" id="fieldset152"></fieldset>
+  <fieldset class="fieldset" pg="153" style="display:none;" mintime="1" maxtime="60" id="fieldset153">
+   <div class="field ui-field-contain" id="div153" req="1" topic="181" data-role="fieldcontain" type="4">
+    <div class="field-label">
+     16. 中共七大的重大意义在于( )。
+     <span class="req">*</span>
+     <span class="qtypetip">【多选题】</span>
+    </div>
+    <div class="ui-controlgroup column1">
+     <div class="ui-checkbox">
+      <span class="jqcheckwrapper"><input type="checkbox" value="1" id="q153_1" name="q153" style="display:none;" /><a class="jqcheck" href="javascript:;"></a></span>
+      <div class="label" for="q153_1">
+       -----
+      </div>
+     </div>
+     <div class="ui-checkbox">
+      <span class="jqcheckwrapper"><input type="checkbox" value="2" id="q153_2" name="q153" style="display:none;" /><a class="jqcheck" href="javascript:;"></a></span>
+      <div class="label" for="q153_2">
+       B、做出了把党和国家工作重心转移到城市的决定
+      </div>
+     </div>
+     <div class="ui-checkbox">
+      <span class="jqcheckwrapper"><input type="checkbox" value="3" id="q153_3" name="q153" style="display:none;" /><a class="jqcheck" href="javascript:;"></a></span>
+      <div class="label" for="q153_3">
+       -------
+      </div>
+     </div>
+     <div class="ui-checkbox">
+      <span class="jqcheckwrapper"><input type="checkbox" value="4" id="q153_4" name="q153" style="display:none;" /><a class="jqcheck" href="javascript:;"></a></span>
+      <div class="label" for="q153_4">
+       ---------
+      </div>
+     </div>
+     <div class="ui-checkbox">
+      <span class="jqcheckwrapper"><input type="checkbox" value="5" id="q153_5" name="q153" style="display:none;" /><a class="jqcheck" href="javascript:;"></a></span>
+      <div class="label" for="q153_5">
+       E、首次提出了新民主主义革命的总路线
+      </div>
+     </div>
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+  </fieldset>
+  <fieldset class="fieldset" pg="154" style="display:none;" mintime="1" maxtime="60" id="fieldset154">
+   <div class="field ui-field-contain" id="div154" req="1" topic="172" data-role="fieldcontain" type="4">
+    <div class="field-label">
+     17. 党用（ ）创造了百年伟业，也一定能用（ ）创造新的伟业。全党全军全国各族人民要紧密团结在党中央周围，牢记（ ）、（ ），坚定信心、同心同德，埋头苦干、奋勇前进，为全面建设社会主义现代化国家、全面推进中华民族伟大复兴而团结奋斗！
+     <span class="req">*</span>
+     <span class="qtypetip">【多选题】</span>
+    </div>
+    <div class="ui-controlgroup column1">
+     <div class="ui-checkbox">
+      <span class="jqcheckwrapper"><input type="checkbox" value="1" id="q154_1" name="q154" style="display:none;" /><a class="jqcheck" href="javascript:;"></a></span>
+      <div class="label" for="q154_1">
+       ------
+      </div>
+     </div>
+     <div class="ui-checkbox">
+      <span class="jqcheckwrapper"><input type="checkbox" value="2" id="q154_2" name="q154" style="display:none;" /><a class="jqcheck" href="javascript:;"></a></span>
+      <div class="label" for="q154_2">
+       ------
+      </div>
+     </div>
+     <div class="ui-checkbox">
+      <span class="jqcheckwrapper"><input type="checkbox" value="3" id="q154_3" name="q154" style="display:none;" /><a class="jqcheck" href="javascript:;"></a></span>
+      <div class="label" for="q154_3">
+       ---------
+      </div>
+     </div>
+     <div class="ui-checkbox">
+      <span class="jqcheckwrapper"><input type="checkbox" value="4" id="q154_4" name="q154" style="display:none;" /><a class="jqcheck" href="javascript:;"></a></span>
+      <div class="label" for="q154_4">
+       ---------
+      </div>
+     </div>
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+  </fieldset>
+  <fieldset class="fieldset" pg="155" style="display:none;" mintime="1" maxtime="60" id="fieldset155">
+   <div class="field ui-field-contain" id="div155" req="1" topic="177" data-role="fieldcontain" type="4">
+    <div class="field-label">
+     18. 《中国共产党第二十次全国代表大会关于（中国共产党章程（修正案）》的决议》指出，大会同意把逐步实现（ ），把握新发展阶段，贯彻创新、协调、绿色、开放、共享的新发展理念，加快构建（ ）的新发展格局，推动高质量发展，充分发挥（ ）作为第一资源的作用，促进国民经济更高质量、更有效率、更加公平、更可持续、更为安全发展等内容写入党章。
+     <span class="req">*</span>
+     <span class="qtypetip">【多选题】</span>
+    </div>
+    <div class="ui-controlgroup column1">
+     <div class="ui-checkbox">
+      <span class="jqcheckwrapper"><input type="checkbox" value="1" id="q155_1" name="q155" style="display:none;" /><a class="jqcheck" href="javascript:;"></a></span>
+      <div class="label" for="q155_1">
+       A、共产主义
+      </div>
+     </div>
+     <div class="ui-checkbox">
+      <span class="jqcheckwrapper"><input type="checkbox" value="2" id="q155_2" name="q155" style="display:none;" /><a class="jqcheck" href="javascript:;"></a></span>
+      <div class="label" for="q155_2">
+       -------
+      </div>
+     </div>
+     <div class="ui-checkbox">
+      <span class="jqcheckwrapper"><input type="checkbox" value="3" id="q155_3" name="q155" style="display:none;" /><a class="jqcheck" href="javascript:;"></a></span>
+      <div class="label" for="q155_3">
+       ---------
+      </div>
+     </div>
+     <div class="ui-checkbox">
+      <span class="jqcheckwrapper"><input type="checkbox" value="4" id="q155_4" name="q155" style="display:none;" /><a class="jqcheck" href="javascript:;"></a></span>
+      <div class="label" for="q155_4">
+       ---------
+      </div>
+     </div>
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+  </fieldset>
+  <fieldset class="fieldset" pg="156" style="display:none;" mintime="1" maxtime="60" id="fieldset156">
+   <div class="field ui-field-contain" id="div156" req="1" topic="170" data-role="fieldcontain" type="4">
+    <div class="field-label">
+     19. 党的二十大报告中指出，团结就是力量，团结才能胜利，全面建设社会主义现代化国家，必须充分发挥亿万人民的创造伟力。全党要坚持（ ）的根本宗旨，树牢群众观点，贯彻群众路线，尊重人民首创精神，坚持（ ），从群众中来、到群众中去，始终保持同人民群众的血肉联系，始终接受（ ），始终同人民同呼吸、共命运、心连心，不断巩固全国各族人民大团结，加强海内外中华儿女大团结，形成同心共圆中国梦的（ ）。
+     <span class="req">*</span>
+     <span class="qtypetip">【多选题】</span>
+    </div>
+    <div class="ui-controlgroup column1">
+     <div class="ui-checkbox">
+      <span class="jqcheckwrapper"><input type="checkbox" value="1" id="q156_1" name="q156" style="display:none;" /><a class="jqcheck" href="javascript:;"></a></span>
+      <div class="label" for="q156_1">
+       -------
+      </div>
+     </div>
+     <div class="ui-checkbox">
+      <span class="jqcheckwrapper"><input type="checkbox" value="2" id="q156_2" name="q156" style="display:none;" /><a class="jqcheck" href="javascript:;"></a></span>
+      <div class="label" for="q156_2">
+       -------
+      </div>
+     </div>
+     <div class="ui-checkbox">
+      <span class="jqcheckwrapper"><input type="checkbox" value="3" id="q156_3" name="q156" style="display:none;" /><a class="jqcheck" href="javascript:;"></a></span>
+      <div class="label" for="q156_3">
+       -------
+      </div>
+     </div>
+     <div class="ui-checkbox">
+      <span class="jqcheckwrapper"><input type="checkbox" value="4" id="q156_4" name="q156" style="display:none;" /><a class="jqcheck" href="javascript:;"></a></span>
+      <div class="label" for="q156_4">
+       ------
+      </div>
+     </div>
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+  </fieldset>
+  <fieldset class="fieldset" pg="157" style="display:none;" mintime="1" maxtime="60" id="fieldset157">
+   <div class="field ui-field-contain" id="div157" req="1" topic="199" data-role="fieldcontain" type="4">
+    <div class="field-label">
+     20. 新中国成立之初，国民经济遇到严重困难，其主要原因是( )。
+     <span class="req">*</span>
+     <span class="qtypetip">【多选题】</span>
+    </div>
+    <div class="ui-controlgroup column1">
+     <div class="ui-checkbox">
+      <span class="jqcheckwrapper"><input type="checkbox" value="1" id="q157_1" name="q157" style="display:none;" /><a class="jqcheck" href="javascript:;"></a></span>
+      <div class="label" for="q157_1">
+       ------
+      </div>
+     </div>
+     <div class="ui-checkbox">
+      <span class="jqcheckwrapper"><input type="checkbox" value="2" id="q157_2" name="q157" style="display:none;" /><a class="jqcheck" href="javascript:;"></a></span>
+      <div class="label" for="q157_2">
+       --------
+      </div>
+     </div>
+     <div class="ui-checkbox">
+      <span class="jqcheckwrapper"><input type="checkbox" value="3" id="q157_3" name="q157" style="display:none;" /><a class="jqcheck" href="javascript:;"></a></span>
+      <div class="label" for="q157_3">
+       C、新解放区农村经济凋敝、城镇工业停产，经济还没有恢复
+      </div>
+     </div>
+     <div class="ui-checkbox">
+      <span class="jqcheckwrapper"><input type="checkbox" value="4" id="q157_4" name="q157" style="display:none;" /><a class="jqcheck" href="javascript:;"></a></span>
+      <div class="label" for="q157_4">
+       ----------
+      </div>
+     </div>
+    </div>
+    <div class="errorMessage"></div>
+   </div>
+  </fieldset>
+  <fieldset class="fieldset" pg="158" style="display:none;" mintime="1" maxtime="60" id="fieldset158"></fieldset>
+  <fieldset class="fieldset" pg="159" style="display:none;" mintime="1" maxtime="60" id="fieldset159"></fieldset>
+  <fieldset class="fieldset" pg="160" style="display:none;" mintime="1" maxtime="60" id="fieldset160"></fieldset>
+  <fieldset class="fieldset" pg="161" style="display:none;" mintime="1" maxtime="60" id="fieldset161"></fieldset>
+  <fieldset class="fieldset" pg="162" style="display:none;" mintime="1" maxtime="60" id="fieldset162"></fieldset>
+  <fieldset class="fieldset" pg="163" style="display:none;" mintime="1" maxtime="60" id="fieldset163"></fieldset>
+  <fieldset class="fieldset" pg="164" style="display:none;" mintime="1" maxtime="60" id="fieldset164"></fieldset>
+  <fieldset class="fieldset" pg="165" style="display:none;" mintime="1" maxtime="60" id="fieldset165"></fieldset>
+  <fieldset class="fieldset" pg="166" style="display:none;" mintime="1" maxtime="60" id="fieldset166"></fieldset>
+  <fieldset class="fieldset" pg="167" style="display:none;" mintime="1" maxtime="60" id="fieldset167"></fieldset>
+  <fieldset class="fieldset" pg="168" style="display:none;" mintime="1" maxtime="60" id="fieldset168"></fieldset>
+  <fieldset class="fieldset" pg="169" style="display:none;" mintime="1" maxtime="60" id="fieldset169"></fieldset>
+  <fieldset class="fieldset" pg="170" style="display:none;" mintime="1" maxtime="60" id="fieldset170"></fieldset>
+  <fieldset class="fieldset" pg="171" style="display:none;" mintime="1" maxtime="60" id="fieldset171"></fieldset>
+  <fieldset class="fieldset" pg="172" style="display:none;" mintime="1" maxtime="60" id="fieldset172"></fieldset>
+  <fieldset class="fieldset" pg="173" style="display:none;" mintime="1" maxtime="60" id="fieldset173"></fieldset>
+  <fieldset class="fieldset" pg="174" style="display:none;" mintime="1" maxtime="60" id="fieldset174"></fieldset>
+  <fieldset class="fieldset" pg="175" style="display:none;" mintime="1" maxtime="60" id="fieldset175"></fieldset>
+  <fieldset class="fieldset" pg="176" style="display:none;" mintime="1" maxtime="60" id="fieldset176"></fieldset>
+  <fieldset class="fieldset" pg="177" style="display:none;" mintime="1" maxtime="60" id="fieldset177"></fieldset>
+  <fieldset class="fieldset" pg="178" style="display:none;" mintime="1" maxtime="60" id="fieldset178"></fieldset>
+  <fieldset class="fieldset" pg="179" style="display:none;" mintime="1" maxtime="60" id="fieldset179"></fieldset>
+  <fieldset class="fieldset" pg="180" style="display:none;" mintime="1" maxtime="60" id="fieldset180"></fieldset>
+  <fieldset class="fieldset" pg="181" style="display:none;" mintime="1" maxtime="60" id="fieldset181"></fieldset>
+  <fieldset class="fieldset" pg="182" style="display:none;" mintime="1" maxtime="60" id="fieldset182"></fieldset>
+  <fieldset class="fieldset" pg="183" style="display:none;" mintime="1" maxtime="60" id="fieldset183"></fieldset>
+  <fieldset class="fieldset" pg="184" style="display:none;" mintime="1" maxtime="60" id="fieldset184"></fieldset>
+  <fieldset class="fieldset" pg="185" style="display:none;" mintime="1" maxtime="60" id="fieldset185"></fieldset>
+  <fieldset class="fieldset" pg="186" style="display:none;" mintime="1" maxtime="60" id="fieldset186"></fieldset>
+  <fieldset class="fieldset" pg="187" style="display:none;" mintime="1" maxtime="60" id="fieldset187"></fieldset>
+  <fieldset class="fieldset" pg="188" style="display:none;" mintime="1" maxtime="60" id="fieldset188"></fieldset>
+  <fieldset class="fieldset" pg="189" style="display:none;" mintime="1" maxtime="60" id="fieldset189"></fieldset>
+  <fieldset class="fieldset" pg="190" style="display:none;" mintime="1" maxtime="60" id="fieldset190"></fieldset>
+  <fieldset class="fieldset" pg="191" style="display:none;" mintime="1" maxtime="60" id="fieldset191"></fieldset>
+  <fieldset class="fieldset" pg="192" style="display:none;" mintime="1" maxtime="60" id="fieldset192"></fieldset>
+  <fieldset class="fieldset" pg="193" style="display:none;" mintime="1" maxtime="60" id="fieldset193"></fieldset>
+  <fieldset class="fieldset" pg="194" style="display:none;" mintime="1" maxtime="60" id="fieldset194"></fieldset>
+  <fieldset class="fieldset" pg="195" style="display:none;" mintime="1" maxtime="60" id="fieldset195"></fieldset>
+  <fieldset class="fieldset" pg="196" style="display:none;" mintime="1" maxtime="60" id="fieldset196"></fieldset>
+  <fieldset class="fieldset" pg="197" style="display:none;" mintime="1" maxtime="60" id="fieldset197"></fieldset>
+  <fieldset class="fieldset" pg="198" style="display:none;" mintime="1" maxtime="60" id="fieldset198"></fieldset>
+  <fieldset class="fieldset" pg="199" style="display:none;" mintime="1" maxtime="60" id="fieldset199"></fieldset>
+  <fieldset class="fieldset" pg="200" style="display:none;" mintime="1" maxtime="60" id="fieldset200"></fieldset>
+  <fieldset class="fieldset" pg="201" style="display:none;" mintime="1" maxtime="60" id="fieldset201"></fieldset>
+  <fieldset class="fieldset" pg="202" style="display:none;" mintime="1" maxtime="60" id="fieldset202"></fieldset>
+  <fieldset class="fieldset" pg="203" style="display:none;" mintime="1" maxtime="60" id="fieldset203"></fieldset>

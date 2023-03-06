@@ -1,0 +1,450 @@
+cnt">
+   <h3>1. 《农产品质量安全法》规定,农业部和省、自治区、直辖市人民政府农业行政主管部门应当按照职责权限,发布有关（）状况信息。</h3>
+   <ul>
+    <li><input type="radio" name="dati[1]" value="1" />------</li>
+    <li><input type="radio" name="dati[1]" value="2" />食品质量安全</li>
+    <li><input type="radio" name="dati[1]" value="3" />农业生产环境质量安全</li>
+    <li><input type="radio" name="dati[1]" value="4" />农、兽药质量安全</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>2. 农产品质量安全标准是（）的技术规范。</h3>
+   <ul>
+    <li><input type="radio" name="dati[2]" value="5" />自愿执行</li>
+    <li><input type="radio" name="dati[2]" value="6" />-------</li>
+    <li><input type="radio" name="dati[2]" value="7" />任意执行</li>
+    <li><input type="radio" name="dati[2]" value="8" />随便执行</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>3. 农产品在包装、保鲜、贮存、运输中所使用的保鲜剂、防腐剂、添加剂等材料,应当符合国家有关（）的技术规范。</h3>
+   <ul>
+    <li><input type="radio" name="dati[3]" value="9" />任意性</li>
+    <li><input type="radio" name="dati[3]" value="10" />推荐性</li>
+    <li><input type="radio" name="dati[3]" value="11" />专业性</li>
+    <li><input type="radio" name="dati[3]" value="12" />--------</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>4. 农产品产地发生污染事故时,（）人民政府农业行政主管部门应当依法调查处理。</h3>
+   <ul>
+    <li><input type="radio" name="dati[4]" value="13" />国家级</li>
+    <li><input type="radio" name="dati[4]" value="14" />省级以上</li>
+    <li><input type="radio" name="dati[4]" value="15" />地市级以上</li>
+    <li><input type="radio" name="dati[4]" value="16" />--------</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>5. 农产品生产者、销售者对监督抽查检测结果有异议的,可以自收到检测结果之日起（）内,向组织实施农产品质量安全监督抽查的农业行政主管部门或者其上级农业行政主管部门申请复检。</h3>
+   <ul>
+    <li><input type="radio" name="dati[5]" value="17" />三日</li>
+    <li><input type="radio" name="dati[5]" value="18" />--------</li>
+    <li><input type="radio" name="dati[5]" value="19" />八日</li>
+    <li><input type="radio" name="dati[5]" value="20" />十五日</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>6. 从事农产品质量安全检测的机构必须由（）以上人民政府农业行政主管部门或者其授权的部门考核合格。</h3>
+   <ul>
+    <li><input type="radio" name="dati[6]" value="21" />县级</li>
+    <li><input type="radio" name="dati[6]" value="22" />市级</li>
+    <li><input type="radio" name="dati[6]" value="23" />------</li>
+    <li><input type="radio" name="dati[6]" value="24" />乡（镇）级</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>7. 农民专业合作经济组织和农产品行业协会对其成员应当及时提供生产技术服务,建立农产品质量安全管理制度,健全农产品质量安全控制体系,加强（）。</h3>
+   <ul>
+    <li><input type="radio" name="dati[7]" value="25" />行政管理</li>
+    <li><input type="radio" name="dati[7]" value="26" />强制管理</li>
+    <li><input type="radio" name="dati[7]" value="27" />-------</li>
+    <li><input type="radio" name="dati[7]" value="28" />经济管理</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>8. （）部门会同国务院食品安全监督管理等部门，制定、实施国家食品安全风险监测计划。</h3>
+   <ul>
+    <li><input type="radio" name="dati[8]" value="29" />--------</li>
+    <li><input type="radio" name="dati[8]" value="30" />国家市场监管总局</li>
+    <li><input type="radio" name="dati[8]" value="31" />国家食品安全风险评估中心</li>
+    <li><input type="radio" name="dati[8]" value="32" />中国疾病预防控制中心</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>9. 食品安全风险监测工作人员（）进入相关食用农产品种植养殖、食品生产经营场所采集样品、收集相关数据。</h3>
+   <ul>
+    <li><input type="radio" name="dati[9]" value="33" />请求</li>
+    <li><input type="radio" name="dati[9]" value="34" />-------</li>
+    <li><input type="radio" name="dati[9]" value="35" />无权</li>
+    <li><input type="radio" name="dati[9]" value="36" />申请</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>10. 医疗机构发现其接收的病人属于食源性疾病病人或者疑似病人的，应当按照规定及时将相关信息向所在地（）报告。</h3>
+   <ul>
+    <li><input type="radio" name="dati[10]" value="37" />县级食品安全监督管理部门</li>
+    <li><input type="radio" name="dati[10]" value="38" />县级疾病预防控制中心</li>
+    <li><input type="radio" name="dati[10]" value="39" />--------</li>
+    <li><input type="radio" name="dati[10]" value="40" />县级人民政府</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>11. 食品安全风险评估结果应当作为（）的依据。</h3>
+   <ul>
+    <li><input type="radio" name="dati[11]" value="41" />开展食品安全监督管理</li>
+    <li><input type="radio" name="dati[11]" value="42" />-------</li>
+    <li><input type="radio" name="dati[11]" value="43" />发布食品安全风险警示</li>
+    <li><input type="radio" name="dati[11]" value="44" />000000</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>12. 我省深化食品安全风险评估和标准实施专项行动包括（）。</h3>
+   <ul>
+    <li><input type="radio" name="dati[12]" value="45" />开展食物消费量调查、总膳食研究、毒理学研究等基础性工作，建立完善我省食品安全风险评估基础数据库</li>
+    <li><input type="radio" name="dati[12]" value="46" />加强食品安全风险监测，增加食源性疾病监测点和污染物监测样本量，提高代表性</li>
+    <li><input type="radio" name="dati[12]" value="47" />加快食品安全地方标准制修订，规范食品安全企业标准备案制度，完善省级食品安全标准信息平台，加大食品安全标准宣传贯彻和培训力度，做好食品安全标准使用的跟踪评价</li>
+    <li><input type="radio" name="dati[12]" value="48" />-------</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>13. 发生食品安全事故的单位，应当立即（）造成食品安全事故或者可能导致食品安全事故的食品及其原料、工具、设备，保护现场并配合疾病预防控制机构以及食品药品监督管理等有关部门进行食品安全事故调查。</h3>
+   <ul>
+    <li><input type="radio" name="dati[13]" value="49" />废弃</li>
+    <li><input type="radio" name="dati[13]" value="50" />卫生处理</li>
+    <li><input type="radio" name="dati[13]" value="51" />------</li>
+    <li><input type="radio" name="dati[13]" value="52" />检查</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>14. 消费者因不符合食品安全标准的食品受到损害的，可以向（）要求赔偿损失。</h3>
+   <ul>
+    <li><input type="radio" name="dati[14]" value="53" />生产者</li>
+    <li><input type="radio" name="dati[14]" value="54" />经营者</li>
+    <li><input type="radio" name="dati[14]" value="55" />-------</li>
+    <li><input type="radio" name="dati[14]" value="56" />消费者协会</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>15. 违反《食品安全法》规定，构成犯罪的（涉嫌食品安全犯罪的），应当（）。</h3>
+   <ul>
+    <li><input type="radio" name="dati[15]" value="57" />可以以罚代刑</li>
+    <li><input type="radio" name="dati[15]" value="58" />-------</li>
+    <li><input type="radio" name="dati[15]" value="59" />依法不应追究刑事责任的，不再给予行政处罚</li>
+    <li><input type="radio" name="dati[15]" value="60" />经审查没有犯罪事实但依法应当予以行政处罚的，由公安机关予以处罚</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>16. 下列关于过期食品处置措施正确的是（）。</h3>
+   <ul>
+    <li><input type="radio" name="dati[16]" value="61" />尽快使用</li>
+    <li><input type="radio" name="dati[16]" value="62" />降价销售</li>
+    <li><input type="radio" name="dati[16]" value="63" />-------</li>
+    <li><input type="radio" name="dati[16]" value="64" />混合使用</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>17. 食品生产经营者应当依照（）从事生产经营活动，建立健全食品安全管理制度，采取有效管理措施保证食品安全。</h3>
+   <ul>
+    <li><input type="radio" name="dati[17]" value="65" />企业食品安全管理制度</li>
+    <li><input type="radio" name="dati[17]" value="66" />食品生产经营者要求</li>
+    <li><input type="radio" name="dati[17]" value="67" />------</li>
+    <li><input type="radio" name="dati[17]" value="68" />食品安全地方政府负总责要求</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>18. 在广告中对食品质量作虚假宣传，欺骗消费者的，应依照（）的规定给予处罚。</h3>
+   <ul>
+    <li><input type="radio" name="dati[18]" value="69" />-------</li>
+    <li><input type="radio" name="dati[18]" value="70" />《中华人民共和国食品安全法》</li>
+    <li><input type="radio" name="dati[18]" value="71" />《中华人民共和国消费者权益保护法》</li>
+    <li><input type="radio" name="dati[18]" value="72" />《中华人民共和国产品质量法》</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>19. 食品安全法规定，食品安全监督管理部门在进行抽样检验时，应当（）。</h3>
+   <ul>
+    <li><input type="radio" name="dati[19]" value="73" />免费抽检</li>
+    <li><input type="radio" name="dati[19]" value="74" />------</li>
+    <li><input type="radio" name="dati[19]" value="75" />随意抽取</li>
+    <li><input type="radio" name="dati[19]" value="76" />仅收取检验费</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>20. 在中国境内市场销售的进口食品，必须使用下列哪种标识（）。</h3>
+   <ul>
+    <li><input type="radio" name="dati[20]" value="77" />英文</li>
+    <li><input type="radio" name="dati[20]" value="78" />------</li>
+    <li><input type="radio" name="dati[20]" value="79" />拼音标识</li>
+    <li><input type="radio" name="dati[20]" value="80" />其他文字</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>21. 食品添加剂应当在技术上确有必要且经过（）证明安全可靠，方可列入允许使用的范围。</h3>
+   <ul>
+    <li><input type="radio" name="dati[21]" value="81" />感官评估</li>
+    <li><input type="radio" name="dati[21]" value="82" />营养评估</li>
+    <li><input type="radio" name="dati[21]" value="83" />-------</li>
+    <li><input type="radio" name="dati[21]" value="84" />微生物检验</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>22. 县级以上人民政府食品安全监督管理部门根据食品安全风险监测、风险评估结果和食品安全状况等，确定监督管理的重点、方式和频次，实施（）管理。</h3>
+   <ul>
+    <li><input type="radio" name="dati[22]" value="85" />日常监督</li>
+    <li><input type="radio" name="dati[22]" value="86" />-------</li>
+    <li><input type="radio" name="dati[22]" value="87" />信用分类</li>
+    <li><input type="radio" name="dati[22]" value="88" />动态</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>23. 食品（）应当配备食品安全管理人员，加强对其培训和考核。</h3>
+   <ul>
+    <li><input type="radio" name="dati[23]" value="89" />生产经营者</li>
+    <li><input type="radio" name="dati[23]" value="90" />生产企业</li>
+    <li><input type="radio" name="dati[23]" value="91" />经营企业</li>
+    <li><input type="radio" name="dati[23]" value="92" />-------</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>24. 国家（）食品生产经营企业参加食品安全责任保险。</h3>
+   <ul>
+    <li><input type="radio" name="dati[24]" value="93" />------</li>
+    <li><input type="radio" name="dati[24]" value="94" />倡导</li>
+    <li><input type="radio" name="dati[24]" value="95" />鼓励和支持</li>
+    <li><input type="radio" name="dati[24]" value="96" />倡导和支持</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>25. 食品生产经营许可的有效期为（）年。</h3>
+   <ul>
+    <li><input type="radio" name="dati[25]" value="97" />1年</li>
+    <li><input type="radio" name="dati[25]" value="98" />3年</li>
+    <li><input type="radio" name="dati[25]" value="99" />------</li>
+    <li><input type="radio" name="dati[25]" value="100" />10年</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>26. 被吊销许可证的食品生产经营者及其法定代表人、直接负责的主管人员和其他直接责任人员自处罚决定作出之日起（）年内不得申请食品生产经营许可，或者从事食品生产经营管理工作、担任食品生产经营企业食品安全管理人员。</h3>
+   <ul>
+    <li><input type="radio" name="dati[26]" value="101" />2</li>
+    <li><input type="radio" name="dati[26]" value="102" />3</li>
+    <li><input type="radio" name="dati[26]" value="103" />------</li>
+    <li><input type="radio" name="dati[26]" value="104" />10</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>27. 从事（）工作的食品生产经营人员应当每年进行健康检查，取得健康证明后方可上岗工作。</h3>
+   <ul>
+    <li><input type="radio" name="dati[27]" value="105" />一切食品</li>
+    <li><input type="radio" name="dati[27]" value="106" />高风险食品</li>
+    <li><input type="radio" name="dati[27]" value="107" />-------</li>
+    <li><input type="radio" name="dati[27]" value="108" />散装食品</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>28. 根据《食品安全法》第十条，新闻媒体应当对食品安全违法行为进行（）。</h3>
+   <ul>
+    <li><input type="radio" name="dati[28]" value="109" />评议</li>
+    <li><input type="radio" name="dati[28]" value="110" />--------</li>
+    <li><input type="radio" name="dati[28]" value="111" />考核</li>
+    <li><input type="radio" name="dati[28]" value="112" />管理</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>29. 根据《福建省食品安全信息追溯管理办法》第三条规定，福建省追溯食品包括（）类食品和食用农产品。</h3>
+   <ul>
+    <li><input type="radio" name="dati[29]" value="113" />10</li>
+    <li><input type="radio" name="dati[29]" value="114" />------</li>
+    <li><input type="radio" name="dati[29]" value="115" />12</li>
+    <li><input type="radio" name="dati[29]" value="116" />13</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>30. 根据《福建省食品安全信息追溯管理办法》规定，下列追溯食品生产经营者中不要求上传电子化信息的是（）。</h3>
+   <ul>
+    <li><input type="radio" name="dati[30]" value="117" />食品生产企业</li>
+    <li><input type="radio" name="dati[30]" value="118" />食品批发经营者</li>
+    <li><input type="radio" name="dati[30]" value="119" />-------</li>
+    <li><input type="radio" name="dati[30]" value="120" />特定餐饮服务提供者</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>31. 根据《食品安全法实施条例》第二十五条，非食品生产经营者从事对温度、湿度等有特殊要求的食品贮存业务的，应当自取得营业执照之日起（）个工作日内向所在地县级人民政府食品安全监督管理部门备案。</h3>
+   <ul>
+    <li><input type="radio" name="dati[31]" value="121" />10</li>
+    <li><input type="radio" name="dati[31]" value="122" />15</li>
+    <li><input type="radio" name="dati[31]" value="123" />20</li>
+    <li><input type="radio" name="dati[31]" value="124" />--------</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>32. 食品的进货查验记录和进货凭证保存期限不得少于产品保质期满后（）。</h3>
+   <ul>
+    <li><input type="radio" name="dati[32]" value="125" />3个月</li>
+    <li><input type="radio" name="dati[32]" value="126" />--------</li>
+    <li><input type="radio" name="dati[32]" value="127" />12个月</li>
+    <li><input type="radio" name="dati[32]" value="128" />18个月</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>33. 餐饮服务提供者在散装食品的贮存位置可以不标明哪项内容（）。</h3>
+   <ul>
+    <li><input type="radio" name="dati[33]" value="129" />食品的名称</li>
+    <li><input type="radio" name="dati[33]" value="130" />食品的生产日期或生产批号</li>
+    <li><input type="radio" name="dati[33]" value="131" />-------</li>
+    <li><input type="radio" name="dati[33]" value="132" />保质期</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>34. 根据《餐饮服务食品安全操作规范》，在食用冰中保存的生食海鲜，加工后至食用时的间隔时间不得超过（）小时。</h3>
+   <ul>
+    <li><input type="radio" name="dati[34]" value="133" />-----</li>
+    <li><input type="radio" name="dati[34]" value="134" />2</li>
+    <li><input type="radio" name="dati[34]" value="135" />4</li>
+    <li><input type="radio" name="dati[34]" value="136" />24</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>35. 因食品安全犯罪被判处有期徒刑以上刑罚的人员，（）不得从事食品生产经营管理工作，也不得担任食品生产经营企业食品安全管理人员。</h3>
+   <ul>
+    <li><input type="radio" name="dati[35]" value="137" />5年内</li>
+    <li><input type="radio" name="dati[35]" value="138" />10年内</li>
+    <li><input type="radio" name="dati[35]" value="139" />20年内</li>
+    <li><input type="radio" name="dati[35]" value="140" />--------</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>36. 根据《食品安全法》第三十八条，餐饮服务提供者加工食品时可以添加（）。</h3>
+   <ul>
+    <li><input type="radio" name="dati[36]" value="141" />药品</li>
+    <li><input type="radio" name="dati[36]" value="142" />任何中药材</li>
+    <li><input type="radio" name="dati[36]" value="143" />--------</li>
+    <li><input type="radio" name="dati[36]" value="144" />少数西药</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>37. 根据《餐饮服务食品安全操作规范》，留样食品的留样数量不少于（）克。</h3>
+   <ul>
+    <li><input type="radio" name="dati[37]" value="145" />20</li>
+    <li><input type="radio" name="dati[37]" value="146" />50</li>
+    <li><input type="radio" name="dati[37]" value="147" />75</li>
+    <li><input type="radio" name="dati[37]" value="148" />--------</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>38. 根据《餐饮服务食品安全操作规范》餐饮服务预防食物中毒注意事项，易引起沙门氏菌食物中毒的食品是（）。</h3>
+   <ul>
+    <li><input type="radio" name="dati[38]" value="149" />------</li>
+    <li><input type="radio" name="dati[38]" value="150" />蔬菜及水果</li>
+    <li><input type="radio" name="dati[38]" value="151" />水产品</li>
+    <li><input type="radio" name="dati[38]" value="152" />乳及乳制品</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>39. 根据《餐饮服务食品安全操作规范》餐饮服务预防食物中毒注意事项，易引起副溶血性弧菌食物中毒的食品是（）。</h3>
+   <ul>
+    <li><input type="radio" name="dati[39]" value="153" />家禽及蛋类</li>
+    <li><input type="radio" name="dati[39]" value="154" />蔬菜及水果</li>
+    <li><input type="radio" name="dati[39]" value="155" />------</li>
+    <li><input type="radio" name="dati[39]" value="156" />乳及乳制品</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>40. 国家对特殊食品实行严格的监督管理，特殊食品是（）。</h3>
+   <ul>
+    <li><input type="radio" name="dati[40]" value="157" />保健食品</li>
+    <li><input type="radio" name="dati[40]" value="158" />特殊医学用途配方食品</li>
+    <li><input type="radio" name="dati[40]" value="159" />婴幼儿配方食品</li>
+    <li><input type="radio" name="dati[40]" value="160" />-------</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>41. 关于保健食品广告,下列说法正确的是（）。</h3>
+   <ul>
+    <li><input type="radio" name="dati[41]" value="161" />表示功效、安全性的断言或者保证</li>
+    <li><input type="radio" name="dati[41]" value="162" />声称或者暗示广告商品为保障健康所必需</li>
+    <li><input type="radio" name="dati[41]" value="163" />利用广告代言人作推荐、证明</li>
+    <li><input type="radio" name="dati[41]" value="164" />-------</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>42. 保健食品广告批准文号有效期为（）。 </h3>
+   <ul>
+    <li><input type="radio" name="dati[42]" value="165" />------</li>
+    <li><input type="radio" name="dati[42]" value="166" />三年</li>
+    <li><input type="radio" name="dati[42]" value="167" />四年</li>
+    <li><input type="radio" name="dati[42]" value="168" />五年</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>43. 食品安全举报投诉电话（）。</h3>
+   <ul>
+    <li><input type="radio" name="dati[43]" value="169" />12358</li>
+    <li><input type="radio" name="dati[43]" value="170" />------</li>
+    <li><input type="radio" name="dati[43]" value="171" />12369</li>
+    <li><input type="radio" name="dati[43]" value="172" />12119</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>44. 对（）之外的其他食品，不得声称具有保健功能。</h3>
+   <ul>
+    <li><input type="radio" name="dati[44]" value="173" />特医食品</li>
+    <li><input type="radio" name="dati[44]" value="174" />-------</li>
+    <li><input type="radio" name="dati[44]" value="175" />特膳食品</li>
+    <li><input type="radio" name="dati[44]" value="176" />婴幼儿配方食品</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>45. （）有权举报食品生产经营中的违法行为，依法向有关部门了解食品安全信息，对食品安全监督管理工作提出意见和建议。</h3>
+   <ul>
+    <li><input type="radio" name="dati[45]" value="177" />-------</li>
+    <li><input type="radio" name="dati[45]" value="178" />食品生产经营者</li>
+    <li><input type="radio" name="dati[45]" value="179" />消费者</li>
+    <li><input type="radio" name="dati[45]" value="180" />食品企业</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>46. 食品生产加工企业不得使用（）原料生产加工食品。</h3>
+   <ul>
+    <li><input type="radio" name="dati[46]" value="181" />过期、变质、污秽不洁</li>
+    <li><input type="radio" name="dati[46]" value="182" />陈化、回收</li>
+    <li><input type="radio" name="dati[46]" value="183" />非食用</li>
+    <li><input type="radio" name="dati[46]" value="184" />-------</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>47. 食品生产者发现其生产的食品出现（）的情况，就当立即停止生产，召回已经上市销售的食品，通知相关生产经营者和消费者，并记录召回和通知情况。</h3>
+   <ul>
+    <li><input type="radio" name="dati[47]" value="185" />-------</li>
+    <li><input type="radio" name="dati[47]" value="186" />技术明显落后于业界水平</li>
+    <li><input type="radio" name="dati[47]" value="187" />食品口感受到公众质疑</li>
+    <li><input type="radio" name="dati[47]" value="188" />食品严重滞销</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>48. 生产经营转基因食品（）。</h3>
+   <ul>
+    <li><input type="radio" name="dati[48]" value="189" />-------</li>
+    <li><input type="radio" name="dati[48]" value="190" />无须标示</li>
+    <li><input type="radio" name="dati[48]" value="191" />可以标示</li>
+    <li><input type="radio" name="dati[48]" value="192" />视情况标示</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>49. 生产不符合食品安全标准的食品或者经营明知是不符合食品安全标准的食品，消费者除要求赔偿损失外，还可以向生产者或者经营者要求支付价款（）或者损失三倍的赔偿金；增加赔偿的金额不足一千元的，为一千元。</h3>
+   <ul>
+    <li><input type="radio" name="dati[49]" value="193" />3倍</li>
+    <li><input type="radio" name="dati[49]" value="194" />5倍</li>
+    <li><input type="radio" name="dati[49]" value="195" />8倍</li>
+    <li><input type="radio" name="dati[49]" value="196" />------</li>
+   </ul>
+  </div>
+  <div class="cnt">
+   <h3>50. 食品经营者销售散装食品，在散装食品的容器、外包装上可以不用标明的内容是（）。</h3>
+   <ul>
+    <li><input type="radio" name="dati[50]" value="197" />食品的名称</li>
+    <li><input type="radio" name="dati[50]" value="198" />生产日期或者生产批号</li>
+    <li><input type="radio" name="dati[50]" value="199" />保质期</li>
+    <li><input type="radio" name="dati[50]" value="200" />---------</li>
+   </ul>
+  </div>

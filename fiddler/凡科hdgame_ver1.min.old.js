@@ -1,0 +1,2021 @@
+!
+function(e) {
+    var a, t;
+    g_config.$$needNewVersion && LongPageCard.init(),
+    g_config.$$isHideAwardCollectionBtn = g_config.$$isHideAwardCollectionBtn || !_manage && !e.isWeiXin(),
+    a = {
+        show: function(a, t, n) {
+            $("#awardDetailBox").hide(),
+            e.lastDisplayStatus || (e.lastDisplayStatus = {
+                gameBox: $(".gameBox").is(":visible"),
+                home: $(".home").is(":visible")
+            }),
+            e.tlog(e.lastDisplayStatus);
+            var o = g_config.ajaxUrl.replace("/ajax/", "");
+            $("#awardUserInfoBg").data({
+                _aUserInfoArg: a,
+                _aUserInfoThis: t
+            }).show(),
+            !_manage && e.ajaxLoad.hide(),
+            0 == $("#contactInputIframe").length && setTimeout((function() { ! _manage && e.ajaxLoad.show();
+                var a = o + "/contactInfo.jsp?afterLinkModify=" + g_config.afterLinkModify + "&fromCanal=" + fromCanal + "&awardLinkMsg=" + e.encodeUrl(e._awardLinkMsg) + "&isSetFissileInfo=" + n + "&_manage=" + _manage + "&isLinkInfoNotPayMinApp=" + g_config.$$isLinkInfoNotPayMinApp + "&style=" + g_config.style;
+                g_config.$$isFirstSet && (a += "&isFirstSet=true", g_config.$$isFirstSet = !1);
+                var t = $('<iframe id="contactInputIframe" frameborder="0" scrolling="yes" src="' + a + '" style="height: 100%; width: 100%;"></iframe>');
+                $("#awardUserInfoBg").append(t),
+                t.load((function() { ! $("#contactInputIframe").length && $(".gameBgBox, .home").hide(),
+                    !_manage && e.ajaxLoad.hide()
+                }))
+            }), 50),
+            $("#spxdPage").addClass("spxdPageHide"),
+            $("#nameInput").val(g_config.awardUsername),
+            $("#phoneInput").val(g_config.awardPhone),
+            $("#addressInput").text(g_config.awardAddress),
+            a || $("#awardUserInfoBg").removeData("_aUserInfoArg")
+        },
+        hide: function() {
+            e.tlog(e.lastDisplayStatus),
+            e.lastDisplayStatus && (e.lastDisplayStatus.gameBox && $(".gameBgBox").not(".getOneFirst").show(), e.lastDisplayStatus.home && $(".home").show(), e.lastDisplayStatus = null);
+            var t = $("#awardUserInfoBg");
+            t.hide(),
+            $("#spxdPage").removeClass("spxdPageHide");
+            var n = t.data("_aUserInfoArg");
+            if (n) {
+                if (function(e) {
+                    return "undefined" != typeof gameOver && e.callee === gameOver || "undefined" != typeof startBtnAjax && e.callee === startBtnAjax || "undefined" != typeof luckDraw && e.callee === luckDraw
+                } (n)) {
+                    var o = n[2];
+                    o && o.info && (o.info = $.parseJSON(o.info), o.info.ausername = g_config.awardUsername, o.info.aphone = g_config.awardPhone, o.info.aadress = g_config.awardAddress, o.info = $.toJSON(o.info))
+                }
+                a.afterUserInfoHide = !0,
+                g_config.$$isCheckPrizeMsg = !0;
+                var i = t.data("_aUserInfoThis");
+                n.callee.apply(i, n),
+                setTimeout((function() {
+                    a.afterUserInfoHide = !1
+                }), 0),
+                setTimeout((function() {
+                    $("#contactInputIframe").remove()
+                }), 510)
+            }
+        },
+        refresh: function() {
+            var e = $("#contactInputIframe");
+            e.length > 0 && e.attr("src", $("#contactInputIframe").attr("src"))
+        }
+    },
+    e.aUserInfo = a,
+    e.jumpToHostUrl = function(a) {
+        var t = $("#hostInfoBg").hide(),
+        n = $("#ruleBox a.hostName").attr("href", "javascript:;");
+        if (0 == g_config.jumpType) a && e.showMsg("主办方还未添加介绍");
+        else if (1 == g_config.jumpType) {
+            if (_fromCardBag || _fromHdportalM) return HdGameAsynFn({
+                fn: "HdGame.copyContent3",
+                res_key: "js_copyContent"
+            },
+            g_config.hostLink);
+            if (!/https?:\/\/(.+)/.test(g_config.hostLink)) return;
+            a ? window.open(e.decodeHtml(g_config.hostLink)) : n.attr("href", e.decodeHtml(g_config.hostLink))
+        } else if (2 == g_config.jumpType) {
+            if (0 == $("#hostInfoIframe").length) {
+                var o = g_config.ajaxUrl.replace("/ajax/", "") + "/hostIntroducePage_new.jsp?aid=" + g_config.aid + (_fromCardBag ? "&nFromCardBag=true": "") + (_fromHdportalM ? "&fromHdportalM=true": "");
+                o += "&storeId=" + g_config.storeId + "&areaId=" + g_config.areaId + "&hostInfoId=" + g_config.hostInfoId,
+                t.append('<iframe id="hostInfoIframe" frameborder="0" scrolling="yes" src="' + o + '" style="height: 100%; width: 100%;"></iframe>')
+            }
+            t.show()
+        } else 3 == g_config.jumpType && -2 != g_config.jzSiteId && $.ajax({
+            type: "post",
+            url: g_config.apiAjaxUrl + "faierDepartment/getJzSiteJumpUrl",
+            data: {
+                aid: g_config.aid,
+                jzSiteId: g_config.jzSiteId
+            },
+            success: function(e) {
+                var a = $.parseJSON(e);
+                if (_fromCardBag || _fromHdportalM) return HdGameAsynFn({
+                    fn: "HdGame.copyContent3",
+                    res_key: "js_copyContent"
+                },
+                a.jumpUrl);
+                window.location.href = "//" + a.jumpUrl
+            }
+        })
+    },
+    e.computeDistance = function(e, a, t, n) {
+        var o = new qq.maps.LatLng(e, a),
+        i = new qq.maps.LatLng(t, n);
+        return qq.maps.geometry.spherical.computeDistanceBetween(o, i)
+    },
+    e.homePoup = function(a) {
+        1 == a ? ($("#rankBox").show(), !_manage && g_config.showSkillSup && (e.logDog(1000200, 4), g_config.localPoupPage = 4)) : 3 == a ? ($("#awardBox").show(), !_manage && g_config.showSkillSup && (e.logDog(1000200, 2), g_config.localPoupPage = 2)) : 4 == a && ($("#regAwardBox").show(), !_manage && g_config.showSkillSup && (e.logDog(1000200, 3), g_config.localPoupPage = 3)),
+        g_config.createTime < 1494376826e3 && ($("#poupInfoBox").show(), !_manage && g_config.showSkillSup && (e.logDog(1000200, 1), g_config.localPoupPage = 1))
+    },
+    function() {
+        var a = {
+            rankUrl: "",
+            awardUrl: "",
+            getRegAwardUrl: "",
+            getStoreUrl: "",
+            mhaveScore: 0,
+            openId: "",
+            gameId: 0
+        },
+        t = {
+            menuLen: "",
+            slideBarWidth: "",
+            slideBarMaxWidth: "",
+            marginLeft: !1,
+            hasInitEvent: !1
+        };
+        "undefined" != typeof g_config && (g_config.firstTouchRank = g_config.firstTouchAward = g_config.firstTouchWinList = !0);
+        var n = {
+            isLoad: !1,
+            isRankAll: !1,
+            hasLoadAll: !1,
+            start: 0,
+            num: 0,
+            limit: 99,
+            delay: 500,
+            close: function() {
+                this.isClose = !0,
+                this.isRankAll = !1,
+                this.hasLoadAll = !1,
+                this.num = this.start = 0
+            },
+            getRankData: function(t) {
+                n.isLoad || n.isClose || n.isRankAll || n.hasLoadAll || ~ [123].indexOf(g_config.style) || ((t = $.extend({
+                    init: null,
+                    success: null,
+                    error: null,
+                    container: null
+                },
+                t)).init && t.init(), t.container && (o = container), n.isLoad = !0, $.ajax({
+                    type: "post",
+                    url: a.rankUrl + "&start=" + n.start + "&limit=" + n.limit + "&playerId=" + g_config.playerId,
+                    error: function() {
+                        t.error && t.error(),
+                        0 == n.num && e.poupAjaxComplete(),
+                        n.isLoad = !1
+                    },
+                    success: function(a) {
+                        e.tlog("creatRankList", a);
+                        var o = $.parseJSON(a);
+                        t.success && t.success(o),
+                        o.isRankAll && (n.hasLoadAll = !0),
+                        0 == n.num && e.poupAjaxComplete();
+                        var i = function() {
+                            e.logDog(1000010),
+                            n.creatRankList(o),
+                            n.isLoad = !1,
+                            n.num++,
+                            n.start = n.num * n.limit,
+                            hg.fire("updateRankList", o)
+                        };
+                        n.delay ? setTimeout(i, n.delay) : i(),
+                        0 == n.num && (g_config.firstTouchRank = !1),
+                        e.hideLoadToast()
+                    }
+                }))
+            },
+            creatRankList: function(a) {
+                var t = a.rankList,
+                i = a.rank,
+                s = a.bestCostTime,
+                r = o.find("#rankInfoBox");
+                if (0 == t.length) g_config.$$needNewVersion && o.find("#rankInfoBox, #rankBox .poupMainInfo").hide(),
+                o.find(g_config.$$needNewVersion ? ".noRank": "#noRank").show();
+                else {
+                    g_config.$$needNewVersion && o.find("#rankInfoBox, #rankBox .poupMainInfo").show(),
+                    o.find(".rankNum").show();
+                    var d = 0,
+                    c = o.find("#rankHeader"),
+                    l = 0,
+                    g = !1,
+                    f = !1;
+                    t.length <= 3 && g_config.createTime > 15837696e5 && g_config.openStrongAttention && g_config.ishasAttentiosThisAPP && -1 !== [1, 3].indexOf(g_config.gameType) && i > 0 && i <= 3 && (g = !0),
+                    (56 == g_config.style || 80 == g_config.style || 85 == g_config.style) && g_config.createTime > 15421608e5 && (f = !0);
+                    var p = function(a) {
+                        if (g_config.createTime > 15361128e5 && e._showTowPointNum) if (t[a].achievement.indexOf(".") < 0) t[a].achievement = "" === t[a].achievement ? "无": t[a].achievement + ".00";
+                        else {
+                            var n = t[a].achievement.indexOf(".") + 1;
+                            1 == t[a].achievement.length - n && (t[a].achievement = t[a].achievement + "0")
+                        }
+                    };
+                    if (t.length >= 3 && !g) {
+                        c.html("");
+                        for (var m = 3,
+                        u = 0; u < m; u++) {
+                            var h = null == (x = t[u].info.length > 0 ? $.parseJSON(t[u].info).headImg: null) ? "": "src='" + e.encodeHtmlAttr(x) + "'";
+                            if (g_config.createTime > 15837696e5 && g_config.openStrongAttention && g_config.ishasAttentiosThisAPP && -1 !== [1, 3].indexOf(g_config.gameType)) {
+                                var w = e.encodeHtml(t[u].name);
+                                if (u + 1 == i) {
+                                    m++,
+                                    l = 1;
+                                    continue
+                                }
+                            }
+                            p(u);
+                            var y = '<div class="headItem">                                    <div class="headImgBg">                                        <img class="headImg" ' + h + '/>                                    </div>                                    <p class="nickName ellipsis">' + e.encodeHtml(t[u].name) + '</p>                                    <p class="score pageStyleColor">' + ("" === t[u].achievement || "无" === t[u].achievement ? "无": t[u].achievement + g_config.scoreUnit) + "</p>                                    " + (f ? '<p class="bestCostTime">' + t[u].bestCostTime + ("无" == t[u].bestCostTime ? "": "秒") + "</p>": "") + "</div>";
+                            c.append(y)
+                        }
+                        d = m,
+                        o.find("#rankHeader .headItem").eq(1).insertBefore(o.find("#rankHeader .headItem").eq(0))
+                    }
+                    g_config.$$needNewVersion && t.length > 10 && !LongPageCard.isShowDeatil && (t = t.slice(0, 10), o.find("#rankList .seeDetailList").show());
+                    for (var _ = d; _ < t.length; _++) {
+                        var x;
+                        w = e.encodeHtml(t[_].name),
+                        h = null == (x = t[_].info.length > 0 ? $.parseJSON(t[_].info).headImg: null) ? "": "src='" + e.encodeHtmlAttr(x) + "'";
+                        if (g_config.createTime > 15837696e5 && g_config.openStrongAttention && g_config.ishasAttentiosThisAPP && -1 !== [1, 3].indexOf(g_config.gameType) && _ + 1 == i) l = 1;
+                        else {
+                            n.start + _ + 1 >= rankShowNum && (n.isRankAll = !0),
+                            p(_);
+                            var v = "";
+                            if (g_config.isDoubleGame) {
+                                var I = t[_].info.length > 0 ? $.parseJSON(t[_].info).headImgB: null;
+                                v = '<img class="headImg" ' + (null == I ? "": "src='" + e.encodeHtmlAttr(I) + "'") + " />"
+                            }
+                            var B = !1;
+                            _ + 1 == i && (B = !0);
+                            var C = '<li class="' + (B ? "mySelf": "") + '">                                ' + (B ? '<span class="myRank">我的排名</span>': "") + '                                <span class="rankNumText">NO.' + (n.start + _ + 1 - l) + '</span>                                <div><img class="headImg" ' + h + "/>" + v + '</div>                                <span class="nickName ellipsis">' + w + "</span>                                " + (f ? '<span class="bestCostTime">' + t[_].bestCostTime + ("无" == t[_].bestCostTime ? "": "秒") + "</span>": "") + '<span class="rankScore pageStyleColor">' + e.encodeHtml("" === t[_].achievement || "无" === t[_].achievement ? "无": t[_].achievement + g_config.scoreUnit) + "</span>                            </li>";
+                            r.append(C)
+                        }
+                    }
+                    if (o.find("#showRankNum").text(rankShowNum), (n.isRankAll || n.hasLoadAll) && i > rankShowNum) {
+                        if (e.currentScore) {
+                            h = g_config.headImg ? "src='" + e.encodeHtmlAttr(g_config.headImg) + "'": "";
+                            $(".outOf100").html("").show().append('<p class="rankNum">— 只显示前<span id="showRankNum">' + rankShowNum + '</span>名 —</p>                                <div class="mySelf">                                    <span class="myRank">我的排名</span>                                    <span class="rankNumText">NO.' + i + '</span>                                    <div><img class="headImg" ' + h + '/></div>                                    <span class="nickName ellipsis">' + e.encodeHtml(g_config.userName) + "</span>                                    " + (f ? '<span class="bestCostTime">' + (e.currentBestCostTime || s) + ("无" == e.currentBestCostTime || "无" == s ? "": "秒") + "</span>": "") + '<span class="rankScore pageStyleColor">' + ((g_config.scoreType ? e.encodeHtml(e.currentScore) : parseInt(e.currentScore)) + g_config.scoreUnit) + "</span>                                </div>")
+                        }
+                    } else $(".outOf100").html("");
+                    hg.fire("setPageStyleColor", "rankList", "", o)
+                }
+            }
+        };
+        e.rankAjax = n,
+        e.initChangePoup = function(o) {
+            o && $.extend(a, o),
+            _manage && $("#Award_Round_Dot").show(),
+            t.menuLen = 0,
+            $(".poupTitleBox .poupTitleMune").each((function() {
+                71 == g_config.style && 4 == $(this).attr("_flag") && $(this).css("display", "block"),
+                "block" == $(this).css("display") ? ($(this).removeClass("hide"), t.menuLen++) : $(this).addClass("hide")
+            })),
+            $(".popTabBox").css("width", 16 * g_rem * t.menuLen);
+            var i = null;
+            $(".poupTitleBox .poupTitleMune").not(".hide").each((function(e, a) {
+                for (var t = $(this).attr("_flag"), n = 0; n < $("#poupInfoBox .poupMain").length; n++) {
+                    var o = $("#poupInfoBox .poupMain").eq(n);
+                    if (o.attr("_flag") == t) return o.show(),
+                    void(i = i ? i.add(o) : o)
+                }
+            }));
+            var s = _manage ? $(window).width() : 100 / t.menuLen + "%";
+            $("#poupInfoBox .poupMain").css("width", s),
+            $("#poupInfoBox .poupMain").not(i).hide(),
+            $(".poupTitleBox .poupTitleMune").css("width", 12.95 / t.menuLen + "rem");
+            for (var r = 0; r < t.menuLen - 1; r++) $(".poupTitleBox .poupTitleMune .item").eq(r).addClass("hasBorder");
+            t.slideBarWidth = parseInt($(".poupTitleBox .poupTitleMune").css("width")),
+            t.slideBarMaxWidth = parseInt($(".poupTitleBox .slideBarTip").css("max-width")),
+            t.slideBarWidth > t.slideBarMaxWidth && (t.marginLeft = !0),
+            t.hasInitEvent || (!
+            function() {
+                var a = _manage ? "click": "touchstart",
+                t = $(".poupTitleBox .poupTitleMune");
+                t.on(a, (function() {
+                    if (t.length == t.not(".hide").length) var a = $(this).index();
+                    else a = (a = t.filter(":visible").index(this)) < 0 ? 0 : a;
+                    var n = parseInt($(this).attr("_flag"));
+                    e.changePoup(n, a),
+                    _manage && e.removeAllEditLayer()
+                }));
+                var o = $("#rankBox .poupMainInfo");
+                o.scroll((function(a) {
+                    _manage || 2 * $("#rankHeight").height() / 3 <= o.height() + o.scrollTop() && n.getRankData({
+                        init: function() {
+                            e.showLoadToast("数据加载中")
+                        }
+                    })
+                }))
+            } (), t.hasInitEvent = !0)
+        },
+        e.getUserInfo = function() {
+            var t = new Array;
+            t.push("gameId=", a.gameId),
+            t.push("&openId=", a.openId),
+            g_config.isPaymentGame && t.push("&mchCode=", $("#resule-gift-sucImg").data("openCode")),
+            g_config.isDoubleGame && t.push("&openIdB=", e.otherOpenId),
+            $("#resule-gift-sucImg").data("openCode") && t.push("&afterGetResultOpen=true"),
+            e.ajaxLoad.show(),
+            $.ajax({
+                type: "post",
+                url: a.awardUrl,
+                data: t.join(""),
+                error: function() {
+                    e.ajaxLoad.hide()
+                },
+                success: function(a) {
+                    e.ajaxLoad.hide();
+                    var t = $.parseJSON(a);
+                    if (g_config.userInfo = t.userInfo, t.userInfo) {
+                        var n = !1;
+                        if (t.userInfo.ausername || t.userInfo.aphone || t.userInfo.aadress) n = !0;
+                        else for (var o in t.userInfo) if (/^aprop.*/.test(o) && null != t.userInfo[o] && "" !== t.userInfo[o]) {
+                            n = !0;
+                            break
+                        }
+                        n && !g_config.isYKY && ($("#awardContactInfo").show(), e.updateContactView(t.userInfo))
+                    }
+                    g_config.firstTouchUserInfo = !0
+                }
+            })
+        },
+        e.changePoup = function(o, r, c, l) {
+            if (g_config.$$isOpenSilkBagGray && -1 != $.inArray(o, [1, 2, 3, 4]) && (HdgComponent.$isShowSilkBagPopup(!0), HdgComponent.$showPoupInfoBox(1 == o ? 2 : 2 == o ? 1 : o)), !_manage && g_config.showSkillSup) switch (o) {
+            case 1:
+                e.logDog(1000200, 4),
+                g_config.localPoupPage = 4;
+                break;
+            case 3:
+                e.logDog(1000200, 2),
+                g_config.localPoupPage = 2;
+                break;
+            case 4:
+                e.logDog(1000200, 3),
+                g_config.localPoupPage = 3;
+                break;
+            case 2:
+                e.logDog(1000200, 1),
+                g_config.localPoupPage = 1
+            }
+            if (~ [1, 2, 3, 4].indexOf(o)) {
+                var g, f;
+                switch (o) {
+                case 1:
+                    g = $("#ruleBox"),
+                    f = 7;
+                    break;
+                case 2:
+                    g = $("#rankBox"),
+                    f = 6;
+                    break;
+                case 3:
+                    g = $("#awardBox"),
+                    f = 4;
+                    break;
+                case 4:
+                    g = $("#regAwardBox"),
+                    f = 8
+                }
+                g.find(".hasMoreActiveBtn").length > 0 && (g.find(".hasMoreActiveBtn").show(), g.find(".noMoreActiveBtn").hide()),
+                HdGameAsynFn({
+                    fn: "HdGame.gamePageExposure",
+                    res_key: "js_asenseUse"
+                },
+                f, !g.find(".noMoreActiveBtn").is(":visible"), g.find(".hasMoreActiveBtn .moreActive"))
+            }
+            0 == r && (0 == g_config.isAOpenId ? e.logDog(1000115, 5) : e.logDog(1000115, 6)),
+            n.isClose = !1;
+            var p = $("#ruleImg"),
+            m = p.length > 0 && p.offset().left + p.width() / 2 + "px ",
+            u = p.length > 0 && p.offset().top + p.height() / 2 + "px";
+            if ($("#poupInfoBox").css({
+                "transform-origin": m + u,
+                "-webkit-transform-origin": m + u,
+                "z-index": 1500
+            }), 5 != o && $("#poupInfoBox").show(), g_config.isPaymentGame && $("#poupInfoBox").hide(), $(".poupTitleMune").removeClass("checked"), 5 == o && 1 == a.hasReport) HdgComponentRef.componentVisitor.toShowComplaintPage();
+            else if ("number" == typeof r) {
+                var h = $(".poupTitleMune").filter(":visible").eq(r);
+                "我的奖品" == h[0].outerText && activityDecInfo(0),
+                h.addClass("checked"),
+                o = parseInt(h.attr("_flag"))
+            } else $(".poupTitleBox .poupTitleMune").filter(":visible").each((function(e, a) {
+                $.trim($(this).attr("_flag")) == o && (r = e, $(this).addClass("checked"))
+            }));
+            if (2 != o || _manage || g_config.firstTouchUserInfo || e.getUserInfo(), _manage) {
+                var w = $.trim($(".poupTitleMune").eq(r).find(".item").text()),
+                y = parent.$("#editActive .topBar .column");
+                "活动说明" == w && (w = "活动奖品");
+                var _ = g_config.isAngular ? -28 : 2;
+                y.each((function() {
+                    $.trim($(this).find(".name").text()) == w && (parent.$(".topBar .transitionPanel").css("left", $(this).offset().left + _ + "px"), y.removeClass("checked"), $(this).addClass("checked"))
+                })),
+                48 == g_config.style && $(".body").scrollTop(0).css("overflow-y", "hidden")
+            }
+            t.marginLeft ? $(".poupSlideBar .slideBarTip").css("left", 12.95 / t.menuLen * r + (t.slideBarWidth - t.slideBarMaxWidth) / g_rem / 2 + .2 + "rem") : $(".poupSlideBar .slideBarTip").css("left", 12.95 / t.menuLen * r + "rem"),
+            function(o, r, c) {
+                var l = $("#poupInfoBox").attr("class");
+                if (_manage) $("#poupInfoBox").addClass("retrans");
+                else {
+                    if (r) 5 != o && $("#poupInfoBox").addClass("retrans");
+                    else {
+                        l = $("#poupInfoBox").attr("class");
+                        $("#poupInfoBox").hasClass("enlarge") || ($("#poupInfoBox").addClass("enlarge"), activityDecInfo = $buryPoint.enterActivityDecPage())
+                    } [115, 127, 128, 130].includes(g_config.style) || $(".gameBox,.home,.body").addClass("overflow-y-hidden"),
+                    e.tlog("testjjp--addadd"),
+                    55 != g_config.style && g_config.showSkillSup && $(".bottomSkill").hide()
+                }
+                $(".poupClose").off("click"),
+                setTimeout((function() {
+                    if ($(".poupClose").on("click", (function(a) {
+                        if (!_manage) {
+                            a.preventDefault(),
+                            a.stopPropagation(),
+                            g_config.firstTouchRank = !0,
+                            g_config.firstTouchAward = !0,
+                            g_config.firstTouchWinList = !0,
+                            n.close(),
+                            $("#rankInfoBox").html(""),
+                            $(".poupTitleMune").removeClass("checked"),
+                            $(".poupTitleMune").eq(0).addClass("checked");
+                            var i = $("#poupInfoBox");
+                            i.css({
+                                "z-index": -1
+                            }),
+                            i.removeClass("enlarge").removeClass("retrans"),
+                            "retrans" == l && i.hide(),
+                            r && i.hide(),
+                            (g_config.isShoppingGame || -1 != [71].indexOf(g_config.style)) && setTimeout((function() {
+                                i.hide()
+                            }), 500),
+                            yxCard && (yxCard.isDefaultShowTsCard = !0),
+                            $(".gameBox,.home,.body").removeClass("overflow-y-hidden"),
+                            e.tlog("testjjp--removeremove"),
+                            g_config.showSkillSup && $(".bottomSkill").show(),
+                            60 != g_config.style && 45 != g_config.style || $(".notFullLuckOne").is(":visible") && g_config.showSkillSup && $(".gameBgBox .bottomSkill").hide(),
+                            setTimeout((function() {
+                                $(".popTabBox").css("left", 0),
+                                $(".poupSlideBar .slideBarTip").css("left", (t.slideBarWidth - t.slideBarMaxWidth) / 40 + "rem")
+                            }), 100),
+                            hg.fire("hidePoup", o)
+                        }
+                    })), $("#poupInfoBox .poupMainInfo .poupLine:last").addClass("noAfter"), !g_config.$$isOpenSilkBagGray) {
+                        var a = $("#ruleBox .poupMainInfoWrap, #rankBox .poupMainInfoWrap, #regAwardBox .poupMainInfo, #awardBox .poupMainInfoWrap"),
+                        i = function() {
+                            var e = $(this).scrollTop(),
+                            a = $(this).height(),
+                            t = $(this).length > 0 && $(this)[0].scrollHeight,
+                            n = t > a && e + a >= t - 1; (2 === o && !n && t === a || 4 === o && c) && (n = !0)
+                        };
+                        i.call(a, !0),
+                        a.scroll($.throttle(i))
+                    }
+                }), 300),
+                e.tlog(o),
+                1 === o ? i(o) : 2 === o ?
+                function(t) {
+                    _manage || (yxCard && (yxCard.isDefaultShowTsCard = !1), g_config.showSkillSup && e.logDog(1000200, 1), g_config.localPoupPage = 1, e.logDog(1000009), 2 != skillSupportType && 3 != skillSupportType || (e.hdSkillLog(!1, 1000069), e.FdpTrack("hd_game_ad_c_popup_test", {
+                        hd_free_text_1: "活动说明页-技术支持"
+                    }), e.logDog(1000028, 2), e.FdpTrack("hd_game_ad_expo", {
+                        hd_modid: g_config.modId,
+                        hd_ta: g_config._ta,
+                        hd_free_text_0: "活动说明"
+                    })));
+                    isLimitDraw && drawTimesLimitShow == drawTotalLimitShow ? ($("#explaiDrawInfoBox").find(".dayFont").hide(), $("#explaiDrawInfoBox").find(".drawTotalFont").hide(), $("#explaiDrawInfoBox").find(".chanceFont").show(), $("#explaiDrawInfoBox").find(".everyOneFont").show()) : $("#directDrawInfoBox").find(".drawTotalFont").show();
+                    isLimitDraw || ($("#explaiDrawInfoBox").find(".drawTotalFont").hide(), $("#explaiDrawInfoBox").find(".chanceFont").show(), $("#explaiDrawInfoBox").find(".everyOneFont").show());
+                    isLimitDraw && 4 == gameType && $(".drawTotalFont").hide();
+                    $("#ruleBox .poupMainInfo").css("padding-bottom", $("#ruleBox .attentionBox").outerHeight()),
+                    g_config.isPaymentGame && $("#ruleBox .poupMainInfo").css("padding-bottom", $("#ruleBox .attentionBox").outerHeight());
+                    $("#ruleBox").show(),
+                    $("#poupInfoBox").show(),
+                    (!a.mhaveScore && 61 != g_config.style && 62 != g_config.style || 39 == g_config.style || 9 == g_config.style || 58 == g_config.style || 50 == g_config.style) && $("#haveScore").hide();
+                    e.isGameNoaward(g_config.style, gameType) ? $("#awardLine").hide() : $("#awardLine").show();
+                    parent.game && parent.game._flagC.f2048 && 2 === parent.game._setting.accessrule ? (3 == gameType || e.isGameNoaward(g_config.style, gameType)) && $("#explainPlayInfoBox").hide() : (3 == gameType || e.isGameNoaward(g_config.style, gameType)) && g_config.isCheckPlayTimes && 63 != g_config.style ? (PlayInfo.isLimitPlay.show && playTimesLimit == playTotalLimit && ($("#explainPlayInfoBox").find(".dayFont").hide(), $("#explainPlayInfoBox").find(".playTotalFont").hide(), $("#explainPlayInfoBox").find(".chanceFont").show(), $("#explainPlayInfoBox").find(".everyOneFont").show()), PlayInfo.isLimitPlay.show || ($("#explainPlayInfoBox").find(".playTotalFont").hide(), $("#explainPlayInfoBox").find(".chanceFont").show(), $("#explainPlayInfoBox").find(".everyOneFont").show()), $("#explainPlayInfoBox").canShow()) : 3 == gameType && 51 == g_config.style ? ($("#directDrawInfoBox").hide(), $("#explainPlayInfoBox").mustHide()) : 3 == gameType && g_config.openCreditJoin4Credit ? $("#explainPlayInfoBox").canShow() : $("#explainPlayInfoBox").mustHide();
+                    0 != gameType && 5 != gameType && $("#directDrawInfoBox").hide();
+                    e.toggleActiveRuleView()
+                } () : 3 === o ? s(o) : 4 === o ? d(o) : 5 === o && HdgComponentRef.componentVisitor.toShowComplaintPage();
+                hg.fire("showPoup", o)
+            } (o, c),
+            $(".popTabBox").css("left", -$(window).width() * r);
+            var x = _manage ? parent.game._awardList: g_config.awardList;
+            $.each(x, (function(a, t) {
+                e.watch("awardList[" + a + "].afterPayStyle", t.afterPayStyle, (function(e) {
+                    var n = (_manage ? t.$type: g_config.$$awardTypeInfo[getAwardType(t.awardtype)]).isAfterPayType || !1;
+                    $(".unComfortLine .afterPayStyle").eq(a).toggle(n && t.isOpenAfterPay).text((e || "").replace("#money#", t.payMoney / 100).replace("#val#", "元立享")),
+                    $(".unComfortLine .awardStyle").eq(a).toggle(!(n && t.isOpenAfterPay))
+                }))
+            }))
+        };
+        var o = $("body");
+        function i(a, t) {
+            t && (o = t),
+            !_manage && g_config.showSkillSup && e.FdpTrack("hd_game_ad_expo", {
+                hd_modid: g_config.modId,
+                hd_ta: g_config._ta,
+                hd_free_text_0: "排行榜"
+            });
+            var i = !1;
+            if (g_config.isDoubleGame && o.find("#rankBox").addClass("isDoubleGame"), o.find("#rankBox .poupMainInfo").css("padding-bottom", o.find("#rankBox .attentionBox").height() + 18), _manage) {
+                var s = 999;
+                g_config.createTime > 15361128e5 && e._showTowPointNum && (s = 999.99); (56 == g_config.style || 80 == g_config.style || 85 == g_config.style) && g_config.createTime > 15421608e5 && (i = !0);
+                var r = [{
+                    name: "magazine",
+                    achievement: s
+                },
+                {
+                    name: "hubert",
+                    achievement: s
+                },
+                {
+                    name: "lvox",
+                    achievement: s
+                },
+                {
+                    name: "hth",
+                    achievement: s
+                },
+                {
+                    name: "monica",
+                    achievement: s
+                },
+                {
+                    name: "lzz",
+                    achievement: s
+                },
+                {
+                    name: "william",
+                    achievement: s
+                },
+                {
+                    name: "sinki",
+                    achievement: s
+                },
+                {
+                    name: "weiqizhou",
+                    achievement: s
+                },
+                {
+                    name: "candyq",
+                    achievement: s
+                },
+                {
+                    name: "jarvis",
+                    achievement: s
+                },
+                {
+                    name: "johnvi",
+                    achievement: s
+                },
+                {
+                    name: "tomato",
+                    achievement: s
+                },
+                {
+                    name: "tina",
+                    achievement: s
+                }];
+                e.homePoup(a);
+                var d = o.find("#rankInfoBox"),
+                c = o.find("#rankHeader");
+                d.html(""),
+                c.html(""),
+                $(".rankNum").show();
+                var l = "",
+                g = void 0 === g || "" == g.trim() ? g_config.scoreUnit: g,
+                f = _resRoot + "/image/manImg.jpg",
+                p = _resRoot + "/image/girlImg.jpg";
+                l = g_config.isDoubleGame ? '<img class="headImg" src="' + f + '"/><img class="headImg2" src="' + p + '"/>': '<img class="headImg" src="' + f + '"/>';
+                var m = $("#setGameUnit").val();
+                g = m ? Fai.encodeHtml(m) : g_config.scoreUnit;
+                for (var u = 0; u < 3; u++) {
+                    var h = '<div class="headItem">                            <div class="headImgBg">                                <img class="headImg" src="' + f + '"/>                            </div>                            <p class="nickName ellipsis">' + e.encodeHtml(r[u].name) + '</p>                            <p class="score pageStyleColor">' + r[u].achievement + g + "</p>                            " + (i ? '<p class="bestCostTime">12.9秒</p>': "") + "</div>";
+                    1 === u ? c.prepend(h) : c.append(h)
+                }
+                g_config.$$needNewVersion && r.length > 10 && !LongPageCard.isShowDeatil && (r = r.slice(0, 10), o.find("#rankList .seeDetailList").show());
+                for (var w = 3; w < r.length; w++) {
+                    var y = '<li class="' + (5 === w ? "mySelf": "") + '">                            ' + (5 === w ? '<span class="myRank">我的排名</span>': "") + '                            <span class="rankNumText">NO.' + (w + 1) + "</span>                            <div>" + l + '</div>                            <span class="nickName ellipsis ' + (g_config.isDoubleGame ? "doubleGame": "") + ' ">' + e.encodeHtml(r[w].name) + "</span>                            " + (i ? '<span class="bestCostTime">12.9秒</span>': "") + '<span class="rankScore pageStyleColor">' + r[w].achievement + g + "</span>                        </li>";
+                    d.append(y)
+                }
+                var _ = parseInt(o.find("#showRankNum").text()) - 4;
+                o.find("#rankInfoBox li:gt(" + _ + ")").hide(),
+                hg.fire("setPageStyleColor", "rankList", "", o)
+            } else e.logDog(1000010, 0),
+            g_config.firstTouchRank && (g_config.$$isOpenSilkBagGray || $(".ajaxLoadBg").show(), $(".ajaxLoadBar").addClass("ajaxLoad"), g_config.$$needNewVersion && o.find("#rankInfoBox").show(), o.find(g_config.$$needNewVersion ? ".noRank": "#noRank").hide(), g_config.openStrongAttention && g_config.hasWXAuth && g_config.ishasAttentiosThisAPP ? e.Res.loadg("fansExclusive").then((function() {
+                e.getIsHasAttention(null, !0, !0).then((function() {
+                    n.getRankData()
+                }))
+            })) : g_config.$$isOpenSilkBagGray ? (HdgComponent.$showPoupInfoBox(2, !0), HdgComponent.$isShowSilkBagPopup(!0)) : n.getRankData())
+        }
+        e.epImg_default = _resRoot + "/image/ptchl_zf/describeImg.png",
+        e.refreshImgTextBox = function(a, t) {
+            var n = $(a);
+            if (n.length > 0) {
+                n.find(".imgTextList").length <= 0 && n.append($('<div class="imgTextList"></div>'));
+                var o = n.find(".imgTextList");
+                o.css("display", "block");
+                for (var i = 0; i < t.count; i++) {
+                    var s = o.children(".imgTextItem:eq(" + i + ")");
+                    s.length <= 0 && (s = $('<div class="imgTextItem"><img/><div></div></div>'), o.append(s));
+                    var r = t.imgList && t.imgList[i] || e.epImg_default,
+                    d = t.textList && e.encodeHtml(t.textList[i]) || "";
+                    s.children("img").attr("src", r),
+                    s.find("img").on("load", (function() {
+                        hg.fire("setHeight")
+                    })),
+                    s.children("div").html(d).css("margin", d.length > 0 ? ".25rem 0": 0)
+                }
+                if (o.children(".imgTextItem").length > t.count) for (var c = o.children(".imgTextItem").length - 1; c >= t.count; c--) o.children(".imgTextItem:eq(" + c + ")").remove()
+            }
+        },
+        e.refreshExplainBox = function() {
+            if ($("#exlainInfo").length, $("#exlainInfo").length > 0) {
+                var a = !_preview && parent.game && parent.game._setting._ep || $.parseJSON(g_config.explainInfo);
+                if (!a) return;
+                $("#exlainInfo").html('<p class="exlainInfoText">' + e.encodeHtml(a.top) + "</p>"),
+                $("#explainBox").css("display", "block"),
+                2 === a.type ? e.refreshImgTextBox("#exlainInfo", a) : 1 === a.type && ($("#explainBox").find(".imgTextList").css("display", "none"), a.top || $("#explainBox").css("display", "none"))
+            }
+        },
+        e.refreshBandIntroductionBox = function() {
+            if ($("#bandIntroductionBox").length > 0) {
+                var a = !_preview && parent.game && parent.game._setting._bi || $.parseJSON(g_config.bandInfo) || {};
+                if (void 0 === a) return;
+                a.count || (a.count = 1),
+                e.refreshImgTextBox("#bandIntroductionBox", a)
+            }
+        },
+        e.refreshExplainBox(),
+        -1 !== [106, 113].indexOf(g_config.style) && e.refreshBandIntroductionBox();
+        var s = function(t, n) { ! _manage && g_config.showSkillSup && (e.logDog(1000011, 0), e.logDog(1000200, 2), g_config.localPoupPage = 2);
+            var o = new Array;
+            if (75 == g_config.style) $("#myAwardInfo");
+            else $("#awardInfo"); - 1 !== [75, 113, 115].indexOf(g_config.style) ? $("#awardInfoBox").css("height", "auto") : setTimeout((function() {
+                $("#awardInfoBox").css("padding-bottom", $("#awardBox .attentionBox").height() + 18)
+            }), 500),
+            $("#poupInfoBox,#awardBox").show(),
+            !_manage && g_config.showSkillSup && (e.hdSkillLog(!0, 1000069), e.logDog(1000028, 1), e.FdpTrack("hd_game_ad_expo", {
+                hd_modid: g_config.modId,
+                hd_ta: g_config._ta,
+                hd_free_text_0: "我的奖品"
+            }), "number" == typeof g_config.isAOpenId && e.logDog(1000115, 1 + g_config.isAOpenId)),
+            g_config.showMenu && e.logDog(1000036),
+            _manage ? parent.awardList && parent.awardList.length > 0 && e.showAwardDetail([parent.awardList[0]]) : (o.push("gameId=", a.gameId), o.push("&openId=", a.openId), g_config.isPaymentGame && o.push("&mchCode=", $("#resule-gift-sucImg").data("openCode")), g_config.isDoubleGame && o.push("&openIdB=", e.otherOpenId), $("#resule-gift-sucImg").data("openCode") && o.push("&afterGetResultOpen=true"), g_config.isPaymentGame && $("#poupInfoBox").hide(), (g_config.firstTouchAward || g_config.$$isLongPageAwardBox) && (e.ajaxLoad.show(), $.ajax({
+                type: "post",
+                url: a.awardUrl,
+                data: o.join(""),
+                error: function() {
+                    e.ajaxLoad.hide()
+                },
+                success: function(a) {
+                    e.ajaxLoad.hide(),
+                    e.tlog("poupAward", a);
+                    var t = $.parseJSON(a);
+                    if (e.awardList = t.list, $("#Award_Round_Dot").hide(), e.logDog(1000011), e.tlog("success", t.success), t.success ? ((!g_config.isPaymentGame || 4 != e.awardList[0].codeStatus) && e.showAwardDetail(t.list || [], n), g_config.isPaymentGame && $("#poupInfoBox").hide()) : (g_config.isPaymentGame && $(".gameBox,.home,.body").removeClass("overflow-y-hidden"), $("#awardInfo").find(".noPrize").show()), g_config.userInfo = t.userInfo, t.userInfo) {
+                        var o = !1;
+                        if (t.userInfo.ausername || t.userInfo.aphone || t.userInfo.aadress) o = !0;
+                        else for (var i in t.userInfo) if (/^aprop.*/.test(i) && null != t.userInfo[i] && "" !== t.userInfo[i]) {
+                            o = !0;
+                            break
+                        }
+                        o && !g_config.isYKY && ($("#awardContactInfo").show(), e.updateContactView(t.userInfo)),
+                        $("#awardBox .noPrize").toggleClass("hasConcatInfo", o && !g_config.isYKY)
+                    }
+                    g_config.firstTouchAward = !1
+                }
+            })))
+        };
+        e.poupLongPageAwardBox = function() {
+            g_config.$$isLongPageAwardBox = !0,
+            e.poupAward()
+        },
+        e.poupAward = function() {
+            s(3, !0)
+        },
+        e.poupRegAward = function(e) {
+            d(4, e)
+        },
+        e.poupRank = function(e) {
+            i(1, e)
+        },
+        e.updateContactView = function(a) {
+            var t = !1,
+            n = $.parseJSON(g_config.contactNoDraw);
+            if (n && "object" == typeof n[0]) {
+                $contactGroup = $("#awardContactInfo .contactGroup"),
+                $contactGroup.empty();
+                for (var o = 0; o < n.length; o++) {
+                    var i = n[o];
+                    if (i.isOpen) {
+                        var s = e.encodeHtml(i.name),
+                        r = a[i.key];
+                        if (null != r && "" != r) {
+                            r = e.encodeHtml(r);
+                            var d = '<div class="contactItem contact-' + i.key + ' hide" style="display: block;">' + s + "： <span>" + r + "</span></div>";
+                            $contactGroup.append(d),
+                            t = !0
+                        }
+                    }
+                }
+            } else {
+                a.ausername && ($("#awardContactInfo .contactName").show(), $("#awardContactInfo .contactName span, #awardContactInfo .contactName-ausername span").text(a.ausername), t = !0),
+                a.aphone && ($("#awardContactInfo .contactPhone").show(), $("#awardContactInfo .contactPhone span, #awardContactInfo .contact-aphone span").text(a.aphone), t = !0);
+                var c = a.aadress && a.aadress.replace(/,/g, "");
+                c && ($("#awardContactInfo .contactAddress span, #awardContactInfo .contact-aadress span").text(c), $("#awardContactInfo .contactAddress").show(), t = !0)
+            }
+            $("#awardContactInfo").toggle(t)
+        },
+        parseAward = e.parseAward,
+        e.changeCodeInfo = function(a, t) {
+            e.awardList && ($.each(e.awardList, (function(n, o) {
+                o.code == a.code && (e.awardList[n] = t)
+            })), e.showAwardDetail(e.awardList))
+        },
+        e.showAwardDetail = function(a, t) {
+            if (! (_manage && e.showAwardDetail.hasRun || 123 == g_config.style)) {
+                if (75 == g_config.style) var n = $("#myAwardInfo");
+                else n = $("#awardInfo");
+                for (var o = "",
+                i = $("#resule-gift-sucImg").data("openCode"), s = null, r = 0; r < a.length; r++) {
+                    var d = a[r];
+                    if (_manage) var c = d.awardtype;
+                    else c = $.parseJSON(d.awardInfo).awardtype;
+                    var l = "",
+                    g = !1,
+                    f = !1,
+                    p = !1,
+                    m = Fai.checkBit(d.flag, 512),
+                    u = null,
+                    h = (_manage ? d.$type: g_config.$$awardTypeInfo[getAwardType(c)]).isAfterPayType || !1,
+                    w = !0;
+                    if (_manage) {
+                        u = d;
+                        var y = 1,
+                        _ = (w = !(h && u.isOpenAfterPay)) ? "未兑奖": "支付立享";
+                        d.codeStatus = 2,
+                        g = 2 == d.mainStyle,
+                        f = [5, 9].indexOf(d.mainStyle) > -1,
+                        p = 6 == d.mainStyle
+                    } else {
+                        parseAward(d),
+                        u = d._award;
+                        y = d.anwei ? d.awardLevel: d.level,
+                        _ = (w = !(h && u.isOpenAfterPay) || m || d.isTrash || 5 == d.codeStatus) ? e.getStatusName(d.codeStatus) : e.getPayStatusName(d.codeStatus);
+                        g = 2 == d._award.mainStyle,
+                        f = [5, 9].indexOf(d._award.mainStyle) > -1,
+                        p = 6 == d._award.mainStyle,
+                        d._award.genewxcard && ($("#awardCollectionBtn").attr("isWxCard", !0), "DATE_TYPE_FIX_TERM" != d._award.t_type || d.depositTime || (l = "领取后" + (0 == d._award.cfbt ? "当": d._award.cfbt) + "天生效，有效天数" + d._award.cft + "天"))
+                    }
+                    var x = w ? /0|2|7|8/.test(d.codeStatus) ? "": "useless": /1|2|4|5|9/.test(d.codeStatus) ? "pay": "useless";
+                    if (g_config.$$isLongPageAwardBox) {
+                        var v = d.codeStatus,
+                        I = !1,
+                        B = "查看详情",
+                        C = "hasCashedCode";
+                        g_config.$$needNewVersion && !_manage && (B = w ? e.getLongPageStatusName(v) : e.getLongPagePayStatusName(v), C = w ? e.getLongPageStatusClass(v) : e.getLongPagePayStatusClass(v), !_manage && h && u.isOpenAfterPay && !m && u.payTimeLimit && -1 == [1, 3].indexOf(v) && (I = !0)),
+                        o += '<div id="codeInfo' + r + '" class="codeInfoBox MyAwardSimpleBox newVersionCard_myGiftBox"><div class="giftBgImg"></div><div class="myGiftBoxDetail flexBox justify-content_flex-justify ' + (I ? "disabled": "") + '"><div class="awardLimitBox leftBox"><span class=\'awardText awardLevel awardStyle title\'></span><span class="afterPayStyle"></span><span class=\'colon\'>：</span><span class=\'awardText awardName\'></span></div><div class="rightBox"><span class="getDetailBtn awardInfoDetail ' + C + '">' + B + '</span></div></div><div class="limitTimePay hide">※待支付剩余<span class="payTimeDetail"></span>，逾期奖品失效</div></div>'
+                    } else o += '<div id="codeInfo' + r + '" class="codeInfoBox' + (9 == c ? " isJZCoupon": "") + (g_config.isYKY || g || f || p ? " isYKY": "") + '" _level="' + y + '"><div class="isEmptyAward"><p class="awardStyle ellipsis"></p><p class="afterPayStyle ellipsis"></p><p class="awardName"></p><p class="limitTimePay hide">待支付剩余<span class="payTimeDetail"></span>，逾期奖品失效</p><div class="goDetailIcon"></div></div><div class="dashedLine"></div><div class="noPartnersBox"><div class="codeperiod"><span class="awardTypeName"></span>：' + ("" != l ? l: '<span class="awardBgTime"></span> 至 <span class="awardEndTime"></span>') + '</div><div class="codeStatusName ' + x + '">' + _ + "</div></div></div>";
+                    var k = !!d && (h && (d.awardInfo ? JSON.parse(d.awardInfo) : {}).isOpenAfterPay);
+                    _manage || void 0 === i || i != d.awardCode && i != d._awardCode || !(!k || k && m) || (s = d)
+                }
+                a.length && n.html(o),
+                g_config.$$isLongPageAwardBox && (hg.edit.initEdit("myAwardInfoBox"), hg.fire("setPageStyleColor"));
+                var T = $(".limitTimePay .payTimeDetail");
+                $.each(a, (function(a, t) {
+                    $(".goDetailIcon").height($(".isEmptyAward").height());
+                    var o = _manage ? t: t._award,
+                    i = n.find("#codeInfo" + a),
+                    s = (_manage ? o.$type: g_config.$$awardTypeInfo[getAwardType(o.awardtype)]).isAfterPayType || !1;
+                    e.watch("awardList[0].style", t.awardStyle, (function(e) {
+                        i.find(".awardStyle").text(e).toggle(!(s && o.isOpenAfterPay))
+                    })),
+                    e.watch("awardList[0].name", t[t.anwei ? "award": "awardName"], (function(e) {
+                        i.find(".awardName").text(e)
+                    }));
+                    var r, d, c = 6 == t.codeStatus && !t.isTrash;
+                    if (e.isEditActiveNew ? e.watch.add(["awardList[0].needlessconsume", "awardList[0].$type.sitetype"], (function(e) {
+                        var a = e[0] && "url" === e[1];
+                        i.find(".codeStatusName").toggle(!a)
+                    })) : e.watch('awardList[0].needlessconsume && awardList[0].$type.sitetype == "url"', c, (function(e) {
+                        i.find(".codeStatusName").toggle(!e)
+                    })), e.watch("awardList[0].awardtype", o.awardtype, (function(e) { [31, 32, 33].indexOf(e) > -1 ? i.toggleClass("isJZCoupon", !1).find(".noPartnersBox, .dashedLine").hide() : i.toggleClass("isJZCoupon", 9 == e).find(".noPartnersBox, .dashedLine").toggle(9 != e)
+                    })), !g_config.isYKY) {
+                        e.watch("awardList[0].$type.deadline", o.$type.deadline, (function(e) {
+                            i.find(".awardTypeName").text(e)
+                        })),
+                        e.watch("awardList[0].cbt", o.cbt, (function(e) {
+                            i.find(".awardBgTime").text(e.substring(0, 10).replace("-", ".").replace("-", "."))
+                        })),
+                        e.watch("awardList[0].cet", o.cet, (function(e) {
+                            i.find(".awardEndTime").text(e.substring(0, 10).replace("-", ".").replace("-", "."))
+                        }));
+                        var l = Fai.checkBit(t.flag, 512);
+                        e.watch("awardList[0].afterPayStyle", o.afterPayStyle, (function(e) {
+                            i.find(".afterPayStyle").text((e || "").replace("#money#", o.payMoney / 100).replace("#val#", "元立享")).toggle(s && o.isOpenAfterPay)
+                        })),
+                        e.watch("awardList[0].payTimeLimit", o.payTimeLimit, (function(e) {
+                            if (e) {
+                                var a = (o.payTime && o.payTime.pay_day > 0 ? o.payTime.pay_day + "天": "") + (o.payTime && o.payTime.pay_hour > 0 ? o.payTime.pay_hour + "小时": "") + (o.payTime ? o.payTime.pay_min: 0) + "分钟" || 0;
+                                i.find(".limitTimePay").toggle(s && o.isOpenAfterPay && e && !l).find(".payTimeDetail").text(a)
+                            }
+                        })),
+                        !_manage && s && o.isOpenAfterPay && !l && o.payTimeLimit && !I && (r = a, d = 24 * o.payTime.pay_day * 3600 + 3600 * o.payTime.pay_hour + 60 * o.payTime.pay_min, e.countDownTime({
+                            endTime: t.awardTime + 1e3 * d
+                        }).on("change", (function(e, a) {
+                            T.eq(r).text(a)
+                        })).on("end", (function() {
+                            T.eq(r).parent().hide(),
+                            g_config.$$isLongPageAwardBox ? ($(".MyAwardSimpleBox .awardInfoDetail").eq(r).text("已失效").addClass("useless").removeClass("getDetailBtn"), $(".MyAwardSimpleBox .myGiftBoxDetail").eq(r).addClass("disabled")) : $(".codeStatusName").eq(r).text("已失效").addClass("useless").removeClass("pay")
+                        })))
+                    }
+                    i.data("data", t)
+                })),
+                s && !t && (e.openAwardDetail(s), $("#resule-gift-sucImg").removeData("openCode")),
+                _manage && (e.showAwardDetail.hasRun = !0)
+            }
+        },
+        e.openStoreLocation = function(e) {
+            var a = $(e).parent().data("store"),
+            t = $.parseJSON(a.point);
+            wx.openLocation({
+                latitude: t.lat,
+                longitude: t.lng,
+                name: a.name,
+                address: a.address,
+                scale: 22,
+                infoUrl: ""
+            })
+        },
+        function() {
+            function t(t) {
+                if (isPublish) {
+                    var n = "_loadYKY_" + t.awardCode;
+                    if (!e.openAwardDetail[n]) {
+                        var o = $.parseJSON(t.prop),
+                        i = function(a) {
+                            e.replaceUrlByTime(),
+                            window.open(a)
+                        };
+                        return o && o.ykyurl ? (e.tlog("getYKYAwardUrl", o), void i(o.ykyurl)) : !g_config.ykyRelationId || void(e.openAwardDetail[n] = $.ajax({
+                            type: "post",
+                            url: g_config.apiAjaxUrl + "yky/getYKYAwardUrl?gameId=" + a.gameId + "&openId=" + a.openId + "&code=" + t.awardCode + "&ykyRelationId=" + g_config.ykyRelationId,
+                            error: function() {
+                                e.showMsgToast("服务繁忙，请稍候重试")
+                            },
+                            success: function(a) {
+                                e.tlog("getYKYAwardUrl", a);
+                                var n = $.parseJSON(a);
+                                e.tlog("result", n),
+                                n.success ? 0 !== n.status && (t.prop = $.toJSON({
+                                    ykyurl: n.data.url
+                                }), i(n.data.url)) : e.showMsgToast(n.data.failMessages)
+                            },
+                            complete: function() {
+                                e.hideLoadToast(),
+                                delete e.openAwardDetail[n]
+                            }
+                        }))
+                    }
+                } else e.showMsgToast("活动尚未发布<br>无法查看奖品详情")
+            }
+            function n(a, t) {
+                var n = a._award;
+                if (!isPublish) return e.showMsgToast("活动尚未发布<br>无法查看奖品详情", (function() {
+                    9 == n.mainStyle && $(document).find(".awardCloseIcon").click()
+                }));
+                if (Fai.checkBit(a.flag, 256)) {
+                    if (9 == n.mainStyle) return o(n.awardtype);
+                    if (5 == n.mainStyle && t) return i(n.awardtype);
+                    var s = $.parseJSON(a.prop);
+                    s && s.cdUrl ? ( - 1 == s.cdUrl.indexOf("http") && (s.cdUrl = "http://" + s.cdUrl), window.location.href = s.cdUrl) : e.showMsg("当前该礼品无详情介绍")
+                } else {
+                    e.showLoadToast("数据加载中");
+                    var r = [2, 6].indexOf(n.mainStyle) > -1 ? "distributePartnerGift": "distrbuteInternalGift";
+                    HdGameAsynFn({
+                        fn: "HdGame.checkMallLogin",
+                        res_key: "innerPartnerUse"
+                    }).then((function() {
+                        $.ajax({
+                            type: "post",
+                            url: g_config.apiAjaxUrl + "partner/" + r + "?uid=" + g_config.uid + "&gameId=" + g_config.gameId + "&playerId=" + g_config.playerId + "&awardCode=" + a.awardCode
+                        }).done((function(a) {
+                            var s = $.parseJSON(a);
+                            if (s.success) {
+                                if (9 == n.mainStyle) return o(n.awardtype);
+                                if (5 == n.mainStyle && t) return i(n.awardtype);
+                                s.cdUrl ? window.location.href = s.cdUrl: e.showMsg("派发成功，当前该礼品无详情介绍", !0, "知道了", (function() {
+                                    location.reload(!0)
+                                }))
+                            } else e.showMsg(s.msg || "系统繁忙，请稍后重试")
+                        })).always((function() {
+                            e.hideLoadToast(),
+                            e.otherAjaxComplete()
+                        }))
+                    }))
+                }
+            }
+            function o(e) {
+                if ($(document).find(".awardCloseIcon").click(), [31, 32, 33].indexOf(e) > -1) {
+                    var a = "";
+                    switch (e) {
+                    case 31:
+                        a = "integral/memberIntegral";
+                        break;
+                    case 32:
+                        a = "coupon/list";
+                        break;
+                    case 33:
+                        a = "remain/balance"
+                    }
+                    return $(".gameBox,.home,.body").removeClass("overflow-y-hidden"),
+                    wx.miniProgram.navigateTo({
+                        url: "/pages/" + a
+                    })
+                }
+            }
+            function i(e) {
+                switch ($(document).find(".awardCloseIcon").click(), e) {
+                case 21:
+                    pageUrl = "/subPages/integral/integral";
+                    break;
+                case 22:
+                    pageUrl = "/subPages/profile/profile?type=coupon"
+                }
+                return $(".gameBox,.home,.body").removeClass("overflow-y-hidden"),
+                wx.miniProgram.navigateTo({
+                    url: pageUrl
+                })
+            }
+            function s(a, t) {
+                var n = $.parseJSON(a.tlmt),
+                o = (new Date).getDay(),
+                i = !1,
+                s = !0;
+                if (0 != g_config.status && (s = s || g_config.verInfo.createAuthVer >= 2), i = 1 == n.length && 8 == n[0] || n.some((function(e) {
+                    return 7 == e && (e = 0),
+                    e == o
+                })), a.iscancelver && s) {
+                    if (1 == t.codeStatus) return void e.statusMsg("该兑奖码已被核销！", "");
+                    if (3 == t.codeStatus) return void e.statusMsg("该兑奖码已过期！", "");
+                    if (4 == t.codeStatus) return void e.statusMsg("该兑奖码已作废！", "");
+                    if (!i) return void e.showMsg("该奖项未到可用时段！");
+                    var r = {
+                        hasHead: !0,
+                        headMsg: "请联系核销员确认核销",
+                        bodyMsg: '<div class="weui-cell" style="border: 1px solid #D5D5D6"><div class="weui-cell__bd"><input class="weui-input" type="text" placeholder="请输入核销码" style="color: #000" onblur="window.scroll(0, 0);"></div></div>',
+                        isTwoFootBtn: !0,
+                        isFocusInput: !0,
+                        primaryBtnText: "确认核销",
+                        defaultBtnText: "取消",
+                        primaryBtnFn: function(n, o) {
+                            var i = o.find(".weui-input").val().trim().toLowerCase();
+                            if ("" == i) return setTimeout((function() {
+                                e.statusMsg("请先输入核销码", "")
+                            }), 200),
+                            "stop";
+                            a.vercodeFlow || (e.FdpTrack("hd_hdportal_writeoffmethod", {
+                                hd_modid: g_config.modId,
+                                hd_gametype: g_config.gameTypeTxt,
+                                hd_prototype: g_config.style,
+                                hd_free_text_0: "自助核销"
+                            }), a.vercodeFlow = !0, $.ajax({
+                                url: g_config.apiAjaxUrl + "consumeCode/checkVerificationCode",
+                                type: "post",
+                                data: {
+                                    storeId: g_config.storeId,
+                                    areaId: g_config.areaId,
+                                    vcode: i,
+                                    id: g_config.playerId,
+                                    gameId: g_config.gameId,
+                                    openId: g_config.openId,
+                                    code: t.code,
+                                    extra: g_config.extra
+                                },
+                                success: function(a) {
+                                    a = JSON.parse(a),
+                                    e.tlog("cancelVer", a),
+                                    $("#verifictionCodeLayer").hide(),
+                                    o.find(".weui-input").val("");
+                                    var n = t.codeStatus;
+                                    if (a.success ? (e.statusMsg(a.msg, ""), t.codeStatus = 1) : ( - 6 == a.rt ? t.codeStatus = 1 : -15 == a.rt ? t.codeStatus = 3 : -12 == a.rt ? t.codeStatus = 4 : 71 == a.rt && (t.codeStatus = 6), e.statusMsg(a.msg, 0, 0, "", (function() { - 1 != a.rt || $("#bottomCusBtnInfo").click()
+                                    }))), n != t.codeStatus) {
+                                        var i = {
+                                            gameId: g_config.gameId,
+                                            openId: g_config.openId
+                                        };
+                                        g_config.isPaymentGame ? i.mchCode = t.code: i.code = t.code,
+                                        $.ajax({
+                                            type: "post",
+                                            url: g_config.apiAjaxUrl + "rank/getGiftList",
+                                            data: i,
+                                            success: function(a) {
+                                                var n = $.parseJSON(a);
+                                                n.success && (g_config.isPaymentGame ? (e.tlog(t), e.openAwardDetail(t)) : (e.changeCodeInfo(t, n.list[0]), e.openAwardDetail(n.list[0])))
+                                            }
+                                        })
+                                    }
+                                },
+                                error: function() {
+                                    e.statusMsg("服务器繁忙，请稍后再试", "")
+                                },
+                                complete: function() {
+                                    a.vercodeFlow = !1
+                                }
+                            }))
+                        },
+                        defaultBtnFn: function(e) {
+                            return e.find(".weui-input").val(""),
+                            "delay"
+                        }
+                    };
+                    e.showMsgToast2(r)
+                } else $("#awardCodeLayer").show()
+            }
+            function r(a, t, n) {
+                var o = $("#awardDetailBox");
+                if (a && 0 != a.length) {
+                    if (null != t && null != n) {
+                        for (var i = 0; i < a.length; i++) {
+                            var s = a[i],
+                            r = $.parseJSON(s.point),
+                            c = e.computeDistance(t, n, r.lat, r.lng);
+                            s.distance = parseInt(c),
+                            e.tlog("distance", s.distance)
+                        }
+                        a.sort((function(e, a) {
+                            return e.distance - a.distance
+                        }))
+                    } else a.sort((function(e, a) {
+                        return a.id - e.id
+                    }));
+                    var l = a[0],
+                    g = $("#useStoreBox");
+                    if (g.find(".storeInfoBox").data("store", l), d(l, g.find(".storeInfoBox")), o.find("#useStoreBox").removeClass("initHide"), o.find("#useStoreBox").canShow("listNotNull"), a.length > 1 ? (g.find(".storeNumText").show(), g.find("#storeNum").text(a.length), g.find(".moreBtn").show()) : (g.find(".storeNumText").hide(), g.find(".moreBtn").hide()), !_manage && a.length > 1) {
+                        var f = $("#storeListBox .list");
+                        f.empty();
+                        for (i = 0; i < a.length; i++) {
+                            s = a[i];
+                            var p = $('<div class="storeInfoBox"><div class="locationBtn" onclick="HdGame.openStoreLocation(this)"><i class="iconfont icondizhi awardDetailStyleColor"></i></div><div class="info"><div class="storeNameBox"><span id="storeName"></span><span id="distance"></span></div><div class="storeAdress"></div></div></div>');
+                            p.data("store", s),
+                            d(s, p),
+                            f.append(p)
+                        }
+                        var m = hg.edit.getCrrCss(g_config.$$needNewVersion ? "awardDetailStyleColor": "pageStyleColor")[0].css[0].val;
+                        $("#storeListBox .locationBtn .awardDetailStyleColor").css("color", m),
+                        $("#storeListBox").css("backgroundColor", m)
+                    }
+                } else o.find("#useStoreBox").mustHide("listNotNull")
+            }
+            function d(e, a) {
+                var t = "",
+                n = "",
+                o = "";
+                if (e) {
+                    t = e.name,
+                    n = function(e) {
+                        if ("北京" == e.province || "天津" == e.province || "上海" == e.province || "重庆" == e.province) return e.city + e.county + e.address;
+                        return e.province + e.city + e.county + e.address
+                    } (e);
+                    var i = e.distance;
+                    i && i > 0 && (o = i > 1e3 ? parseInt(i / 1e3) + "km": i + "m")
+                }
+                a.find("#storeName").text(t),
+                a.find(".storeAdress").text(n),
+                a.find("#distance").text(o)
+            }
+            function c(e, a) {
+                var t = $(".codeDetailInfoBox").hide(),
+                n = $("#codeStatusBox").show(),
+                o = n.find("#codeStatusInfo").show(),
+                i = n.find("#codeStatusBtn"),
+                s = n.find("#codeStatusTips").hide(),
+                r = $.parseJSON(a.awardInfo).awardtype;
+                if (s.css("fontSize", ""), g_config.$$isHideAwardCollectionBtn ? $("#awardCollectionBtn").hide() : $("#awardCollectionBtn").show(), i.show(), 4 == a.codeStatus) i.html("已作废"),
+                5 == a.status ? o.html("微信检测到您有刷红包嫌疑，为保证公平公正<br>已取消您的领取资格") : 4 == a.status ? o.html("红包超过24小时未领取，已退回至商家账户") : o.html("商家已将该兑奖码设置为作废<br>详情请联系商家");
+                else if (1 == a.codeStatus) i.html("已兑奖"),
+                o.hide();
+                else if (5 == a.codeStatus) {
+                    i.html("已失效");
+                    var d = 5 == r ? "红包已失效，详细请联系商家": "已失效，详细请联系商家";
+                    o.html(d)
+                } else if (3 == a.codeStatus) i.html("已过期"),
+                o.hide();
+                else if (a.theGiftDate < 0) {
+                    i.html("未到兑奖时间"),
+                    o.hide(),
+                    s.show().find(".giftNameA").text(e.$type.collect);
+                    var c = -1 * a.theGiftDate / 864e5,
+                    l = (new Date).setHours(23, 59, 59),
+                    g = c < 1 && a.codeStartTime <= l ? "今天": Math.ceil(c) + "天后";
+                    s.find(".targetDateMin").text(g),
+                    e.genewxcard && (e.depositTime || (e.depositTime = a.depositTime), e.depositTime ? (s.show().find(".giftNameA").text("打开微信卡券"), s.css("fontSize", "")) : (s.show().find(".giftNameA").text("领取到微信卡包"), i.hide(), s.css("fontSize", "0.75rem")))
+                } else if (11 == a.codeStatus) i.html("待发货"),
+                o.hide();
+                else if (12 == a.codeStatus) i.html("已发货"),
+                o.hide();
+                else {
+                    var f = e.depositTime || a.depositTime;
+                    e && e.genewxcard && !f ? (i.hide(), o.text("请先领取到微信卡包，以获取优惠码")) : (t.show(), n.hide())
+                }
+                var p = t.find(".redPacketTip").hide(),
+                m = t.find(".codeOptInfo").canShow("redPacket");
+                Fai.checkBit(a.flag, 1) && (0 == a.status ? (t.show(), p.show().html("您的红包正在发送中，请耐心等待"), m.mustHide("redPacket")) : 1 == a.status ? o.show().html("红包已发送，请留意服务通知！") : 2 == a.status && (t.show(), p.show(), m.mustHide("redPacket"), "FREQ_LIMIT" == a.result_code ? p.html("目前领取人数过多，请稍后点击“立即领取”重试！") : p.html("红包发送失败，点击“立即领取”重试，如多次失败请联系管理员！")))
+            }
+            function l(e, a) {
+                return "领取后" + (0 == e ? "当": e) + "天生效，有效天数" + a + "天"
+            }
+            function g(a, t) {
+                var n = $("#taopwPoup");
+                function o() {
+                    var e = $("#codeStatusBtn"),
+                    o = e.text();
+                    n.show();
+                    var i = a.cashsite_taopw_decode ? decodeURIComponent(a.cashsite_taopw_decode) : a.cashsite;
+                    n.find(".taopwtext").text(i),
+                    e.is(":visible") && o ? n.find(".codetext").text(o) : n.find(".codetext").text(t.awardCode);
+                    var s = Fai.checkBit(t.flag, 32) ? Fai.checkBit(t.flag, 16) : 6 == t.codeStatus;
+                    n.toggleClass("needlessconsume", s);
+                    var r = n.find(".attentionPoup");
+                    r.css("margin-top", Math.max($(window).height() - r.outerHeight(), 0) / 2)
+                }
+                0 == n.length ? ((n = $('<div id="taopwPoup" class="homePoupMask"><div class="attentionPoup"><div class="close"></div><div class="tips tips1">点击“一键复制”按钮复制淘口令</div><div class="tips taopwtext"></div><div class="tips copyBtn">一键复制</div><div class="tips tips2">在手机中打开淘宝APP即可进入对应商品链接</div><div class="needconsume"><div class="tips tips3">联系客服并发送优惠码即可兑奖<br><span class="note">注：淘口令优惠券可直接领取</span></div><div class="tips tips4">您的优惠码</div><div class="tips codetext"></div></div></div></div>').appendTo("body")).find(".close").on("click", (function(e) {
+                    n.hide()
+                })), e.showLoadToast("数据加载中"), e.Res.load("js_clipboard").then((function() {
+                    e.hideLoadToast(),
+                    new ClipboardJS(n.find(".copyBtn"), {
+                        text: function() {
+                            return n.find(".taopwtext").text()
+                        }
+                    }).on("success", (function(a) {
+                        e.showSuccessToast("复制成功")
+                    })),
+                    o()
+                }))) : o()
+            }
+            function f(a) {
+                var t = $("#serviceWxPoup");
+                if (!a.serviceWxImg) return e.showMsg("商家暂未上传客服微信二维码，请联系商家");
+                0 == t.length ? e.Res.loadg("attentionUs").then((function() {
+                    t = $(_fromHdportalM ? '<div id="serviceWxPoup" class="homePoupMask"><div class="homePoupInner attentionPoup cardBag"><div class="container"><img class="qrImg serviceWxImg" src="' + a.serviceWxImg + '" /><div class="tipsContainer"><div>请保存图片</div><div>打开“<span class="wxScanLabel"><span class="label">微信扫一扫</span><div class="underline"></div></span>”识别二维码</div></div></div><div class="bottom">凡科互动-你的活动营销专家</div></div></div>': '<div id="serviceWxPoup" class="homePoupMask"><div class="content flexBox flex-column justify-center align-center"><img class="serviceWxImg" src="' + a.serviceWxImg + '" /><div class="flexBox justify-center align-center"><div class="merchantIcon"></div><div><div class="p1">长按识别二维码</div><div class="p2">添加商家客服微信</div></div></div></div><div class="closeBtn"></div></div>').appendTo("body").show(),
+                    _fromHdportalM ? t.on("click", (function(e) {
+                        $(e.target).hasClass("homePoupMask") && t.hide()
+                    })) : t.on("click", ".closeBtn", (function() {
+                        t.hide()
+                    }))
+                })) : t.show().find(".serviceWxImg").attr("src", a.serviceWxImg)
+            }
+            e.openAwardDetail = function(o, i) {
+                var d = $("#awardDetailBox"),
+                p = $("#ticketDetailBox"),
+                m = d.find("#bottomCusBtnBox"),
+                u = {};
+                if (_manage) $$((function() {
+                    u = o = parent.game.$cAward
+                }));
+                else {
+                    if (HdGameAsynFn({
+                        fn: "HdGame.adsenseCEndExposure",
+                        res_key: "js_asenseUse"
+                    },
+                    17), d.find("#button-ad-slot-17 .moreActive").off("touchstart").on("touchstart", (function() {
+                        HdGameAsynFn({
+                            fn: "HdGame.handleMoreActive",
+                            res_key: "js_asenseUse"
+                        },
+                        17)
+                    })), o && o.awardInfo || (o = $(this).data("data")), $(".codeInfoBox.checked").removeClass("checked"), $(this).addClass("checked"), parseAward(o), (u = o._award) && u.isRedeemMsgNotice && (0 == g_config.gameType || [127, 130].includes(g_config.style)) && "DATE_TYPE_FIX_TIME_RANGE" == u.t_type && [0, 1].indexOf(u.mainStyle) > -1 && !i) {
+                        var h = this;
+                        return e.Res.loadg("wxMsgFunc").then((function() {
+                            return WxMsgFunc.openWxMessage({
+                                msg: "为防止错过兑奖时间，是否同意接收兑奖消息通知？",
+                                type: 3,
+                                awardLevel: u.level
+                            }).then((function() {
+                                return e.openAwardDetail.call(h, o, !0)
+                            }))
+                        }))
+                    }
+                    if (g_config.award = o, g_config.wxAward = u, !g_config.$$isPayTypeNewActivity) {
+                        var w = Fai.checkBit(o.flag, 64);
+                        if (w) e.Res.loadg("fission").then((function() {
+                            if (Fission.isNeedFisLinkInfo([2, 3, 4])) return e.aUserInfo.show(arguments, this, !0)
+                        }));
+                        else if ( - 1 === [120].indexOf(g_config.style) && e.checkContact(u, o)) return e.aUserInfo.show(arguments, this)
+                    }
+                    if (g_config.isYKY) return void(t(o) && e.aUserInfo.show(arguments, this));
+                    if ( - 1 !== [106, 111].indexOf(g_config.style)) return hg.fire("getAwardEvent");
+                    if (37 == u.awardtype) return e.integralEnterInstance.toMall();
+                    if (900 != o.level && [2, 5, 6, 9].indexOf(o._award.mainStyle) > -1) return e.checkInWebView().then((function(e) {
+                        n(o, e)
+                    }));
+                    c(u, o);
+                    var y = o.gameid || o.gameId;
+                    $("#awardCodeLayer,#awardDetailBox").find(".codeImg").attr("src", "http://" + e.gameDomain + "/manage/qrCode.jsp?cmd=qrurl&siteUrl=" + e.encodeUrl(900 == o.awardLevel ? "id=" + o.id + "&code=" + o.code1 + "&gameId=" + y: "code=" + o.awardCode + "&gameId=" + y)),
+                    d.find(".code,.copyCode").text(o.awardCode),
+                    $("#awardCodeLayer").find(".code").text(o.awardCode),
+                    d.find(".code").attr("code", o.code);
+                    var _ = d.find("#bottomCusBtnInfo");
+                    e.log(_);
+                    var x = o._award;
+                    if (_.removeAttr("href").unbind("click").off(".cusBtn"), $("#awardDetailBox #ticketDetailBox .addressLine .guideMap").data("pointData", x.addressData), a.afterWxCard) {
+                        if ("wxUrl" == u.$type.sitetype) {
+                            var v = /\?/.test(g_config.sendGiftUrl),
+                            I = function(e) {
+                                var a = g_config.award._award,
+                                t = 27 == a.awardtype ? a.freeGiftTypeItem.val: a.giftTypeItem.val,
+                                n = e + (v ? "&": "?") + "typeB=" + t + "&awardCode=" + o.awardCode + "&gameId=" + g_config.gameId + "&jsHostId=" + g_config.jsHostId;
+                                g_config.$$fromPartnerApp && (n += "&fromPartnerApp=true"),
+                                _.attr("href", n)
+                            };
+                            e.checkIsOtherGift(u.awardtype) ? 2 === u.ticketType || -1 === u.ticketType ? I(g_config.sendGiftUrl) : 1 === u.ticketType && I(g_config.sendVideoVipUrl) : e.checkDiffRedPacketSendWay().then((function(a) {
+                                if (a) _.click((function() {
+                                    e.showMsgToast2({
+                                        bodyMsg: "商家更换了红包派发方式，当前无法派发红包，请联系商家"
+                                    })
+                                }));
+                                else {
+                                    var t = g_config.redPacketUrl + "&redCode=" + o.awardCode + "&jsHostId=" + g_config.jsHostId + "&canal=" + fromCanal;
+                                    _.attr("href", t)
+                                }
+                            }))
+                        } else if ("url" == u.$type.sitetype) {
+                            var B = u.cashsite.indexOf("https:") > -1 ? "https:": "http:",
+                            C = e.fixUrl(B + "//" + u.cashsite.replace(/^(http(s)?:\/\/)+/g, ""));
+                            /[?&]hd_code=djm\b/.test(C) && (C = e.setUrlArg(C, ["hd_code", o.awardCode])),
+                            "http://" == C ? _.click((function() {
+                                e.showMsgToast2({
+                                    bodyMsg: "商家暂未填写兑奖网页链接<br/>请联系商家"
+                                })
+                            })) : _fromCardBag || _fromHdportalM ? _.click((function() {
+                                HdGameAsynFn({
+                                    fn: "HdGame.copyContent3",
+                                    res_key: "js_copyContent"
+                                },
+                                C)
+                            })) : (C.indexOf("w.url.cn") > -1 && (C += "#wechat_redirect"), _.click((function() {
+                                window.open(C)
+                            })))
+                        } else "taopw" == u.$type.sitetype ? _.off(".cusBtn").on("click.cusBtn", (function() {
+                            g(u, o)
+                        })) : "img" == u.$type.sitetype ? (2 == u.awardtype && 1 == u.cashtype && 1 == u.onlinect || 2 == u.awardtype && 3 == u.cashtype || $.inArray(u.awardtype, [5, 6, 7, 8, 11, 12, 13, 15, 16, 17, 26]), _.off(".cusBtn").on("click.cusBtn", (function() {
+                            _fromCardBag && e.logDog(1000314, 8),
+                            e.Res.loadg("attentionUs").then((function() {
+                                e.showAttentionPoup({
+                                    url: g_config.qrCodeUrl,
+                                    isMinAppCode: u && 2 == u.qrCodeType || !u && 2 == g_config.qrCodeType
+                                })
+                            }))
+                        }))) : "text" != u.$type.sitetype || Fai.checkBit(o.flag, 2048) ? "minUrl" == u.$type.sitetype ? (6 == u.cashtype || 8 == u.cashtype && 1 == u.clickEffect) && _.off(".weappBtn").on("click.weappBtn", (function() {
+                            e.showMsg("当前微信版本过低，无法跳转小程序")
+                        })) : "serviceWx" == u.$type.sitetype ? _.off(".cusBtn").on("click.cusBtn", (function() {
+                            f(u)
+                        })) : ("delivery" == u.$type.sitetype || Fai.checkBit(o.flag, 2048)) && _.off(".weappBtn").on("click.cusBtn", (function() {
+                            e.deliveryInfo.show(o)
+                        })) : _.off(".cusBtn").on("click.cusBtn", (function() {
+                            s(u, o)
+                        }));
+                        o && (6 == o.codeStatus ? o.aid && 17396608 == o.aid || $(".codeImgBox .codeLine").hide() : $(".codeImgBox .codeLine").show())
+                    } else $(".awardCusText").toggle(u.optx),
+                    d.find("#awardCusTextInfo").text(u.txc);
+                    if (u.genewxcard) m.hdToggle("codeStatus", o.theGiftDate < 0 || 1 != o.codeStatus);
+                    else {
+                        var k = "minUrl" == u.$type.sitetype && [35, 36].includes(u.awardtype);
+                        m.find("#bottomCusBtnInfo").hdToggle("codeStatus", !(o.theGiftDate < 0 || (["text", "serviceWx", "delivery"].indexOf(u.$type.sitetype) > -1 || k) && -1 != $.inArray(o.codeStatus, [4, 1, 5, 3]))),
+                        Fai.checkBit(o.flag, 2048) && 1 == o.codeStatus && m.find("#bottomCusBtnInfo").toggle(!0),
+                        34 == u.awardtype && 8 == u.cashtype && u.isHideCustomCashBtn && m.find("#bottomCusBtnInfo").toggle(!1)
+                    }
+                    if (e.logDog(1000085), 3 == u.attention) $("#awardCusBtnInfo").off(".cusBtn").on("touchend.cusBtn", (function() {
+                        e.logDog(1000086),
+                        _fromCardBag && e.logDog(1000314, 8),
+                        e.Res.loadg("attentionUs").then((function() {
+                            e.showAttentionPoup({
+                                url: u.attentionimg,
+                                isMinAppCode: u && 2 == u.qrCodeType || !u && 2 == g_config.qrCodeType
+                            })
+                        }))
+                    }));
+                    else if (2 == u.attention) {
+                        var T = $("#awardCusBtnInfo");
+                        if (2 == u.msJumpType) T.off(".weappBtn").on("click.weappBtn", (function() {
+                            e.showMsg("当前微信版本过低，无法跳转小程序")
+                        })),
+                        e.insertWxOpenLaunchWeapp({
+                            id: "jumptoMinappBtn_Diy",
+                            type: 2,
+                            btnName: u.btn,
+                            insertOuter: !0,
+                            insertEle: T,
+                            mpAppId: u.diyMinAppId,
+                            mpPagePath: u.diyMinAppPath,
+                            trulyMpAppIDforH5Game: u.diyTrulyMpAppIDforH5Game
+                        });
+                        else {
+                            T.off(".cusBtn").unbind("click");
+                            var S = e.fixUrl(u.btl);
+                            _fromCardBag || _fromHdportalM ? T.click((function() {
+                                HdGameAsynFn({
+                                    fn: "HdGame.copyContent3",
+                                    res_key: "js_copyContent"
+                                },
+                                S)
+                            })) : T.attr("href", S)
+                        }
+                        $("._jumptoMinappBtn_Diy").toggle(2 == u.msJumpType)
+                    }
+                    var A = $("#hostInfoDetail").off("click.hostDetail");
+                    u.isOpenHostInfo && A.on("click.hostDetail", (function() {
+                        e.jumpToHostUrl(!0)
+                    })),
+                    e.checkInWebView().then((function(a) {
+                        var t = !1;
+                        if (e.isMingYuanActive()) t = 1 != u.attention;
+                        else {
+                            var n = e.UA.compareWxVer("7.0.12") && 2 == u.attention && 2 == u.msJumpType;
+                            t = 1 != u.attention && !(n && !a && u.diyMinAppId)
+                        }
+                        $("#awardCusBtnInfo").hdToggle("attention", t)
+                    })),
+                    e.wxConfig ? e.wxConfig.setWxShareUrlArg(["fromFav", o.awardCode]) : hg.on("initWxconfig", (function() {
+                        e.wxConfig.setWxShareUrlArg(["fromFav", o.awardCode])
+                    })),
+                    e.logDog(1000056),
+                    e.logDog(1000045, 1),
+                    $("#awardDeailBg").show(),
+                    setTimeout((function() {
+                        $("#awardDeailBg").hide()
+                    }), 800)
+                }
+                var L = e.watch.bind(["award", "game. $cAward", u], ["type", "game.$cAward.$type", u.$type]),
+                b = g_config.isPaymentGame;
+                L("{award}.cbt", (function(e) {
+                    var t = u.awardtype;
+                    _manage && $$((function() {
+                        t = parent.game.$cAward.awardtype
+                    }));
+                    var n = g_config.createTime > 15561576e5 && -1 == $.inArray(t, [4, 9]) ? 16 : 10; (d.find(".awardCodeTime .codeBgTime")[0] || d.find(".awardCodeTime").append(" : <span class='codeBgTime'></span> - "), "number" == typeof e && (e = $.format.date(new Date(e), "yyyy.MM.dd HH:mm")), "string" != typeof e && (e = e.toString()), d.find(".awardCodeTime .codeBgTime").text(e.substring(0, n).replace(/-/g, ".")), a.afterWxCard) && (d.find(".itemList .beginTime")[0] || d.find(".itemList.dateLine.codeTimeFixedRange .box").html("").append("<span class='beginTime'></span>至"), p.find(".itemList .beginTime").html(e.substring(0, n)))
+                })),
+                L("{award}.cet", (function(e) {
+                    var t = u.awardtype;
+                    _manage && $$((function() {
+                        t = parent.game.$cAward.awardtype
+                    }));
+                    var n = g_config.createTime > 15561576e5 && -1 == $.inArray(t, [4, 9]) ? 16 : 10; (d.find(".awardCodeTime .codeEndTime")[0] || d.find(".awardCodeTime").append("<span class='codeEndTime'></span>"), "number" == typeof e && (e = $.format.date(new Date(e), "yyyy.MM.dd HH:mm")), "string" != typeof e && (e = e.toString()), d.find(".awardCodeTime .codeEndTime").text(e.substring(0, n).replace(/-/g, ".")), a.afterWxCard) && (d.find(".itemList .endTime")[0] || d.find(".itemList.dateLine.codeTimeFixedRange .box").append("<span class='endTime'></span>"), p.find(".itemList .endTime").html(e.substring(0, n)))
+                })),
+                e.watch("game.$cAward.name", o.awardName || o.name, (function(e) {
+                    d.find(".awardName").text(e)
+                })),
+                L("{award}.stl", (function(e) {
+                    d.find(".awardSubTitle").text(e)
+                })),
+                L("{type}.showsitebox?{award}.opti:{type}.opti", (function(e) {
+                    d.add("#awardCodeLayer").find(".codeOptInfo").text(e)
+                })),
+                L("{type}.deadline", (function(e) {
+                    if (u && u.genewxcard && "DATE_TYPE_FIX_TERM" == u.t_type && !u.depositTime && !u.depositTime && !_manage) {
+                        var a = l(u.cfbt, u.cft);
+                        return d.find(".awardCodeTime").html("<em>" + a + " </em>"),
+                        void d.find(".itemList.dateLine.codeTimeFixedRange .box").text(a)
+                    }
+                    e = b ? "兑换期限": e,
+                    d.find(".awardCodeTime em").text(e)
+                })),
+                L("{type}.collect", (function(a) {
+                    a = b ? "收藏兑换券": a;
+                    var t = hg.edit.getCrrCss(g_config.$$needNewVersion ? "awardDetailStyleColor": "pageStyleColor")[0].css[0].val;
+                    if (!g_config.$$needNewVersion) {
+                        var n = hg.edit.getCrrCss("pageStyleColor")[0].css[0];
+                        t = 0 == n.opt && 2 == g_config.poupInfoType ? "rgb(255, 150, 45)": n.val
+                    }
+                    $("#awardCollectionBtn").length > 0 && $("#awardCollectionBtn").html('<i class="iconfont iconshoucang awardDetailStyleColor" style="color:' + t + '"></i>' + e.encodeHtml(a)),
+                    g_config.$$isHideAwardCollectionBtn ? $("#awardCollectionBtn").hide() : $("#awardCollectionBtn").show(),
+                    g_config.$$isHideAwardCollectionBtn && $("#wxAwardCollectionBtn").remove(),
+                    e.checkInWebView().then((function(n) {
+                        var o = $("#wxAwardCollectionBtn");
+                        if (o.length > 0) {
+                            if (o.css("background", hg.edit.getRgba(t, .1)), e.UA.compareWxVer("7.0.12") && !n) {
+                                if (g_config.enableSelfMiniApp && !_manage && !g_config.isPaymentGame && !g_config.$$isHideAwardCollectionBtn) {
+                                    var i = g_config.selfMiniAppUserName;
+                                    return void o.html('<i class="iconfont iconshoucang awardDetailStyleColor" style="color:' + t + '"></i><wx-open-launch-weapp id="launch-btn" username="' + i + '" path="pages/homeH5/homeH5?to=myAward"><script type="text/wxtag-template"><style>.collection-btn-text {color: ' + t + ';font-size: 0.8rem;}</style><span class="collection-btn-text">' + e.encodeHtml(a) + "</span><\/script></wx-open-launch-weapp>")
+                                }
+                                o.html('<i class="iconfont iconshoucang awardDetailStyleColor" style="color:' + t + '"></i><span style="color: ' + t + ';font-size: 0.6rem;">' + e.encodeHtml(a) + "</span>"),
+                                o.click((function() {
+                                    if ($(".code").removeClass("selectText"), $("#cardBagEnter").length > 0) $("#cardBagEnter").show();
+                                    else {
+                                        var a = $("<div id='cardBagEnter'><div id='cardContainer' class='cardContainer changeBox'><img class='cardImg cardContainer' /></div></div>"); ! isPublish && a.append('<div class="topTips">活动未发布，奖品不会收入我的卡包</div>'),
+                                        a.on("click", (function(e) {
+                                            $(e.target).hasClass("cardContainer") || ($(".code").addClass("selectText"), $("#cardBagEnter").hide())
+                                        })),
+                                        a.find(".cardImg").attr("src", _resRoot + "/image/myCardBag/web/qrCode_poupModule.png?v=20218161420").show(),
+                                        a.appendTo("body")
+                                    }
+                                    e.FdpTrack("hd_mycardbag_tzhdxz_popup", {})
+                                }))
+                            } else o.html('<i class="iconfont iconshoucang awardDetailStyleColor" style="color:' + t + '"></i><span style="color: ' + t + ';font-size: 0.6rem;">' + e.encodeHtml(a) + "</span>");
+                            o.click((function() { (n || !e.UA.compareWxVer("7.0.12")) && HdGameAsynFn({
+                                    fn: "HdGame.favorite",
+                                    res_key: "js_favorite"
+                                }),
+                                e.logDog(1000045, 2)
+                            }))
+                        }
+                    }))
+                })),
+                L("{type}.codename", (function(e) {
+                    e = b ? "兑换码": e,
+                    $("#codeName").text(e)
+                })),
+                L("{award}.btn", (function(e) {
+                    d.find(".awardCusBtn .text").text(e)
+                })),
+                L("{award}.awardtype", (function(e) {
+                    6 == e || 7 == e || 8 == e ? ($(".codeDetailInfoBox").find(".codeOptInfo_Gift").canShow(), $(".codeDetailInfoBox").find(".codeOptInfo").mustHide(), p.find(".addressLine").mustHide()) : 34 == e ? (p.find(".addressLine").mustHide(), $(".codeDetailInfoBox").find(".codeOptInfo_Gift").mustHide(), $(".codeDetailInfoBox").find(".codeOptInfo").canShow()) : Fai.checkBit(o.flag, 2048) ? ($(".codeDetailInfoBox").find(".codeOptInfo").canShow(), $(".codeDetailInfoBox").find(".codeOptInfo_Gift").mustHide(), p.find(".addressLine").mustHide()) : ($(".codeDetailInfoBox").find(".codeOptInfo_Gift").mustHide(), $(".codeDetailInfoBox").find(".codeOptInfo").canShow(), p.find(".addressLine").canShow())
+                })),
+                L("{type}.btn", (function(e) {
+                    if (g_config.$$isPayTypeNewActivity) e = (e = _manage || [2, 6].indexOf(o.codeStatus) > -1 ? e: "查看详情").replace("兑奖", "兑换");
+                    else if (2 == u.awardtype && 7 == u.cashtype || Fai.checkBit(o.flag, 2048)) {
+                        var a = 2 == o.codeStatus ? "填写收货地址": "查看物流详情";
+                        e = _manage ? e: a
+                    } else e = 34 == u.awardtype && 8 == u.cashtype ? _manage ? e: x.customCashBtnName: b ? "立即兑换": _manage || [2, 6].indexOf(o.codeStatus) > -1 ? e: "查看详情";
+                    d.find("#bottomCusBtnInfo .text").text(e)
+                })),
+                L("[{award}.isHideCustomCashBtn, {award}.awardtype, {award}.cashtype]", (function(e) {
+                    _manage && e && d.find("#bottomCusBtnInfo").toggle(!(34 == e[1] && 8 == e[2] && e[0]))
+                })),
+                L("{award}.genewxcard", (function(e) {
+                    e && (o.depositTime || (o.depositTime = u.depositTime), u.depositTime && d.find("#bottomCusBtnInfo .text").text("打开微信卡券"))
+                })),
+                L("{type}.sitetype == 'url' && !{award}.$cashsite_url", (function(e) {
+                    34 == u.awardtype && 8 == u.cashtype && u.isHideCustomCashBtn && (d.find("#bottomCusBtnBox #bottomCusBtnInfo").toggle(!1), e && d.find(".codeOptInfo").show())
+                })),
+                L("{award}.$opqrc", (function(e) {
+                    void 0 === e || e ? $("#awardDetailBox .codeImg ").show() : $("#awardDetailBox .codeImg,#awardDetailBox .codeDetailImgBox").hide()
+                })),
+                L("{award}.addressType == 0", (function(e) {
+                    $("#awardDetailBox #ticketDetailBox .addressLine").toggleClass("addGuideMap", e)
+                })),
+                L("{award}.awardtype == 35 || {award}.awardtype == 36", (function(e) {
+                    e && (d.find(".codeImgBox").find(".codeDetailInfoBox").find(".codeLine").hide(), (o.theGiftDate < 0 || -1 != $.inArray(o.codeStatus, [1, 3, 4, 5])) && d.find("#bottomCusBtnBox #bottomCusBtnInfo .bottomCusBtn").hide())
+                })),
+                a.afterWxCard ? (L("{type}.details", (function(e) {
+                    e = b ? "兑换券详情": e,
+                    p.find(".awardCusText .text,.ticketitle .text").html(e)
+                })), L("{type}.sitetype == 'text'", (function(e) {
+                    d.find("#useStoreBox").hdToggle("address", e),
+                    p.find(".addressLine").toggleClass("addressHide", !e)
+                })), L("{type}.site", (function(e) {
+                    e = b ? "兑换地址": e,
+                    p.find(".itemList .titleAdress").text(e)
+                })), L("{type}.term", (function(e) {
+                    p.find(".itemList .timelimit").parents(".itemList").toggle(e)
+                })), L("{type}.showcopy", (function(e) {
+                    $(".codeDetailInfoBox .copy").toggle(e)
+                })), L("{type}.showsitebox?{award}.opti:{type}.opti", (function(e) {
+                    d.find(".codeOptInfo").text(e),
+                    d.find(".codeOptInfo_Gift").text(e)
+                })), L("{award}.$cashsite_text", (function(e) {
+                    _manage && b && (e = 0 == parent.game._setting.addressCategory ? parent.game._setting.payData.site: parent.game._setting.businessInfo.site);
+                    p.find(".itemList .address").toggleClass("fintColor", "请填写您的兑奖地址或者门店地址" == e),
+                    p.find(".itemList .address").text(e)
+                })), L("{type}.notice", (function(e) {
+                    e = b ? "兑换须知": e,
+                    p.find(".itemList .titleNotice").text(e)
+                })), L("{award}.servicepho", (function(e) {
+                    _manage ? d.find(".servicePhone .text").html("客服电话" + (e ? "": "<span>（未开启）</span>")) : (d.find(".servicePhone").toggle( !! e), d.find(".servicePhone").parent("a").attr("href", "tel:" + e)),
+                    d.find(".servicePhone .phoneText").text(e)
+                })), L("{award}.isOpenHostInfo", (function(e) {
+                    _manage ? d.find(".jumptoHostInfo .text").html((g_config.isYKY ? "主办方": "主办单位") + "介绍" + (e ? "": "（未开启）")) : d.find(".jumptoHostInfo").toggle( !! e)
+                })), L("{award}.tlmt", (function(a) {
+                    p.find(".itemList .timelimit").text(e.changeTimeLimit(a))
+                })), L("{award}.cashinfo", (function(a) {
+                    null == a || "" == a ? _manage ? a = "<span style='color: #999;'>不填写则不显示</span>": p.find(".noticeLine").hide() : (a = e.encodeHtml(a), p.find(".noticeLine").show()),
+                    p.find(".itemList .notice>pre").html(a)
+                })), L("{award}.storeType", (function(e) {
+                    e && 1 != e ? (d.find("#useStoreBox").canShow("storeType"), p.find(".addressLine").mustHide()) : (d.find("#useStoreBox").mustHide("storeType"), p.find(".addressLine").canShow()),
+                    [Fai.checkBit(o.flag, 2048), 34 == u.awardtype].reduce((function(e, a) {
+                        return e || a
+                    })) && p.find(".addressLine").mustHide()
+                })), L("{award}.$$useStoreList", (function(a) { (_manage || a && !(a.length <= 0)) && (_manage || g_config.test ? r(a) : wx.ready((function() {
+                        wx.getLocation({
+                            type: "gcj02",
+                            success: function(e) {
+                                var t = e.latitude,
+                                n = e.longitude;
+                                r(a, t, n)
+                            },
+                            fail: function(t) {
+                                e.statusMsg("当前微信版本不支持定位或没开启定位服务，请联系活动主办单位", ""),
+                                r(a)
+                            },
+                            cancel: function() {
+                                e.statusMsg("用户拒绝了授权地理位置信息", ""),
+                                r(a)
+                            }
+                        })
+                    })))
+                }))) : L("{award}.txn", (function(e) {
+                    d.find(".awardCusText .text").text(e)
+                }));
+                var D = $("#seeFsnDetail").hide();
+                $("#awardCusBtnInfo").nextAll(".hold").height("3.15rem"),
+                D.off(".fsnBtn").on("click.fsnBtn", (function() {
+                    e.Res.loadg("fission").then((function() {
+                        Fission.showFissionDetail(o)
+                    }))
+                }));
+                var P = Fai.checkBit(o.flag, 128),
+                M = !(o.theGiftDate < 0 || ["text", "serviceWx"].indexOf(u.$type.sitetype) > -1 && -1 != $.inArray(o.codeStatus, [4, 1, 5, 3]));
+                if (9 == u.awardtype) _manage || (d.hide(), $.ajax({
+                    type: "post",
+                    url: g_config.apiAjaxUrl + "faierDepartment/getJzCouponAwardUrl",
+                    data: {
+                        gameId: g_config.gameId,
+                        openId: g_config.openId,
+                        code: d.find(".code").attr("code")
+                    },
+                    success: function(a) {
+                        var t = $.parseJSON(a);
+                        if (t.success) {
+                            var n = t.url ? t.url: t.data.url;
+                            _fromCardBag || _fromHdportalM ? HdGameAsynFn({
+                                fn: "HdGame.copyContent3",
+                                res_key: "js_copyContent"
+                            },
+                            n) : window.location.href = n
+                        } else {
+                            var o = {
+                                bodyMsg: "活动未发布" == t.msg ? "活动尚未发布<br>无法查看奖品详情": t.msg,
+                                primaryBtnFn: function() {
+                                    hg.fire("scrollEvent", !0)
+                                }
+                            };
+                            e.showMsgToast2(o)
+                        }
+                    }
+                }));
+                else if (_manage || !P || o.fissileOriginCode) {
+                    if (O = (O = -1 != [2, 10, 34, 35, 36].indexOf(u.awardtype) && 6 == u.cashtype && M) || M && 34 == u.awardtype && 8 == u.cashtype && 1 == u.clickEffect) {
+                        var H = -1 != [35, 36].indexOf(u.awardtype),
+                        N = "";
+                        try {
+                            N = hg.edit.getCrrCss("awardDetailStyleColor")[0].css[0].val
+                        } catch(e) {}
+                        e.insertWxOpenLaunchWeapp({
+                            id: "jumptoMinappBtn",
+                            type: 1,
+                            btnName: "立即兑奖",
+                            insertOuter: !0,
+                            insertEle: d.find("#bottomCusBtnInfo"),
+                            mpAppId: u.minAppId,
+                            mpPagePath: u.minAppPath,
+                            trulyMpAppIDforH5Game: u.trulyMpAppIDforH5Game,
+                            eleOrMt: !!H && u.awardtype,
+                            pageColor: N
+                        })
+                    }
+                    $("._jumptoMinappBtn").toggle(O),
+                    e.tlog("awardInfo.awardtype==========", u.awardtype),
+                    d.show(),
+                    !_manage && d.height() > d.find(".awardDetailBoxBg").height() && (115 == g_config.style ? setTimeout((function() {
+                        d.toggleClass("shortPage", !0)
+                    }), 600) : d.toggleClass("shortPage", !0)),
+                    d.find(".awardDetailBoxBg").css("min-height", "100%")
+                } else {
+                    var O, j = $.parseJSON(o.prop) || {};
+                    if ($(this).hasClass("seeCurAwaFsn") || -1 != [1, 3, 4, 5].indexOf(o.codeStatus) || j.fissileFinish || g_config.isFromFav) g_config.isFromFav = !1,
+                    (O = (O = -1 != [2, 10, 34].indexOf(u.awardtype) && 6 == u.cashtype && M) || M && 34 == u.awardtype && 8 == u.cashtype && 1 == u.clickEffect) && e.insertWxOpenLaunchWeapp({
+                        id: "jumptoMinappBtn",
+                        type: 1,
+                        btnName: "立即兑奖",
+                        insertOuter: !0,
+                        insertEle: d.find("#bottomCusBtnInfo"),
+                        mpAppId: u.minAppId,
+                        mpPagePath: u.minAppPath,
+                        trulyMpAppIDforH5Game: u.trulyMpAppIDforH5Game
+                    }),
+                    $("._jumptoMinappBtn").toggle(O),
+                    d.show(),
+                    D.toggle( - 1 == [1, 3, 4, 5].indexOf(o.codeStatus)),
+                    $("#awardCusBtnInfo").nextAll(".hold").height("5.4rem");
+                    else e.Res.loadg("fission").then((function() {
+                        Fission.showFissionDetail(o)
+                    }))
+                }
+            },
+            e.showWxCodePage = function(t, n) {
+                if (t) {
+                    var o = new Array;
+                    o.push("gameId=", a.gameId),
+                    o.push("&openId=", a.openId),
+                    g_config.isDoubleGame && o.push("&openIdB=", e.otherOpenId),
+                    e.ajaxLoad.show(),
+                    $.ajax({
+                        type: "post",
+                        url: a.awardUrl,
+                        data: o.join(""),
+                        error: function() {
+                            e.ajaxLoad.hide()
+                        },
+                        success: function(a) {
+                            e.ajaxLoad.hide();
+                            var n = $.parseJSON(a);
+                            if (n.success) for (var o = n.list,
+                            i = o.length,
+                            s = 0; s < i; s++) if (o[s].code == t) {
+                                e.openAwardDetail(o[s]);
+                                break
+                            }
+                        }
+                    })
+                }
+            },
+            e.showAwardDetailByCode = function(t, n) {
+                var o = ["style=" + g_config.style, "aid=" + g_config.aid, "gameId=" + a.gameId, "openId=" + a.openId];
+                g_config.isDoubleGame && o.push("openIdB=" + e.otherOpenId);
+                var i = "",
+                s = n > 100,
+                r = [117].indexOf(g_config.style) > -1;
+                i += s ? g_config.apiAjaxUrl + "gameOther/getMyGiftList": r ? g_config.apiAjaxUrl + "gameOther/getMyPrizeList": g_config.apiAjaxUrl + "rank/getGiftList",
+                e.ajaxLoad.show(),
+                $.ajax({
+                    type: "post",
+                    url: i,
+                    data: o.join("&"),
+                    error: function() {
+                        e.ajaxLoad.hide()
+                    },
+                    success: function(a) {
+                        e.ajaxLoad.hide();
+                        var n = $.parseJSON(a);
+                        if (n.success) for (var o = s ? n.data.codeList: r ? n.data.prizeList: n.list, i = 0; i < o.length; i++) if (o[i].code == t) {
+                            e.openAwardDetail(o[i], !0);
+                            break
+                        }
+                    }
+                })
+            }
+        } ();
+        var r = $("body");
+        function d(t, n) {
+            if (n && (r = n), setTimeout((function() {
+                r.find("#regAwardBox .poupMainInfo").css("padding-bottom", $("#regAwardBox .attentionBox").height() + 18),
+                r.find("#regAwardBox").show()
+            }), 500), _manage && !g_config.$$needNewVersion) {
+                e.homePoup(t);
+                var o = [],
+                i = ["lvox、hubert", '<span class="pageStyleColor">magazine</span>、tina', "monica、hth"],
+                s = r.find(".regAwardList");
+                s.find(".playerName").html(""),
+                s.each((function(e) {
+                    $(this).find(".playerName").html(i[e]),
+                    $(this).find(".bgSpan").width($(this).find(".titleName").width() / g_rem + .4 + "rem")
+                })),
+                hg.fire("setPageStyleColor", "regAwardMain", "", r)
+            } else {
+                e.logDog(1000034);
+                var d = a.getRegAwardUrl;
+                if (_manage && g_config.$$needNewVersion) {
+                    o = [];
+                    var l = [[{
+                        name: "lvox"
+                    },
+                    {
+                        name: "hubert"
+                    }], [{
+                        name: "magazine",
+                        isSelf: !0
+                    },
+                    {
+                        name: "tina"
+                    }], [{
+                        name: "monica"
+                    },
+                    {
+                        name: "hth"
+                    },
+                    {
+                        name: "monica"
+                    },
+                    {
+                        name: "hth"
+                    },
+                    {
+                        name: "monica"
+                    },
+                    {
+                        name: "hth"
+                    },
+                    {
+                        name: "monica"
+                    },
+                    {
+                        name: "hth"
+                    },
+                    {
+                        name: "monica"
+                    },
+                    {
+                        name: "hth"
+                    },
+                    {
+                        name: "monica"
+                    },
+                    {
+                        name: "hth"
+                    },
+                    {
+                        name: "monica"
+                    },
+                    {
+                        name: "hth"
+                    },
+                    {
+                        name: "monica"
+                    },
+                    {
+                        name: "hth"
+                    }]],
+                    g = g_config.awardList.length;
+                    g > 3 && (g = 3);
+                    for (var f = 0; f < g; f++) o.push({
+                        level: g_config.awardList[f].level,
+                        list: l[f] || []
+                    });
+                    return c({
+                        regAwardList: o
+                    })
+                }
+                if (g_config.isDoubleGame) d = d + "&openIdB=" + e.otherOpenId;
+                g_config.firstTouchWinList && (e.ajaxLoad.show(), $.ajax({
+                    type: "post",
+                    url: d,
+                    error: function() {
+                        e.ajaxLoad.hide()
+                    },
+                    success: function(a) {
+                        e.ajaxLoad.hide(),
+                        e.tlog("poupRegAward", a);
+                        var t = $.parseJSON(a);
+                        $("#Mingdan_Round_Dot").hide(),
+                        c(t),
+                        g_config.firstTouchWinList = !1
+                    }
+                }))
+            }
+        }
+        function c(e) {
+            var a = !1;
+            if (r.find("#regAwardMain").empty(), !e) return l(a);
+            var t = e.regAwardList,
+            n = !1;
+            g_config.$$needNewVersion && t.length > 3 && !LongPageCard.isShowDeatil && (t.length = 3, r.find(".seeDetailList").show());
+            for (var o = 0; o < t.length; ++o) {
+                var i = t[o];
+                if (i) {
+                    var s = i.level;
+                    r.find("#regAwardMain").append(g(s));
+                    var d = i.list,
+                    c = r.find(".regAwardList");
+                    if (g_config.$$needNewVersion) {
+                        var f = "",
+                        p = d.length > 6 && !LongPageCard.isShowDeatil; ! n && p && (n = !0, r.find("#regAwardList .seeDetailList").show()),
+                        p && (d = d.slice(0, 5));
+                        for (var m = 0; m < d.length; ++m) {
+                            var u = d[m].name,
+                            h = d[m].isSelf;
+                            f += '<div class="playerInfo display_flex flex-direction_column align-items_center"><img src="' + (d[m].headImg || _resRoot + "/image/rank1.jpg") + '" class="headImg"><span class="ellipsis ' + (h ? "pageStyleColor": "") + '">' + u + "</span></div>"
+                        }
+                        p && (f += '<i class="iconfont icongengduo"></i>'),
+                        c.eq(o).find(".playerName").addClass("display_flex flexWrap align-items_center").append(f)
+                    } else {
+                        for (f = [], m = 0; m < d.length; ++m) {
+                            u = d[m].name; (h = d[m].isSelf) ? f.push('<span class="pageStyleColor">' + u + "</span>") : f.push(u)
+                        }
+                        c.eq(o).find(".playerName").append(f.join("、"))
+                    }
+                    a = !0
+                }
+            }
+            return l(e, a)
+        }
+        function l(e, a) {
+            setTimeout((function() {
+                if (a ? (r.find("#noRegAward").hide(), r.find("#regAwardMain").show()) : (r.find("#noRegAward").show(), r.find("#regAwardMain").hide()), g_config.$$needNewVersion) LongPageCard.initBgSpanCss("regAwardList");
+                else for (var t = r.find("#regAwardMain .regAwardList"), n = 0; n < e.regAwardList.length; n++) t.eq(n).find(".bgSpan").width(t.eq(n).find(".titleName").width() / g_rem + .4 + "rem")
+            }), 30),
+            hg.fire("setPageStyleColor", "regAwardMain", "", r)
+        }
+        function g(a) {
+            var t = 9 == a ? g_config.comfort.cas: g_config.awardList[a - 1].style;
+            return "<div class='regAwardList " + (g_config.$$needNewVersion ? "poupLine": "") + "'>                    <div class='mainTitle'>                        <p class='titleName'>" + e.encodeHtml(t) + "</p>                        <span class='bgSpan'></span>                    </div>                    <div class='playerName playerList'></div>                </div>"
+        }
+        false ? $("#awardContactInfo .updateBtn").hide() : g_config.$$haveLongAndShortPage && !g_config.isLongPage ? $("#poupInfoBox #awardContactInfo").on("click", ".updateBtn", (function() {
+            _manage || e.aUserInfo.show()
+        })) : setTimeout((function() {
+            $("#awardContactInfo").on("click", ".updateBtn", (function() {
+                _manage || e.aUserInfo.show()
+            }))
+        }), 300);
+        var f = g_rem || 23.4375,
+        p = $("#poupInfoBox").outerHeight() - $(".poupHead").outerHeight() - .5 * f,
+        m = p - 3 * f + .5 * f;
+        switch (g_config.poupInfoType) {
+        case 1:
+            $("#poupInfoBox .poupMain").height(p),
+            $("#poupInfoBox").removeClass("darkMode").removeClass("halfWindow");
+            break;
+        case 2:
+            $("#poupInfoBox .poupMain").height(p),
+            $("#poupInfoBox").addClass("darkMode").removeClass("halfWindow");
+            break;
+        case 3:
+            $("#poupInfoBox .poupMain").height(m),
+            $("#poupInfoBox").addClass("halfWindow").removeClass("darkMode"),
+            _manage || ($("#poupInfoBox #simulateMask").off("click"), $("#poupInfoBox #simulateMask").on("click", (function() {
+                $("#poupInfoBox #poupHead .poupClose").click()
+            })))
+        }
+        window.requestAnimFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+        function(e) {
+            window.setTimeout(e, 1e3 / 60)
+        },
+        hg.on("isHideAwardCollectionBtn", (function(e) {
+            $("#awardCollectionBtn").toggle(!e)
+        })),
+        1 != g_config.setting.skillsptype && $(".hasHideSkillSup").hide()
+    } (),
+    e.toggleActiveRuleView = function() {
+        var e = 0,
+        a = 0;
+        _manage ? (e = parent.game.style, a = parent.game.gameType) : (e = g_config.style, a = gameType);
+        var t = $("#activeRuleBox");
+        if ( - 1 !== [24, 25, 40, 79].indexOf(e)) return n(!(4 === a));
+        if ( - 1 !== [39, 47, 98].indexOf(e)) return n(!(1 === a || 4 === a));
+        if (34 === e) return n(!(3 === a));
+        function n(e) {
+            var a = t.hasClass("hiddenActiveRule");
+            e ? (_manage && (newWin().game.$$showActiveRuleEdit = !0), !a && t.removeClass("hide")) : (_manage && (newWin().game.$$showActiveRuleEdit = !1), !a && t.addClass("hide"))
+        }
+    };
+    try {
+        e.watch("game._setting.hideRank", g_config.hideRank, (function(a, t) {
+            if (g_config.$$isHasRank && !~ [123].indexOf(g_config.style)) if (_manage && parent.Edit && parent.Edit.showTabByStyle(!1), 69 == g_config.style) {
+                a && ($("#mbtp_InnerRank").hide(), _manage || $("#bottomTab #rankTab").hide().addClass("hide").siblings().eq(0).click()),
+                _manage && (a ? $("#bottomTab #rankTab").hide().addClass("hide").siblings().eq(0).click() : $("#bottomTab #rankTab").show().removeClass("hide").click());
+                var n = $("#bottomTab .bottomItem:visible").length;
+                $("#bottomTab .bottomItem").css("width", 100 / n + "%")
+            } else if (g_config.$$needNewVersion) $("#rankWrap").toggle(!a),
+            $("#seeRank_show_rankText").parent().toggle(!a).siblings().toggleClass("fullWidth", a);
+            else {
+                if ($("#ranBtn").toggle(!a), $("#seeRank_show_rankText").parent().toggle(!a).siblings().toggleClass("fullWidth", a), $(".myTwo .myRank").toggle(!a).parent().toggleClass("toOneBtn", a), a != t && e.initChangePoup(), a) _manage && $(".poupTitleBox").children(".poupTitleMune").not("hide").eq(0).trigger("click");
+                else if (_manage) parent.$(".topBar .column").each((function() {
+                    if ("排行榜" == $(this).find(".name").text()) return $(this).trigger("click", "formTabSetting"),
+                    !1
+                })),
+                $("#ranBtn").click()
+            }
+        }))
+    } catch(e) {
+        console.warn(e)
+    }
+    t = {
+        show: function(a) { ! _manage && e.ajaxLoad.show(),
+            localStorage.setItem("awardItem", JSON.stringify(a));
+            var t = g_config.ajaxUrl.replace("/ajax/", "") + "/deliveryInfo.jsp",
+            n = $('<iframe id="deliveryInfoIframe" style="height: 100%; width: 100%;" scrolling="yes" frameborder="0" src="' + t + '"></iframe>');
+            $("#deliveryInfoBg").append(n),
+            n.load((function() {
+                e.ajaxLoad.hide(),
+                $("#deliveryInfoBg").show()
+            }))
+        },
+        hide: function(a) {
+            $("#deliveryInfoBg").hide(),
+            $("#deliveryInfoIframe").remove(),
+            a && ($(".awardCloseIcon").click(), g_config.$$isLongPageAwardBox ? ($(".body, .home").animate({
+                scrollTop: $("#myAwardBox").offset().top
+            },
+            500), hg.fire("home")) : $(".basePage.drawPage").is(":visible") ? ($(".drawPage .innerAward").click(), $(".drawPage .rlskTab.rldkAward").click()) : 120 == g_config.style ? xccjVue.initWinningPage() : (g_config.$$isOpenSilkBagGray ? HdgComponent.$showPoupInfoBox(3) : e.changePoup(3, "", !0), setTimeout((function() {
+                $("#prizeBtn").trigger("touchstart")
+            }), 500)))
+        },
+        refresh: function() {}
+    },
+    e.deliveryInfo = t;
+    hg.on("jsFootEnd", (function() { !
+        function() {
+            e.sortRuleBox.init(g_config.rulesortstr),
+            _manage && !_preview && parent.game.$$data.isMinAppGame && e.sortRuleBox.init(parent.game._setting.mainModuleSortStr || "abc", $("#EditMoveBox"), $(".EditMoveLine"), !0),
+            jsFootArg.showRedDot && $("#Award_Round_Dot").css("display", "inline-block"),
+            jsFootArg.showMDRedDot && $("#Mingdan_Round_Dot").css("display", "inline-block"),
+            jsFootArg.isSelAwardLine && g_config.$$showCustomExplain || !g_config.$$newAwardDescript && jsFootArg.isSelAwardLine ? ($("#selfAwardLine").show(), $("#awardLineBox").hide()) : ($("#awardLineBox").show(), $("#selfAwardLine").hide()),
+            jsFootArg.showSkillSup || ($(".skillInfo").hide(), $(".skillInfo").addClass("hideSkill")),
+            _manage || $("#ruleImg").addClass("ruleImgAnimate"),
+            $(".awardCloseIcon").on("click", (function() {
+                _manage || (hg.fire("awardDetailClose"), e.wxConfig.removeWxShareUrlArg("fromFav"), $("#awardDetailBox").removeClass("shortPage").hide(), $("#resule-gift-box,resule-status-box").hide(), $(".gameBox,.home,.body").removeClass("overflow-y-hidden"), g_config.showSkillSup && $(".bottomSkill").show(), g_config.firstTouchAward = !0)
+            })),
+            !_manage && $("#awardCollectionBtn").on("click", (function() {
+                e.logDog(1000045, 2),
+                HdGameAsynFn({
+                    fn: "HdGame.favorite",
+                    res_key: "js_favorite"
+                })
+            })),
+            $(".codeImg").on("click", (function() {
+                $(".codeDetailImgBox").show()
+            })),
+            !_manage && $("#immediaAwardBtn").on("click", (function() {
+                $("#awardCodeLayer").show()
+            })),
+            $(".codeDetailImgBox").click((function() {
+                $(this).hide()
+            })),
+            $("#useStoreBox .moreBtn").click((function() {
+                _manage || $("#storeListBox").show()
+            })),
+            $("#storeListBox .closeBtn").click((function() {
+                $("#storeListBox").hide()
+            })),
+            $(".codeDetailInfoBox .copy").on("click", (function() {
+                if (!_manage) {
+                    var a = $("#awardDetailBox").find(".copyCode").text();
+                    HdGameAsynFn({
+                        fn: "HdGame.copyContent2",
+                        res_key: "js_copyContent"
+                    },
+                    "input-copyCode", a) ? e.showSuccessToast("复制成功") : $(".codeCopyDetailMask").show()
+                }
+            })),
+            $(".codeCopyDetailMask").click((function() {
+                $(this).hide()
+            })),
+            $("#awardDetailBox #ticketDetailBox .guideMap").on("click", (function() {
+                e.bindGolocation($.extend($(this).data("pointData"), {
+                    bindBtn: $(this),
+                    isOperation: !0
+                }))
+            })),
+            $("a.hostName").click((function() {
+                e.logDog(1000013),
+                _manage || e.jumpToHostUrl(!1)
+            })),
+            $(".U_PlusName").click((function() {
+                if (!_manage) return HdgComponent.$showSkillMask(!0),
+                !1
+            })),
+            g_config.afterWxCard || $(".awardCusText").on("touchstart", (function() {
+                var e = $("#awardCusTextInfo");
+                "block" == e.css("display") ? ($(this).find(".awardDeailIcon").removeClass("awardIncoSlideDown"), $(this).find(".awardDeailIcon").addClass("awardIncoSlideUp")) : ($(this).find(".awardDeailIcon").removeClass("awardIncoSlideUp"), $(this).find(".awardDeailIcon").addClass("awardIncoSlideDown")),
+                e.slideToggle()
+            }));
+            var a = g_config.$$needNewVersion && $("#myAwardBox").length > 0 ? "#myAwardBox": "#awardInfo";
+            $(a).on("click", ".codeInfoBox", (function(a) {
+                if (!_manage) {
+                    var t = $(this).index(),
+                    n = e.awardList[t],
+                    o = n.awardInfo ? JSON.parse(n.awardInfo) : {},
+                    i = Fai.checkBit(n.flag, 512),
+                    s = (_manage ? n.$type: g_config.$$awardTypeInfo[getAwardType(o.awardtype)]).isAfterPayType || !1;
+                    if (s && o.isOpenAfterPay && 5 != n.codeStatus) {
+                        if (i) return e.openAwardDetail.call(this, a);
+                        e.awardPay({
+                            enCode: n.awardCode,
+                            payTime: o.payTime,
+                            awardTime: n.awardTime,
+                            payTimeLimit: o.payTimeLimit,
+                            codeStatus: n.codeStatus,
+                            isUseless: $(this).find(".codeStatusName").hasClass("useless")
+                        })
+                    } else s && o.isOpenAfterPay && 5 == n.codeStatus ? e.showMsgToast2({
+                        bodyMsg: "兑奖券已失效，遗憾错失本次福利"
+                    }) : e.openAwardDetail.call(this, a)
+                }
+            })),
+            e.tlog("redirectPage", e.getUrlValByKey(document.URL, "redirectPage")),
+            "myAwardPage" === e.getUrlValByKey(document.URL, "redirectPage") && e.changePoup(3, "", !1),
+            "fromRedirectWxMsg3" === e.getUrlValByKey(document.URL, "wxMsgfrom") && ($("#prizeBtn").length > 0 && e.changePoup(3, "", !1), hg.on("initWxConfig", (function() {
+                e.wxConfig.removeWxShareUrlArg("wxMsgfrom")
+            })));
+            var t = e.getUrlValByKey(document.URL, "cashPrizeMsgCode");
+            if (t) {
+                var n = parseInt(e.getUrlValByKey(document.URL, "awardLevel") || 0);
+                e.showAwardDetailByCode(t, n),
+                hg.on("initWxConfig", (function() {
+                    e.wxConfig.removeWxShareUrlArg("cashPrizeMsgCode")
+                }))
+            }
+        } (),
+        1 == skillSupportType ? _manage ? $(".skillCont").hide() : $(".skillLine").css("padding", "0").hide() : 3 != skillSupportType || jsFootArg.isAdverQRCode || ($(".skillName").text(skillName), _fromCardBag || _fromHdportalM ? $(".skillName").attr("href", "").click((function(e) {
+            e.preventDefault(),
+            HdGameAsynFn({
+                fn: "HdGame.copyContent3",
+                res_key: "js_copyContent"
+            },
+            skillLink)
+        })) : $(".skillName").attr("href", skillLink)),
+        (3 != skillSupportType || skillLink.indexOf("mp.weixin.qq.com/s?__biz=MjM5MTk5MjI3OA==&mid=209854000&idx=1&sn=82241d924839270d3ea820ad2d56c01b#wechat_redirect") >= 0 && !_fromCardBag || jsFootArg.isAdverQRCode) && $(".skillName").click((function() {
+            if (! (_manage || $(this).attr("href") && ~$(this).attr("href").indexOf("https://hdm.fkw.com/pro6.jsp"))) {
+                e.logDog(1000013),
+                e.hdSkillLog(!1, 1000070);
+                var a = $(this).parents(".home").length > 0 || $(this).parents(".attentionBox").parent().length > 0 && "body" == $(this).parents(".attentionBox").parent().get(0).tagName.toLowerCase(),
+                t = -1 != $.inArray(g_config.style, [75, 111, 113, 115, 117, 119]) && a && !_manage && !g_config.isOem && g_config.createTime > 16038504e5;
+                return e.FdpTrack("hd_game_ad_click", {
+                    hd_modid: g_config.modId,
+                    hd_ta: g_config._ta,
+                    hd_free_text_0: t ? "首页": "其他"
+                }),
+                0 == g_config.isAOpenId ? e.logDog(1000115, 7) : e.logDog(1000115, 8),
+                14788299 != g_config.aid ? (e.isVisitorA() || e.FdpTrack("hd_game_distinctbc_expo", {
+                    hd_free_text_1: e.isVisitorA() ? "a": "b"
+                }), HdgComponent.$showSkillMask(!1), !1) : void 0
+            }
+        }))
+    }))
+} (HdGame);

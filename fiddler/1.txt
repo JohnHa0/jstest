@@ -1,0 +1,1 @@
+"{\"code\":\"0\",\"msg\":\"getAnnounce\",\"switch\":\"0\",\"content\":\"比赛结束，感谢参与！\"}"
