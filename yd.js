@@ -21,17 +21,19 @@ let userCount = 0
 var msg = ''
 let newurl = "http://m.xmrygnuv.shop"
 let complete=0;
+let for_to=''
 ///////////////////////////////////////////////////////////////////
 class UserInfo {
     constructor(str) {
         //console.log(str)
         this.index = ++userIdx, this.idx = `账号[${this.index}] `, this.ck = str//.split('#'), this.u = this.ck[0], this.t = this.ck[1]
+        this.exception_num=0;
     }
 
     async getreadurl() {
         try {
             let t = Date.now()
-            this.ul = newurl+`/tuijian/do_read?for=&zs\u003d\u0026pageshow\u0026r\u003d0.016638941704032684`;
+            this.ul = newurl+`/tuijian/do_read?for\u003d${for_to}\u0026zs\u003d\u0026pageshow\u0026r\u003d0.016638941704032684`;
             let body = ``;
             let urlObject = popu(this.ul, body,this.ck)
             await httpRequest('get', urlObject)
@@ -57,7 +59,7 @@ class UserInfo {
         try {
             let t = Date.now()
             readurl = decodeURIComponent(readurl);
-            var sj = Math.random() * (8000 - 6000) + 6300
+            var sj = Math.random() * 5000 + 7300
 
             if (readurl.indexOf("jump")==-1){
 
@@ -98,16 +100,24 @@ class UserInfo {
     async readfinish() {
         try {
 
-            this.url=newurl+'/tuijian/do_read?for=&zs=&pageshow=&r=0.7882316111246435&jkey='+this.jkey
+            this.url=newurl+'/tuijian/do_read?for='+for_to+'&zs=&pageshow=&r=0.7882316111246435&jkey='+this.jkey
             let body = ``;
             let urlObject = popu(this.url, body,this.ck)
             //console.log(urlObject)
             await httpRequest('get', urlObject)
             let result = httpResult;
             if (result && result.success_msg) {
-                console.log(result.success_msg)
+                console.log(`账号[${this.index}] `+result.success_msg)
+                this.exception_num=0
             } else {
+                console.log(`账号[${this.index}] `)
                 console.log(result)
+                if(result.msg=='异常访问，请重试'){
+                    this.exception_num++
+                }
+                if(this.exception_num==3){
+                    this.cishu=0;//连续3次异常访问 退出阅读
+                }
             }
             
             /*
@@ -145,7 +155,7 @@ class UserInfo {
                 if (result.infoView.status == 3) {
                    // console.log(result.infoView.msg)
                     msg += ''
-                    console.log('检测文章，需手动过')
+                    console.log(`账号[${this.index}] `+'检测文章，需手动过')
                     msg += `\n${this.idx} 碰到检测文章\n`
                     this.fb = 1
                  
@@ -174,7 +184,7 @@ class UserInfo {
             let result = httpResult;
             if (result.data.user) {
                 result = result.data.user
-                console.log(`\n当前账号余额 ${result.score}分 \n`)
+                console.log(`账号[${this.index}] `+`\n当前账号余额 ${result.score}分 \n`)
                 if (this.ck.indexOf('##') != -1) return
                 this.f = parseInt(result.score)//= Number(Math.floor(result.info.sum / 1000))
                 /*
@@ -184,9 +194,9 @@ class UserInfo {
                 if (this.f >= 3) console.log(`\n可以提现 ${result.info.sum}金币 去提现 ${this.cash} 元\n`), await this.exchange()
                 */
                 if (this.f < 30) {
-                    console.log(`不满足0.3 提现门槛`)
+                    console.log(`账号[${this.index}] `+`不满足0.3 提现门槛`)
                 } else {
-                    console.log(`去提现${this.f/100}元。。。。。。`)
+                    console.log(`账号[${this.index}] `+`去提现${this.f/100}元。。。。。。`)
                     await this.doWithdraw(this.f)
                 }
             }
@@ -204,7 +214,7 @@ class UserInfo {
             let urlObject = popu(url, body,this.ck)
             await httpRequest('post', urlObject)
             let result = httpResult;
-            console.log(result)
+            console.log(`账号[${this.index}] `+result)
 
         } catch (e) {
             console.log(e)
@@ -234,6 +244,7 @@ class UserInfo {
                 //await $.wait(15000)
                 
             }
+            await $.wait(5000)
             await this.withdrawal()
             complete++;
         } catch (e) {
@@ -252,7 +263,7 @@ class UserInfo {
         if (userList.length > 0) {
             await gethost()
             console.log('获取到newurl：'+newurl)
-            /*for (let user of userList) {
+           /* for (let user of userList) {
                 await user.task()
             }*/
             await task();
@@ -267,12 +278,11 @@ async function task() {
                 user.task()
     }
     do{
-         console.log('等待所有账号结束')
+         console.log('等待所有账号结束 '+complete+"/"+userList.length)
         await $.wait(1000);
     }
     while(complete!=userList.length)
 }
-
 ///////////////////////////////////////////////////////////////////
 
 async function gethost() {
