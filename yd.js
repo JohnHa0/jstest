@@ -116,6 +116,7 @@ class UserInfo {
                     this.exception_num++
                 }
                 if(this.exception_num==3){
+                     console.log(`账号[${this.index}] 连续3次异常，退出`)
                     this.cishu=0;//连续3次异常访问 退出阅读
                 }
             }
@@ -214,7 +215,8 @@ class UserInfo {
             let urlObject = popu(url, body,this.ck)
             await httpRequest('post', urlObject)
             let result = httpResult;
-            console.log(`账号[${this.index}] `+result)
+            console.log(`账号[${this.index}] 提现结果:`)
+            console.log(result);
 
         } catch (e) {
             console.log(e)
