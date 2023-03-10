@@ -249,7 +249,8 @@ class UserInfo {
                 
             }
             await $.wait(5000)
-            await this.withdrawal()
+			if(for_to=='')
+				await this.withdrawal()
             complete++;
         } catch (e) {
             console.log(e)
