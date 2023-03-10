@@ -22,6 +22,9 @@ var msg = ''
 let newurl = "http://m.xmrygnuv.shop"
 let complete=0;
 let for_to=($.isNode() ? process.env['yuedu_for'] : $.getdata('yuedu_for')) || '';
+if(for_to!=''){
+	console.log('启用助力模式:'+for_to)
+}
 ///////////////////////////////////////////////////////////////////
 class UserInfo {
     constructor(str) {
