@@ -21,13 +21,14 @@ let userCount = 0
 var msg = ''
 let newurl = "http://m.xmrygnuv.shop"
 let complete=0;
-let for_to=''
+let for_to=($.isNode() ? process.env['yuedu_for'] : $.getdata('yuedu_for')) || '';
 ///////////////////////////////////////////////////////////////////
 class UserInfo {
     constructor(str) {
         //console.log(str)
         this.index = ++userIdx, this.idx = `账号[${this.index}] `, this.ck = str//.split('#'), this.u = this.ck[0], this.t = this.ck[1]
         this.exception_num=0;
+        this.current_index=0;
     }
 
     async getreadurl() {
@@ -107,7 +108,7 @@ class UserInfo {
             await httpRequest('get', urlObject)
             let result = httpResult;
             if (result && result.success_msg) {
-                console.log(`账号[${this.index}] `+result.success_msg)
+                console.log(`账号[${this.index}] `+result.success_msg+' 剩余:'+(this.cishu-this.current_index))
                 this.exception_num=0
             } else {
                 console.log(`账号[${this.index}] `)
@@ -161,10 +162,10 @@ class UserInfo {
                     this.fb = 1
                  
                 } else if (result.infoView.status == 4) {
-                    console.log(result.infoView.msg)
+                    console.log(`${this.idx} `+result.infoView.msg)
 
                 } else if (result.infoView.rest == 0){
-                    console.log(result.infoView.msg)
+                    console.log(`${this.idx} `+result.infoView.msg)
                 }
             }
         } catch (e) {
@@ -233,6 +234,7 @@ class UserInfo {
             //console.log(this.fb)
             if (this.fb != 1) {
                 for (let i = 0;i< this.cishu;i++) {
+                    this.current_index=i+1;
                     await this.getreadurl()
 
                     /*
