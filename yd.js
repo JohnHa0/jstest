@@ -160,7 +160,7 @@ class UserInfo {
                 if (result.infoView.status == 3) {
                    // console.log(result.infoView.msg)
                     msg += ''
-                    console.log(`账号[${this.index}] `+'检测文章，需手动过')
+                    console.log(`账号[${this.index}] `+'检测文章，需手动过----------------------')
                     msg += `\n${this.idx} 碰到检测文章\n`
                     this.fb = 1
                  
