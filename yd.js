@@ -34,12 +34,13 @@ class UserInfo {
 		this.idx = `账号[${this.index} ${this.u}] `
         this.exception_num=0;
         this.current_index=0;
+		this.for_to=this.str[2]??yuedu_bf;
     }
 
     async getreadurl() {
         try {
             let t = Date.now()
-            this.ul = newurl+`/tuijian/do_read?for\u003d${for_to}\u0026zs\u003d\u0026pageshow\u0026r\u003d0.016638941704032684`;
+            this.ul = newurl+`/tuijian/do_read?for\u003d${this.for_to}\u0026zs\u003d\u0026pageshow\u0026r\u003d0.016638941704032684`;
             let body = ``;
             let urlObject = popu(this.ul, body,this.ck)
             await httpRequest('get', urlObject)
@@ -106,7 +107,7 @@ class UserInfo {
     async readfinish() {
         try {
 
-            this.url=newurl+'/tuijian/do_read?for='+for_to+'&zs=&pageshow=&r=0.7882316111246435&jkey='+this.jkey
+            this.url=newurl+'/tuijian/do_read?for='+this.for_to+'&zs=&pageshow=&r=0.7882316111246435&jkey='+this.jkey
             let body = ``;
             let urlObject = popu(this.url, body,this.ck)
             //console.log(urlObject)
