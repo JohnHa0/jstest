@@ -22,6 +22,7 @@ var msg = ''
 let newurl = "http://m.xmrygnuv.shop"
 let complete=0;
 let for_to=($.isNode() ? process.env['yuedu_for'] : $.getdata('yuedu_for')) || '';
+let yuedu_bf=($.isNode() ? process.env['yuedu_bf'] : $.getdata('yuedu_bf')) || 1;
 if(for_to!=''){
 	console.log('启用助力模式:'+for_to)
 }
@@ -283,7 +284,11 @@ class UserInfo {
     .finally(() => $.done())
 async function task() {
     for (let user of userList) {
+			if(yuedu_bf)
                 user.task()
+			else{
+				await user.task()
+			}
     }
     do{
          console.log('等待所有账号结束 '+complete+"/"+userList.length)
