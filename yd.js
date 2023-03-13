@@ -30,7 +30,8 @@ if(for_to!=''){
 class UserInfo {
     constructor(str) {
         //console.log(str)
-        this.index = ++userIdx, this.idx = `账号[${this.index}] `, this.str = str.split('#'), this.ck = this.str[0], this.u = this.str[1]??''
+        this.index = ++userIdx,  this.str = str.split('#'), this.ck = this.str[0], this.u = this.str[1]??''
+		this.idx = `账号[${this.index} ${this.u}] `
         this.exception_num=0;
         this.current_index=0;
     }
@@ -112,16 +113,16 @@ class UserInfo {
             await httpRequest('get', urlObject)
             let result = httpResult;
             if (result && result.success_msg) {
-                console.log(`账号[${this.index}] `+result.success_msg+' 剩余:'+(this.cishu-this.current_index))
+                console.log(this.idx+` `+result.success_msg+' 剩余:'+(this.cishu-this.current_index))
                 this.exception_num=0
             } else {
-                console.log(`账号[${this.index}] `)
+                console.log(this.idx+` `)
                 console.log(result)
                 if(result.msg=='异常访问，请重试'){
                     this.exception_num++
                 }
                 if(this.exception_num==3){
-                     console.log(`账号[${this.index}] 连续3次异常，退出`)
+                     console.log(this.idx+` 连续3次异常，退出`)
                     this.cishu=0;//连续3次异常访问 退出阅读
                 }
             }
@@ -161,7 +162,7 @@ class UserInfo {
                 if (result.infoView.status == 3) {
                    // console.log(result.infoView.msg)
                     msg += ''
-                    console.log(`账号[${this.index}] `+'检测文章，需手动过---------------------- '+this.u)
+                    console.log(this.idx+` `+'检测文章，需手动过---------------------- '+this.u)
                     msg += `\n${this.idx} 碰到检测文章 `+this.u+`\n`
                     this.fb = 1
                  
@@ -190,7 +191,7 @@ class UserInfo {
             let result = httpResult;
             if (result.data.user) {
                 result = result.data.user
-                console.log(`账号[${this.index}] `+`\n当前账号余额 ${result.score}分 \n`)
+                console.log(this.idx+` `+`\n当前账号余额 ${result.score}分 \n`)
                 if (this.ck.indexOf('##') != -1) return
                 this.f = parseInt(result.score)//= Number(Math.floor(result.info.sum / 1000))
                 /*
@@ -200,9 +201,9 @@ class UserInfo {
                 if (this.f >= 3) console.log(`\n可以提现 ${result.info.sum}金币 去提现 ${this.cash} 元\n`), await this.exchange()
                 */
                 if (this.f < 30) {
-                    console.log(`账号[${this.index}] `+`不满足0.3 提现门槛`)
+                    console.log(this.idx+` `+`不满足0.3 提现门槛`)
                 } else {
-                    console.log(`账号[${this.index}] `+`去提现${this.f/100}元。。。。。。`)
+                    console.log(this.idx+` `+`去提现${this.f/100}元。。。。。。`)
                     await this.doWithdraw(this.f)
                 }
             }
@@ -220,7 +221,7 @@ class UserInfo {
             let urlObject = popu(url, body,this.ck)
             await httpRequest('post', urlObject)
             let result = httpResult;
-            console.log(`账号[${this.index}] 提现结果:`)
+            console.log(this.idx+` 提现结果:`)
             console.log(result);
 
         } catch (e) {
