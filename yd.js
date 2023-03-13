@@ -30,7 +30,7 @@ if(for_to!=''){
 class UserInfo {
     constructor(str) {
         //console.log(str)
-        this.index = ++userIdx, this.idx = `账号[${this.index}] `, this.ck = str//.split('#'), this.u = this.ck[0], this.t = this.ck[1]
+        this.index = ++userIdx, this.idx = `账号[${this.index}] `, this.str = str.split('#'), this.ck = this.str[0], this.u = this.str[1]??''
         this.exception_num=0;
         this.current_index=0;
     }
@@ -161,8 +161,8 @@ class UserInfo {
                 if (result.infoView.status == 3) {
                    // console.log(result.infoView.msg)
                     msg += ''
-                    console.log(`账号[${this.index}] `+'检测文章，需手动过----------------------')
-                    msg += `\n${this.idx} 碰到检测文章\n`
+                    console.log(`账号[${this.index}] `+'检测文章，需手动过---------------------- '+this.u)
+                    msg += `\n${this.idx} 碰到检测文章 `+this.u+`\n`
                     this.fb = 1
                  
                 } else if (result.infoView.status == 4) {
