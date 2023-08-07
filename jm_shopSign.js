@@ -1,11 +1,4 @@
 /*
-活动名称：店铺签到 · 超级无线/超级会员/lorealjdcampaign
-活动链接：https://lzkj-isv.isvjd.com/sign/sevenDay/signActivity?activityId=<活动id>
-        https://lzkj-isv.isvjd.com/sign/signActivity2?activityId=<活动id>
-        https://cjhy-isv.isvjcloud.com/sign/sevenDay/signActivity?activityId=<活动id>
-        https://cjhy-isv.isvjcloud.com/sign/signActivity?activityId=<活动id>
-        https://lorealjdcampaign-rc.isvjcloud.com/prod/cc/cjwx/sign/signActivity2?activityId=<活动id>
-环境变量：
 jd_shopSign_activityUrl // 活动链接
 jd_shopSign_joinMember // 是否入会（true/false），默认不入会
 
