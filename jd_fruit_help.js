@@ -82,7 +82,7 @@ let boolneedUpdate = false;
 let strShare = './Fruit_ShareCache.json';
 let Fileexists = fs.existsSync(strShare);
 let TempShareCache = [];
-if (Fileexists) {
+if (0) {//Fileexists
     console.log("检测到东东农场缓存文件Fruit_ShareCache.json，载入...");
     TempShareCache = fs.readFileSync(strShare, 'utf-8');
     if (TempShareCache) {
