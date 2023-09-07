@@ -1227,7 +1227,7 @@ XMLHttpRequest.setRequestHeader('Referer','https://activity.tianmunews.com/');
 },
 
 success:function (data, textStatus) {
-	console.log(data)
+	//console.log(data)
 	setTimeout(function(){
 		
 		end(i,data.data)
