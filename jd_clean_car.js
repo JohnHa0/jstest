@@ -40,8 +40,9 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 const dy = require('./function/dylanx.js');
 //IOS等用户直接用NobyDa的jd cookie
-let cleancartRun = 'true'
+let cleancartRun = 'false'
 let cleancartProducts = ''
+let XH_CLEAN_EXCEPT=process.env.XH_CLEAN_EXCEPT && process.env.XH_CLEAN_EXCEPT.split('@') || [];
 let cookiesArr = [],
     cookie = '';
 if ($.isNode()) {
@@ -58,8 +59,6 @@ message = ''
 cleancartRun = $.isNode() ? (process.env.JD_CART_REMOVE ? process.env.JD_CART_REMOVE : `${cleancartRun}`) : ($.getdata('JD_CART_REMOVE') ? $.getdata('JD_CART_REMOVE') : `${cleancartRun}`);
 
 cleancartProducts = $.isNode() ? (process.env.gua_cleancart_products ? process.env.gua_cleancart_products : '*@&@') : ($.getdata('gua_cleancart_products') ? $.getdata('gua_cleancart_products') : `${cleancartProducts}`);
-
-let XH_CLEAN_EXCEPT=process.env.XH_CLEAN_EXCEPT && process.env.XH_CLEAN_EXCEPT.split('@') || [];
 
 let productsArr = []
 let cleancartProductsAll = []
@@ -105,8 +104,7 @@ for (let i in productsArr) {
                 $.cleancartProductsArr = cleancartProductsAll["*"]
             } else $.cleancartProductsArr = false
             if ($.cleancartProductsArr) console.log($.cleancartProductsArr)
-			//		console.log()
-			if(XH_CLEAN_EXCEPT.length&&XH_CLEAN_EXCEPT.indexOf($.UserName)>-1){
+            if(XH_CLEAN_EXCEPT.length&&XH_CLEAN_EXCEPT.indexOf($.UserName)>-1){
 				console.log("排除账号不清空");
 			}else{
 				 await run();
@@ -268,8 +266,8 @@ function jdApi(functionId, body) {
 
 function taskPostUrl(url, body) {
     return {
-        url: `https://api.m.jd.com${url}`,
-        body: body,
+        url: `https://api.m.jd.com${url}&${body}`,
+        //body: body,
         headers: {
             "Accept": "*/*",
             "Accept-Language": "zh-cn",
