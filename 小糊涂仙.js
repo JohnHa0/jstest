@@ -68,8 +68,9 @@ class User
 			  console.log(`${$.name} API请求失败，请检查网路重试`)
 			} else {
 			  if (data) {
+				  console.log(that.name+" "+data)
 				data = JSON.parse(data);
-				console.log(data)
+				
 				
 			  } else {
 				console.log(`服务器返回空数据`)
@@ -168,7 +169,7 @@ class User
 		this.currentGameInfo=currentGameInfo.data;
 		var t=10*1000+parseInt(Math.random()*10)*1000
 		
-		var score=30000+parseInt(Math.random()*40000)
+		var score=25000+parseInt(Math.random()*30000)
 		t=score*((60*1000*2.5)/10000)+parseInt(Math.random()*50)*1000
 		await $.wait(t);
 		await this.endgame(score);
