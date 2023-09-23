@@ -186,7 +186,7 @@ class User
 	}
 	setTimeout(function(){
 		abc()
-	},60000*3)
+	},60000*60*3)
 
 
 })().catch((e) => {
