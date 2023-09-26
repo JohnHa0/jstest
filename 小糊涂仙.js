@@ -269,6 +269,10 @@ class User
 	async run(){
 		await this.index();
 		var currentGameInfo=await this.firstget();
+		if(currentGameInfo==null){
+			await run();
+			return;
+		}
 		if(currentGameInfo.code!=0){
 			console.log("开始游戏失败:"+this.name)
 			console.log(currentGameInfo)
