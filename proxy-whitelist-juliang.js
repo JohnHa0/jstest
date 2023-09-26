@@ -58,6 +58,14 @@ async function getip(ip) {
         })
     })
 }
+async function getOldip() {
+	
+  return new Promise(async resolve => {
+		var result = client.dynamicGetWhiteIp(dyKey,dyTradeNo);
+		console.log(result);
+        resolve(result);
+    })
+}
 async function addip(ip) {
 	console.log("添加ip")
 
@@ -67,11 +75,21 @@ async function addip(ip) {
 		resolve();
     })
 }
+async function dynamicReplace(ip,oldip) {
+	console.log("添加ip")
+
+  return new Promise(async resolve => {
+       var result = client.dynamicReplace(dyKey,dyTradeNo,ip,{old_ip:oldip,reset:true});
+		console.log(result);
+		resolve();
+    })
+}
 var lastip;
 !(async() => {
 	var ip=await getip();
 	if(lastip!=ip){
-		await addip(ip);
+		var oldip=await getOldip(ip);
+		await dynamicReplace(ip,oldip.data.current_white_ip[0]);
 	}else{
 		console.log("ip没有发生变化")
 	}
