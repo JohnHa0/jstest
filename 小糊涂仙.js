@@ -1,9 +1,10 @@
 const $ = new Env('小糊涂仙');
 const CryptoJS = require('crypto-js');
 var index=0;
-
+var fs=require('fs');
 var cookies=[
-	{"cookie":"2384_user_cookie=caf33a32a57783b4562e7cb7e2fa101b; PHPSESSID=48a836e6feca0b195582724eb7a218db","name":'一条鱼'},
+	
+		{"cookie":"2384_user_cookie=caf33a32a57783b4562e7cb7e2fa101b; PHPSESSID=48a836e6feca0b195582724eb7a218db","name":'一条鱼'},
 	{"cookie":"2384_user_cookie=4acccc7c232ffde9d6079ad28eb62c5b; PHPSESSID=bba747d291fc165edeec2b8e594b2437","name":'秋衣'},
 	{"cookie":"2384_user_cookie=ee9989d8be3f9409c2dd7958716abbc7; PHPSESSID=05edc97aee69e8e61a8caad647122f7c","name":'心想事成'},
 	{"cookie":"PHPSESSID=4cb170fcfd70b8b7aa71f84e999b22b6; 2384_user_cookie=e7ca60e0d429bb982066f07f4996ed8a","name":'杨月'},
@@ -85,6 +86,7 @@ class User
 	  })
 	}
 	encryptByDES (y) {
+		console.log(this.name+":")
 		console.log(this.currentGameInfo)
 					var x = CryptoJS.enc.Utf8.parse(this.currentGameInfo.key),
 						s = CryptoJS.enc.Utf8.parse("cdlchd0123456789"),
@@ -144,8 +146,9 @@ class User
 			  console.log(`${$.name} API请求失败，请检查网路重试`)
 			} else {
 			  if (data) {
-				 console.log(data)
+				 console.log(that.name+data)
 				data = JSON.parse(data);
+				
 				console.log("提交成功------------"+that.name)
 			  } else {
 				console.log(`服务器返回空数据`)
@@ -159,7 +162,112 @@ class User
 		})
 	  })
 	}
+	index(){
+		var that=this;
+	 return new Promise(async resolve => {
+	var request = require("request");
+	
+	
+    const options = {
+		  "url": 'https://wx.cdh5.cn/2384_4549575a/index.php',
+		  "headers": {
+			'Host': 'wx.cdh5.cn',
+			'Connection': 'keep-alive',
+			'Origin': 'https://wx.cdh5.cn',
+				'X-Requested-With': 'XMLHttpRequest',
+				'Accept-Charset':"utf-8",
+			'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+			'Referer': 'https://wx.cdh5.cn/2384_4549575a/index.php',
+			'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Mobile/14F89 MicroMessenger/7.0.17(0x1700112a) NetType/WIFI Language/zh_CN',
+			'Accept':'*/*',
+			'Accept-Language': 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+			'Sec-Fetch-Dest':'empty',
+			'Sec-Fetch-Mode':'cors',
+			'Sec-Fetch-Site':'same-origin',
+			'Cookie':that.cookie,
+			//'Content-Length': data1.length
+			
+		  },
+		  'body':''
+		}
+		//console.log(options);
+		request.post(options, function(err, resp, data) {
+			try {
+			if (err) {
+			  console.log(`${JSON.stringify(err)}`)
+			  console.log(`${$.name} API请求失败，请检查网路重试`)
+			} else {
+			  if (data) {
+				
+				console.log("------------"+that.name)
+			  } else {
+				console.log(`服务器返回空数据`)
+			  }
+			}
+		  } catch (e) {
+			$.logErr(e, resp)
+		  } finally {
+			resolve(data);
+		  }
+		})
+	  })
+	}
+
+		choujiang(){
+		var that=this;
+	 return new Promise(async resolve => {
+	var request = require("request");
+	
+	
+    const options = {
+		  "url": 'https://wx.cdh5.cn/2384_4549575a/index.php?s=/api/lottery',
+		  "headers": {
+			'Host': 'wx.cdh5.cn',
+			'Connection': 'keep-alive',
+			'Origin': 'https://wx.cdh5.cn',
+				'X-Requested-With': 'XMLHttpRequest',
+				'Accept-Charset':"utf-8",
+			'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+			'Referer': 'https://wx.cdh5.cn/2384_4549575a/index.php',
+			'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Mobile/14F89 MicroMessenger/7.0.17(0x1700112a) NetType/WIFI Language/zh_CN',
+			'Accept':'*/*',
+			'Accept-Language': 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+			'Sec-Fetch-Dest':'empty',
+			'Sec-Fetch-Mode':'cors',
+			'Sec-Fetch-Site':'same-origin',
+			'Cookie':that.cookie,
+			//'Content-Length': data1.length
+			
+		  },
+		  'body':''
+		}
+		//console.log(options);
+		request.post(options, function(err, resp, data) {
+			try {
+			if (err) {
+			  console.log(`${JSON.stringify(err)}`)
+			  console.log(`${$.name} API请求失败，请检查网路重试`)
+			} else {
+			  if (data) {
+				 console.log(that.name+data)
+				data = JSON.parse(data);
+				  if(data.data.awardid!=9)
+					fs.appendFileSync('xht.txt',that.name+JSON.stringify(data)+'\r\n');
+				console.log("------------"+that.name)
+			  } else {
+				console.log(`服务器返回空数据`)
+			  }
+			}
+		  } catch (e) {
+			$.logErr(e, resp)
+		  } finally {
+			resolve(data);
+		  }
+		})
+	  })
+	}
 	async run(){
+		await this.index();
 		var currentGameInfo=await this.firstget();
 		if(currentGameInfo.code!=0){
 			console.log("开始游戏失败:"+this.name)
@@ -169,12 +277,14 @@ class User
 		this.currentGameInfo=currentGameInfo.data;
 		var t=10*1000+parseInt(Math.random()*10)*1000
 		
-		var score=25000+parseInt(Math.random()*30000)
+		var score=25000+parseInt(Math.random()*40000)
 		t=score*((60*1000*2.5)/10000)+parseInt(Math.random()*50)*1000
 		await $.wait(t);
 		await this.endgame(score);
+		await $.wait(2000);
+		await this.choujiang()
 		console.log(date('H:i:s'))
-		await $.wait(5000);
+		await $.wait(2000);
 		this.run();
 	}
 
@@ -183,11 +293,13 @@ class User
 	var obj=[];
 	for(var i=0;i<cookies.length;i++){
 		var user=new User(cookies[i]);
-		user.run();
+		obj.push(user);
+		await $.wait(200);
+		obj[i].run();
 	}
 	setTimeout(function(){
 		abc()
-	},60000*60*3)
+	},60000*60*5)
 
 
 })().catch((e) => {
