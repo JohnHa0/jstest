@@ -270,7 +270,7 @@ class User
 		await this.index();
 		var currentGameInfo=await this.firstget();
 		if(currentGameInfo==null){
-			await run();
+			await this.run();
 			return;
 		}
 		if(currentGameInfo.code!=0){
