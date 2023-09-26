@@ -67,7 +67,7 @@ async function addip(ip) {
 		resolve();
     })
 }
-async function dynamicReplace(ip,oldip) {
+async function dynamicReplace(ip) {
 	console.log("添加ip")
 
   return new Promise(async resolve => {
@@ -80,9 +80,7 @@ var lastip;
 !(async() => {
 	var ip=await getip();
 	if(lastip!=ip){
-		var oldip=await getOldip(ip);
-		oldip=JSON.parse(oldip)
-		await dynamicReplace(ip,oldip.data.current_white_ip[0]);
+		await dynamicReplace(ip);
 	}else{
 		console.log("ip没有发生变化")
 	}
