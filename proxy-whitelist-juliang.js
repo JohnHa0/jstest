@@ -6,7 +6,7 @@ const CryptoJS = require('crypto-js');  //引用AES源码js
 //console.log(data);
 var fs=require('fs');
 const httpProxy = require('http-proxy');
-onst juliang = require('juliangip');
+const juliang = require('juliangip');
 //创建Api服务调用对象client
 const client = new juliang.client();
 
