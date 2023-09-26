@@ -71,7 +71,6 @@ var lastip;
 !(async() => {
 	var ip=await getip();
 	if(lastip!=ip){
-		await delall();
 		await addip(ip);
 	}else{
 		console.log("ip没有发生变化")
