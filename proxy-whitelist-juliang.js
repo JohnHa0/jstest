@@ -11,7 +11,7 @@ const accessKey = '9cd797ed39d541fdb5a4a11357e9182a';
 const dyTradeNo = "1143597784471490";
 const dyKey = "579d54afb13f42069bf4a6298cbe25af";
 
-const $ = new Env('定时更新白名单');
+const $ = new Env('巨量代理定时更新白名单');
 
 async function delall() {
 	console.log("删除白名单")
