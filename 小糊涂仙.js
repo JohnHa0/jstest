@@ -282,7 +282,7 @@ class User
 		var t=10*1000+parseInt(Math.random()*10)*1000
 		
 		var score=25000+parseInt(Math.random()*40000)
-		t=score*((60*1000*2.5)/10000)+parseInt(Math.random()*50)*1000
+		t=score*((60*1000*2.2)/10000)+parseInt(Math.random()*10)*1000
 		await $.wait(t);
 		await this.endgame(score);
 		await $.wait(2000);
