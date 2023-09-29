@@ -281,7 +281,7 @@ class User
 		this.currentGameInfo=currentGameInfo.data;
 		var t=10*1000+parseInt(Math.random()*10)*1000
 		
-		var score=4000+parseInt(Math.random()*40000)
+		var score=40000+parseInt(Math.random()*40000)
 		t=score*((60*1000*2.2)/10000)+parseInt(Math.random()*10)*1000
 		await $.wait(t);
 		await this.endgame(score);
